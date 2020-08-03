@@ -18,20 +18,62 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)ShellPage.xaml.cs">
+      <DependentUpon>ShellPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
+      <DependentUpon>SamplePageHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
+      <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TitleBarPage.xaml.cs">
+      <DependentUpon>TitleBarPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+    <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)ShellPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\TitleBarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-	<ItemGroup>
-		<None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
-	</ItemGroup>
-	<ItemGroup>
-		<PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
-	</ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DisplayRequest.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Geolocator.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ComingSoon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Accelerometer.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\FileSavePicker.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Android.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Ios.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Macos.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Windows.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Online.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Offline.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ProtocolActivation.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\NetworkInformation.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\SpeechRecognizer.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Vibration.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Midi.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\TitleBar.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Wasm.png" />
+  </ItemGroup>
 </Project>
