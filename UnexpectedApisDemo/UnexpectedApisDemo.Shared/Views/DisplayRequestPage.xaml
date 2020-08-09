@@ -6,19 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <usercontrols:SamplePageHeader Title="DisplayRequest" />
 
-        <StackPanel Grid.Row="1">
+        <StackPanel Padding="12" Grid.Row="1">
             <TextBlock Text="Toggling the switch will keep the screen even if device is idle." />
             <CheckBox x:Name="DisplayRequestToggle" Checked="DisplayRequest_Toggled" Content="Keep screen on" />
         </StackPanel>
+        
+        <Image MaxHeight="240" Grid.Row="2" Source="/Assets/Code/DisplayRequestCode.png" />
     </Grid>
 </Page>

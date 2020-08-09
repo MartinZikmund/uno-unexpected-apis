@@ -27,13 +27,10 @@ namespace UnexpectedApisDemo.Shared.UserControls
 		{
 			if (dependencyObject is GeopositionDisplayControl control && args.NewValue is Geoposition geoposition)
 			{
-				control.LatitudeRun.Text = geoposition.Coordinate.Point.Position.Longitude.ToString();
-				control.LongitudeRun.Text = geoposition.Coordinate.Point.Position.Latitude.ToString();
-				control.AltitudeRun.Text = geoposition.Coordinate.Point.Position.Altitude.ToString();
-				control.AltitudeAccuracyRun.Text = geoposition.Coordinate.AltitudeAccuracy?.ToString() ?? "";
-				control.AccuracyRun.Text = geoposition.Coordinate.Accuracy.ToString();
-				control.HeadingRun.Text = geoposition.Coordinate.Heading?.ToString() ?? "";
-				control.SpeedRun.Text = geoposition.Coordinate.Speed?.ToString() ?? "";
+				control.LatitudeRun.Text = geoposition.Coordinate.Point.Position.Longitude.ToString("0.##") + " m";
+				control.LongitudeRun.Text = geoposition.Coordinate.Point.Position.Latitude.ToString("0.##") + " m";
+				control.AltitudeRun.Text = geoposition.Coordinate.Point.Position.Altitude.ToString("0.##") + " m";				
+				control.AccuracyRun.Text = geoposition.Coordinate.Accuracy.ToString("0") + " m";								
 				control.TimestampRun.Text = geoposition.Coordinate.Timestamp.ToString();
 			}
 		}

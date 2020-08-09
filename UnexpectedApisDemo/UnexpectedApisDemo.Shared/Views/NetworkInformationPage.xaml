@@ -6,13 +6,13 @@
     xmlns:local="using:UnexpectedApisDemo.Shared.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <usercontrols:SamplePageHeader Title="Network information" />
 
@@ -37,5 +37,7 @@
                     Visibility="Collapsed" />
             </Grid>
         </StackPanel>
+
+        <Image MaxHeight="240" Grid.Row="2" Source="/Assets/Code/NetworkInformationCode.png" />
     </Grid>
 </Page>

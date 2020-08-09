@@ -27,6 +27,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
       <DependentUpon>SamplePageHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JumpListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml.cs">
       <DependentUpon>DisplayRequestPage.xaml</DependentUpon>
     </Compile>
@@ -35,6 +37,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\HelloPage.xaml.cs">
       <DependentUpon>HelloPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\JumpListPage.xaml.cs">
+      <DependentUpon>JumpListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
       <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
@@ -80,6 +85,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\JumpListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,7 +107,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\Vibration.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\DisplayRequestCode.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\GeolocatorCode.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\JumpListCode.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\NetworkInformationCode.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\TitleBarCode.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\VibrationCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\DisplayRequest.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Geolocator.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ComingSoon.png" />
@@ -106,6 +120,9 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\FileSavePicker.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Android.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Hello.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\computer.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\win10.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\xp.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\VibrationBig.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Vibration.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
