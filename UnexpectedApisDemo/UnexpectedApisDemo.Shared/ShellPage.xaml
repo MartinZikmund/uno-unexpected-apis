@@ -8,8 +8,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <NavigationView IsSettingsVisible="False" ItemInvoked="NavigationView_ItemInvoked">
+    <NavigationView x:Name="Menu" IsSettingsVisible="False" ItemInvoked="NavigationView_ItemInvoked">
         <NavigationView.MenuItems>
+            <NavigationViewItem Content="Hello, UnoConf 2020!" Tag="Hello">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
             <NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />

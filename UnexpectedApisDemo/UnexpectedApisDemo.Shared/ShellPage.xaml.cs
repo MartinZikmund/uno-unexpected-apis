@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using UnexpectedApisDemo.Shared.Views;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace UnexpectedApisDemo.Shared
 {
@@ -9,6 +11,13 @@ namespace UnexpectedApisDemo.Shared
         public ShellPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Menu.SelectedItem = Menu.MenuItems[0];
+            RootFrame.Navigate(typeof(HelloPage));
         }
 
         private void NavigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)

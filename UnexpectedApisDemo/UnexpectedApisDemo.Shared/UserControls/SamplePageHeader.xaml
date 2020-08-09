@@ -8,18 +8,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400"
     mc:Ignorable="d">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.ThemeDictionaries>
-                <ResourceDictionary x:Key="Default">
-                    <SolidColorBrush x:Key="HeaderBackground" Color="#111" />
-                </ResourceDictionary>
-                <ResourceDictionary x:Key="Light">
-                    <SolidColorBrush x:Key="HeaderBackground" Color="#EEE" />
-                </ResourceDictionary>
-            </ResourceDictionary.ThemeDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
+
     <Grid Padding="12" Background="{ThemeResource HeaderBackground}">
         <Grid.Resources>
             <Style TargetType="Image">

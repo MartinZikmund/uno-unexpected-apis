@@ -30,6 +30,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml.cs">
       <DependentUpon>GeolocatorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HelloPage.xaml.cs">
+      <DependentUpon>HelloPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
       <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
     </Compile>
@@ -60,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\HelloPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,6 +83,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Accelerometer.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\FileSavePicker.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Android.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Hello.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ios.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Macos.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Windows.png" />
