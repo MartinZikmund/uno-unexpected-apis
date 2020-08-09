@@ -25,7 +25,7 @@ namespace UnexpectedApisDemo.Shared.Views
             this.InitializeComponent();
         }
 
-        private void Vibrate_Tap(object sender, TappedRoutedEventArgs e)
+        private void Vibrate_Tap(object sender, RoutedEventArgs e)
         {
             var vibrationDevice = VibrationDevice.GetDefault();
             if (vibrationDevice != null)
