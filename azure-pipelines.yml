@@ -47,4 +47,4 @@ steps:
     azureSubscription: 'Microsoft Azure Sponsorship(5f792563-f67a-4f80-b04d-268a275432ed)'
     appType: 'webApp'
     WebAppName: 'unexpectedapis'
-    packageForLinux: '$(System.ArtifactStagingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
