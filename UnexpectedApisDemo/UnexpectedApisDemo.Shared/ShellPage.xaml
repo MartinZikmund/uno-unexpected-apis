@@ -8,7 +8,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <NavigationView x:Name="Menu" IsSettingsVisible="False" ItemInvoked="NavigationView_ItemInvoked">
+    <NavigationView x:Name="Menu" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_ItemInvoked">
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Hello, UnoConf 2020!" Tag="Hello">
                 <NavigationViewItem.Icon>
@@ -69,6 +69,10 @@
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ComingSoon.png" />
                 </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Thank you!" Tag="ThankYou">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ThankYou.png" />                </NavigationViewItem.Icon>
             </NavigationViewItem>
         </NavigationView.MenuItems>
         <NavigationView.Content>

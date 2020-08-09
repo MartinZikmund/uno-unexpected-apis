@@ -27,6 +27,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
       <DependentUpon>SamplePageHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml.cs">
+      <DependentUpon>DisplayRequestPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml.cs">
       <DependentUpon>GeolocatorPage.xaml</DependentUpon>
     </Compile>
@@ -35,6 +38,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
       <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ThankYouPage.xaml.cs">
+      <DependentUpon>ThankYouPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\TitleBarPage.xaml.cs">
       <DependentUpon>TitleBarPage.xaml</DependentUpon>
@@ -59,6 +65,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -68,6 +78,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\ThankYouPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,6 +101,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ios.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Macos.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYou.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYouSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Windows.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Online.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Offline.png" />
