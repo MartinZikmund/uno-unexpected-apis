@@ -27,8 +27,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
       <DependentUpon>SamplePageHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AccelerometerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JumpListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AccelerometerPage.xaml.cs">
+      <DependentUpon>AccelerometerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml.cs">
       <DependentUpon>DisplayRequestPage.xaml</DependentUpon>
     </Compile>
@@ -70,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\AccelerometerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
