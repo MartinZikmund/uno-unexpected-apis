@@ -45,6 +45,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\TitleBarPage.xaml.cs">
       <DependentUpon>TitleBarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\VibrationPage.xaml.cs">
+      <DependentUpon>VibrationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
@@ -89,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\VibrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\DisplayRequest.png" />
@@ -98,6 +105,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\FileSavePicker.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Android.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Hello.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\VibrationBig.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Vibration.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ios.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Macos.png" />
@@ -109,7 +118,6 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\ProtocolActivation.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\NetworkInformation.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\SpeechRecognizer.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Vibration.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Midi.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\TitleBar.png" />
