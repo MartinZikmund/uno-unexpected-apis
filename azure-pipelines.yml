@@ -33,18 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).Release.zip'
-    replaceExistingArchive: true
-
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Microsoft Azure Sponsorship(5f792563-f67a-4f80-b04d-268a275432ed)'
     appType: 'webApp'
     WebAppName: 'unexpectedapis'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.Release.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
