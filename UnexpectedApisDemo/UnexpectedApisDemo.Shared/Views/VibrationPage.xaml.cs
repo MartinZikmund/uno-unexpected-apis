@@ -30,7 +30,7 @@ namespace UnexpectedApisDemo.Shared.Views
             var vibrationDevice = VibrationDevice.GetDefault();
             if (vibrationDevice != null)
             {
-                vibrationDevice.Vibrate(TimeSpan.FromMilliseconds(200));
+                vibrationDevice.Vibrate(TimeSpan.FromMilliseconds(500));
             }
         }
     }

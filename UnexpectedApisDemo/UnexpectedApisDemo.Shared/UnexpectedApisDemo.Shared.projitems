@@ -98,6 +98,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\Vibration.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\DisplayRequest.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Geolocator.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ComingSoon.png" />
