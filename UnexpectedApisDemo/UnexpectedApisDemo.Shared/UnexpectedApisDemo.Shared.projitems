@@ -115,6 +115,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\AccelerometerCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\DisplayRequestCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\GeolocatorCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\JumpListCode.png" />

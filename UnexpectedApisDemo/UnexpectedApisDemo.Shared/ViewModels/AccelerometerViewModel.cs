@@ -15,9 +15,9 @@ namespace UnexpectedApisDemo.Shared.ViewModels
         private CoreDispatcher _dispatcher;
         private readonly Accelerometer _accelerometer = null;
         private bool _readingChangedAttached;        
-        private double _accelerationX;
-        private double _accelerationY;
-        private double _accelerationZ;
+        private string _accelerationX;
+        private string _accelerationY;
+        private string _accelerationZ;
         private string _readingTimestamp;
         private string _shakenTimestamp;
         private string _sensorStatus;
@@ -72,7 +72,7 @@ namespace UnexpectedApisDemo.Shared.ViewModels
             }
         }
 
-        public double AccelerationX
+        public string AccelerationX
         {
             get => _accelerationX;
             set
@@ -82,7 +82,7 @@ namespace UnexpectedApisDemo.Shared.ViewModels
             }
         }
 
-        public double AccelerationY
+        public string AccelerationY
         {
             get => _accelerationY;
             set
@@ -92,7 +92,7 @@ namespace UnexpectedApisDemo.Shared.ViewModels
             }
         }
 
-        public double AccelerationZ
+        public string AccelerationZ
         {
             get => _accelerationZ;
             set
@@ -126,9 +126,9 @@ namespace UnexpectedApisDemo.Shared.ViewModels
         {
             await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                AccelerationX = args.Reading.AccelerationX;
-                AccelerationY = args.Reading.AccelerationY;
-                AccelerationZ = args.Reading.AccelerationZ;
+                AccelerationX = args.Reading.AccelerationX.ToString("0.00");
+                AccelerationY = args.Reading.AccelerationY.ToString("0.00");
+                AccelerationZ = args.Reading.AccelerationZ.ToString("0.00");
                 ReadingTimestamp = args.Reading.Timestamp.ToString("R");
             });
         }
