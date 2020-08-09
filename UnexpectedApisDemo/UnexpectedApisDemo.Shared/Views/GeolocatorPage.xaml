@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="UnexpectedApisDemo.Shared.Views.GeolocatorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnexpectedApisDemo.Shared.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <usercontrols:SamplePageHeader Title="Geolocator" />
+
+        <StackPanel
+            Grid.Row="1"
+            Padding="12"
+            Spacing="8">
+            <Button Click="GetGeoposition_Click">Get geoposition</Button>
+            <usercontrols:GeopositionDisplayControl x:Name="GeopositionDisplay" Visibility="Collapsed" />
+        </StackPanel>
+
+        <winui:ProgressRing x:Name="ProgressRing" Visibility="Collapsed" IsActive="False"  Width="120" Height="120" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Page>

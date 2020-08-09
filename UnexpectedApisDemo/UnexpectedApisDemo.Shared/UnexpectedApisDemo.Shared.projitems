@@ -21,8 +21,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\GeopositionDisplayControl.xaml.cs">
+      <DependentUpon>GeopositionDisplayControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
       <DependentUpon>SamplePageHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml.cs">
+      <DependentUpon>GeolocatorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
       <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
@@ -42,7 +48,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)UserControls\GeopositionDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
