@@ -78,5 +78,11 @@
         <NavigationView.Content>
             <Frame x:Name="RootFrame" />
         </NavigationView.Content>
+        <NavigationView.PaneFooter>
+            <StackPanel Padding="12">
+                <TextBlock FontSize="20" Text="Try me at:" />
+                <HyperlinkButton FontWeight="Bold" FontSize="24" Content="https://cutt.ly/apis" NavigateUri="https://cutt.ly/apis" />
+            </StackPanel>
+        </NavigationView.PaneFooter>
     </NavigationView>
 </Page>
