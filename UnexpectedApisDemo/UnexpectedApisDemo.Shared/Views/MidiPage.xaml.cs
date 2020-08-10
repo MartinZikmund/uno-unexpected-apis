@@ -41,7 +41,7 @@ namespace UnexpectedApisDemo.Shared.Views
             Unloaded += MidiDeviceOutputTests_Unloaded;
         }
 
-        public ObservableCollection<string> OutputDevices { get; } = new ObservableCollection<string>();
+        public ObservableCollection<MidiDeviceInfo> OutputDevices { get; } = new ObservableCollection<MidiDeviceInfo>();
 
         public ObservableCollection<string> MessageTypeItems { get; } = new ObservableCollection<string>();
 
