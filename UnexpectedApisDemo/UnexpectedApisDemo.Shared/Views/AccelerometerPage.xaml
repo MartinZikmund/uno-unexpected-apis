@@ -8,7 +8,7 @@
     xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
     mc:Ignorable="d">
 
-    <Grid Padding="12" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -18,7 +18,7 @@
         <usercontrols:SamplePageHeader Title="Accelerometer" SupportsMacos="False" />
 
         <ContentControl Grid.Row="1" IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}">
-            <StackPanel>
+            <StackPanel Spacing="8" Padding="12">
                 <TextBlock Text="{x:Bind Model.SensorStatus, Mode=OneWay}" />
 
                 <ToggleButton Command="{x:Bind Model.ObserveCommand}" IsChecked="{x:Bind Model.ReadingChangedAttached, Mode=OneWay}" x:Name="AccelerometerToggle">Observe accelerometer events</ToggleButton>

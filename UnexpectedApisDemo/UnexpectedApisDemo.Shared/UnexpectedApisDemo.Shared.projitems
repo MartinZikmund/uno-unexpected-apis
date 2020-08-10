@@ -18,20 +18,29 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MidiDeviceInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MidiDeviceWatcher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\GeopositionDisplayControl.xaml.cs">
       <DependentUpon>GeopositionDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\KeyboardKey.xaml.cs">
+      <DependentUpon>KeyboardKey.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
       <DependentUpon>SamplePageHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AccelerometerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ClipboardViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JumpListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AccelerometerPage.xaml.cs">
       <DependentUpon>AccelerometerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ClipboardPage.xaml.cs">
+      <DependentUpon>ClipboardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml.cs">
       <DependentUpon>DisplayRequestPage.xaml</DependentUpon>
@@ -44,6 +53,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\JumpListPage.xaml.cs">
       <DependentUpon>JumpListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MidiPage.xaml.cs">
+      <DependentUpon>MidiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
       <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
@@ -73,11 +85,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)UserControls\KeyboardKey.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\AccelerometerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\ClipboardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\JumpListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\MidiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\AccelerometerCode.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Code\ClipboardCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\DisplayRequestCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\GeolocatorCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\JumpListCode.png" />
@@ -129,6 +154,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\FileSavePicker.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Android.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Hello.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Clipboard.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\computer.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\win10.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\xp.png" />
