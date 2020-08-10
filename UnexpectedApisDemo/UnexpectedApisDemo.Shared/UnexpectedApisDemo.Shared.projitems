@@ -43,6 +43,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\ClipboardPage.xaml.cs">
       <DependentUpon>ClipboardPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ComingSoonPage.xaml.cs">
+      <DependentUpon>ComingSoonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml.cs">
       <DependentUpon>DisplayRequestPage.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\ComingSoonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +171,9 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Android.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Hello.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Clipboard.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Gamepad.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Bluetooth.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\KeyboardNavigation.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\computer.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\win10.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\xp.png" />

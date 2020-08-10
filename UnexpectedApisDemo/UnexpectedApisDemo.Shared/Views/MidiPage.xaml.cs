@@ -4,7 +4,9 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using UnexpectedApisDemo.Shared.Helpers;
+using UnexpectedApisDemo.Shared.UserControls;
 using Windows.Devices.Midi;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -63,6 +65,98 @@ namespace UnexpectedApisDemo.Shared.Views
             _midiOutDeviceWatcher.Stop();
 
             _currentDevice?.Dispose();
+        }
+
+        private async void KeyClicked(object sender, RoutedEventArgs e)
+        {
+            if (_currentDevice != null)
+            {
+                var key = (KeyboardKey)sender;
+                var note = 60;
+                switch (key.KeyText.ToUpperInvariant())
+                {
+                    case "C":
+                        note = 60;
+                        break;
+                    case "D":
+                        note = 62;
+                        break;
+                    case "E":
+                        note = 64;
+                        break;
+                    case "F":
+                        note = 65;
+                        break;
+                    case "G":
+                        note = 67;
+                        break;
+                    case "A":
+                        note = 69;
+                        break;
+                    case "B":
+                        note = 71;
+                        break;
+                }
+
+                await PlayNoteAsync(note);
+            }
+        }
+
+        private async void HappyBirthday_Click(object sender, RoutedEventArgs args)
+        {
+            if (_currentDevice != null)
+            {
+                await PlayHappyBirthday();
+            }
+        }
+
+        private const byte ENote = 64;
+        private const byte DNote = 62;
+        private const byte CNote = 60;
+        private const byte HighCNote = 72;
+        private const byte FNote = 65;
+        private const byte GNote = 67;
+        private const byte ANote = 69;
+        private const byte ASharpNote = 70;
+        private const int Skip = 400;
+
+        private async Task PlayHappyBirthday()
+        {
+            await PlayNoteAsync(CNote, Skip / 2, 127);
+            await PlayNoteAsync(CNote, Skip / 2, 127);
+            await PlayNoteAsync(DNote);
+            await PlayNoteAsync(CNote);
+            await PlayNoteAsync(FNote);
+            await PlayNoteAsync(ENote, Skip * 2, 127);
+
+            await PlayNoteAsync(CNote, Skip / 2, 127);
+            await PlayNoteAsync(CNote, Skip / 2, 127);
+            await PlayNoteAsync(DNote);
+            await PlayNoteAsync(CNote);
+            await PlayNoteAsync(GNote);
+            await PlayNoteAsync(FNote, Skip * 2, 127);
+
+            await PlayNoteAsync(CNote, Skip / 2, 127);
+            await PlayNoteAsync(CNote, Skip / 2, 127);
+            await PlayNoteAsync(HighCNote, Skip * 2, 127);
+            await PlayNoteAsync(ANote);
+            await PlayNoteAsync(FNote);
+            await PlayNoteAsync(ENote);
+            await PlayNoteAsync(DNote);
+
+            await PlayNoteAsync(ASharpNote, Skip / 2, 127);
+            await PlayNoteAsync(ASharpNote, Skip / 2, 127);
+            await PlayNoteAsync(ANote);
+            await PlayNoteAsync(FNote);
+            await PlayNoteAsync(GNote);
+            await PlayNoteAsync(FNote, Skip * 2, 127);
+        }
+
+        private async Task PlayNoteAsync(byte noteNumber, int duration = Skip, byte velocity = 127)
+        {
+            _currentDevice?.SendMessage(new MidiNoteOnMessage(0, noteNumber, velocity));
+            await Task.Delay(duration);
+            _currentDevice?.SendMessage(new MidiNoteOffMessage(0, noteNumber, velocity));
         }
     }
 }

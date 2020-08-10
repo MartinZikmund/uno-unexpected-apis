@@ -29,14 +29,14 @@
 
         <ContentControl x:Name="KeyboardKeys" IsEnabled="False" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <usercontrols:KeyboardKey KeyText="C" />
-                <usercontrols:KeyboardKey KeyText="D" />
-                <usercontrols:KeyboardKey KeyText="E" />
-                <usercontrols:KeyboardKey KeyText="F" />
-                <usercontrols:KeyboardKey KeyText="G" />
-                <usercontrols:KeyboardKey KeyText="A" />
-                <usercontrols:KeyboardKey KeyText="B" />
-                <usercontrols:KeyboardKey KeyText="C" />
+                <usercontrols:KeyboardKey KeyText="C" Click="KeyClicked" />
+                <usercontrols:KeyboardKey KeyText="D" Click="KeyClicked" />
+                <usercontrols:KeyboardKey KeyText="E" Click="KeyClicked" />
+                <usercontrols:KeyboardKey KeyText="F" Click="KeyClicked" />
+                <usercontrols:KeyboardKey KeyText="G" Click="KeyClicked" />
+                <usercontrols:KeyboardKey KeyText="A" Click="KeyClicked" />
+                <usercontrols:KeyboardKey KeyText="B" Click="KeyClicked" />
+                <!--<usercontrols:KeyboardKey KeyText="C" Click="KeyClicked" />-->
             </StackPanel>
         </ContentControl>
 
