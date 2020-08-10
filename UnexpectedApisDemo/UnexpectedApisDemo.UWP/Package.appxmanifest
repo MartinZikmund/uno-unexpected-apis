@@ -36,9 +36,9 @@
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="UnexpectedApisDemo"
-        BackgroundColor="transparent">
+        BackgroundColor="#1F1F1F">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png"  BackgroundColor="#1F1F1F"/>
       </uap:VisualElements>
     </Application>
   </Applications>
@@ -46,5 +46,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <DeviceCapability Name="location"/>
+    <DeviceCapability Name="microphone"/>
   </Capabilities>
 </Package>

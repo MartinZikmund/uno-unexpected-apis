@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="UnexpectedApisDemo.Shared.Views.SpeechRecognizerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnexpectedApisDemo.Shared.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <usercontrols:SamplePageHeader Title="Speech recognizer" />
+
+        <Grid Grid.Row="1" RowSpacing="16" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button IsEnabled="{x:Bind Model.CanRecognize, Mode=OneWay}" HorizontalAlignment="Center" Command="{x:Bind Model.RecognizeCommand}">Recognize</Button>
+            <TextBlock Grid.Row="1" TextWrapping="WrapWholeWords" FontSize="30" HorizontalAlignment="Center" TextAlignment="Center" Text="{x:Bind Model.LastResult, Mode=OneWay}" />
+        </Grid>
+
+        <Image MaxHeight="240" Grid.Row="2" Source="/Assets/Code/SpeechRecognizerCode.png" />
+    </Grid>
+</Page>

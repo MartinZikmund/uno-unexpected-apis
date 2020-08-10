@@ -14,7 +14,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader Title="DisplayRequest" />
+        <usercontrols:SamplePageHeader Title="Display request" />
 
         <StackPanel Padding="12" Grid.Row="1">
             <TextBlock Text="Toggling the switch will keep the screen even if device is idle." />
