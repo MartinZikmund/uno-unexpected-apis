@@ -101,7 +101,7 @@ namespace UnexpectedApisDemo.Shared.Views
                         break;
                 }
 
-                await PlayNoteAsync(note);
+                await PlayNoteAsync((byte)note);
             }
         }
 
