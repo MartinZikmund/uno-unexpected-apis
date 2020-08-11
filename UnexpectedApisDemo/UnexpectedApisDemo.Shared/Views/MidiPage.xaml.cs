@@ -99,6 +99,9 @@ namespace UnexpectedApisDemo.Shared.Views
                     case "B":
                         note = 71;
                         break;
+                    case " C ":
+                        note = 72;
+                        break;
                 }
 
                 await PlayNoteAsync((byte)note);
