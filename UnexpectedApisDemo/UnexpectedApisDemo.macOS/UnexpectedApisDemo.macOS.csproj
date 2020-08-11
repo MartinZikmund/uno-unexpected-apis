@@ -69,11 +69,11 @@
     <Reference Include="System.Memory" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Uno.UI" Version="3.0.0-dev.1535" />
+    <PackageReference Include="Uno.UI" Version="3.0.0-dev.1551" />
     <PackageReference Include="Uno.UI.Lottie">
-      <Version>3.0.0-dev.1535</Version>
+      <Version>3.0.0-dev.1551</Version>
     </PackageReference>
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.0.0-dev.1535" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.0.0-dev.1551" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
   </ItemGroup>
