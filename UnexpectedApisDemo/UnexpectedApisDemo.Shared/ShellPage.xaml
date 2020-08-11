@@ -8,16 +8,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <NavigationView x:Name="Menu" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_ItemInvoked">
+    <NavigationView
+        x:Name="Menu"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        ItemInvoked="NavigationView_ItemInvoked">
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Hello, UnoConf 2020!" Tag="Hello">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
-                <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem Content="Network information" Tag="NetworkInformation">
@@ -25,9 +24,9 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Speech recognizer" Tag="SpeechRecognizer">
+            <NavigationViewItem Content="Title bar" Tag="TitleBar">
                 <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem Content="Geolocator" Tag="Geolocator">
@@ -35,9 +34,9 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Geolocator.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="DisplayRequest" Tag="DisplayRequest">
+            <NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
                 <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem Content="Clipboard" Tag="Clipboard">
@@ -45,14 +44,9 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Vibration" Tag="Vibration">
+            <NavigationViewItem Content="DisplayRequest" Tag="DisplayRequest">
                 <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="MIDI" Tag="Midi">
-                <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem Content="Jump list" Tag="JumpList">
@@ -60,9 +54,19 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/JumpList.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Title bar" Tag="TitleBar">
+            <NavigationViewItem Content="Vibration" Tag="Vibration">
                 <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Speech recognizer" Tag="SpeechRecognizer">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="MIDI" Tag="Midi">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
@@ -72,7 +76,8 @@
             </NavigationViewItem>
             <NavigationViewItem Content="Thank you!" Tag="ThankYou">
                 <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ThankYou.png" />                </NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ThankYou.png" />
+                </NavigationViewItem.Icon>
             </NavigationViewItem>
         </NavigationView.MenuItems>
         <NavigationView.Content>
@@ -81,7 +86,11 @@
         <NavigationView.PaneFooter>
             <StackPanel Padding="12">
                 <TextBlock FontSize="20" Text="Try me at:" />
-                <HyperlinkButton FontWeight="Bold" FontSize="24" Content="https://cutt.ly/apis" NavigateUri="https://cutt.ly/apis" />
+                <HyperlinkButton
+                    Content="https://cutt.ly/apis"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    NavigateUri="https://cutt.ly/apis" />
             </StackPanel>
         </NavigationView.PaneFooter>
     </NavigationView>
