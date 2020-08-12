@@ -19,14 +19,14 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Network information" Tag="NetworkInformation">
-                <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
             <NavigationViewItem Content="Title bar" Tag="TitleBar">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Network information" Tag="NetworkInformation">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem Content="Geolocator" Tag="Geolocator">
@@ -44,7 +44,7 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="DisplayRequest" Tag="DisplayRequest">
+            <NavigationViewItem Content="Display request" Tag="DisplayRequest">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
                 </NavigationViewItem.Icon>
