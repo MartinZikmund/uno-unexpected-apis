@@ -38,16 +38,28 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             IsEnabled="False">
-            <StackPanel Orientation="Horizontal">
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="C" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="D" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="E" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="F" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="G" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="A" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText="B" />
-                <usercontrols:KeyboardKey Click="KeyClicked" KeyText=" C " />
-            </StackPanel>
+            <Grid RowSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="C4" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="D" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="E" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="F" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="G" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="A" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="B" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="C5" />
+                </StackPanel>
+                <Button
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Click="HappyBirthday_Click">
+                    Happy birthday, UnoConf!
+                </Button>
+            </Grid>
         </ContentControl>
 
         <Image

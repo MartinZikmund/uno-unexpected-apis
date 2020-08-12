@@ -78,7 +78,7 @@ namespace UnexpectedApisDemo.Shared.Views
                 var note = 60;
                 switch (key.KeyText.ToUpperInvariant())
                 {
-                    case "C":
+                    case "C4":
                         note = 60;
                         break;
                     case "D":
@@ -99,7 +99,7 @@ namespace UnexpectedApisDemo.Shared.Views
                     case "B":
                         note = 71;
                         break;
-                    case " C ":
+                    case "C5":
                         note = 72;
                         break;
                 }

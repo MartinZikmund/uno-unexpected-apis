@@ -13,22 +13,22 @@
   "prefer_related_applications": true,
   "icons": [
     {
-      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size16.png",
+      "src": "./package_cb2582993e788bb7d9df33a384474ac3cdf6d9a6/package_35b96435f4dc5a82efb0ca1d3a84c63f453a8452/package_c53efc8c431ffcfbff1e17857a75ea7fe48593da/package_6059a63fe8e0f35bbde87750121ac5b89a529d2f/package_ef3bce1de0f5cc207c276c1b036c61661baebb0e/package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size16.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size256.png",
+      "src": "./package_cb2582993e788bb7d9df33a384474ac3cdf6d9a6/package_35b96435f4dc5a82efb0ca1d3a84c63f453a8452/package_c53efc8c431ffcfbff1e17857a75ea7fe48593da/package_6059a63fe8e0f35bbde87750121ac5b89a529d2f/package_ef3bce1de0f5cc207c276c1b036c61661baebb0e/package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size256.png",
       "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size32.png",
+      "src": "./package_cb2582993e788bb7d9df33a384474ac3cdf6d9a6/package_35b96435f4dc5a82efb0ca1d3a84c63f453a8452/package_c53efc8c431ffcfbff1e17857a75ea7fe48593da/package_6059a63fe8e0f35bbde87750121ac5b89a529d2f/package_ef3bce1de0f5cc207c276c1b036c61661baebb0e/package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size44.png",
+      "src": "./package_cb2582993e788bb7d9df33a384474ac3cdf6d9a6/package_35b96435f4dc5a82efb0ca1d3a84c63f453a8452/package_c53efc8c431ffcfbff1e17857a75ea7fe48593da/package_6059a63fe8e0f35bbde87750121ac5b89a529d2f/package_ef3bce1de0f5cc207c276c1b036c61661baebb0e/package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size44.png",
       "sizes": "44x44",
       "type": "image/png"
     }
