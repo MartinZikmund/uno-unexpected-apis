@@ -14,10 +14,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader
-            Title="Vibration"
-            SupportsIos="False"
-            SupportsMacos="False" />
+        <usercontrols:SamplePageHeader Title="Vibration" SupportsMacos="False" />
 
         <Button
             Grid.Row="1"
