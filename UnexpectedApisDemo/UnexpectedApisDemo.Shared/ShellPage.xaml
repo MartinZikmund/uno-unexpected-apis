@@ -91,6 +91,11 @@
                     FontSize="24"
                     FontWeight="Bold"
                     NavigateUri="https://cutt.ly/apis" />
+                <TextBlock Margin="0,12,0,0" Text="Udemy course survey:" />
+                <HyperlinkButton
+                    Content="https://cutt.ly/unocourse"
+                    FontWeight="Bold"
+                    NavigateUri="https://cutt.ly/unocourse" />
             </StackPanel>
         </NavigationView.PaneFooter>
     </NavigationView>

@@ -183,13 +183,13 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-150.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\splashscreen.scale-200.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYouSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\VibrationBig.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Vibration.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ios.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Macos.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYou.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYouSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Windows.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Online.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Offline.png" />
