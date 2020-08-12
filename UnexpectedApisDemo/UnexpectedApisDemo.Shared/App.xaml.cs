@@ -9,6 +9,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -80,6 +81,17 @@ namespace UnexpectedApisDemo
                 }
                 // Ensure the current window is active
                 Windows.UI.Xaml.Window.Current.Activate();
+            }
+
+            DisplayLaunchArguments(e);
+        }
+
+        private async void DisplayLaunchArguments(LaunchActivatedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(e.Arguments))
+            {
+                var dlg = new MessageDialog(e.Arguments, "Launch arguments");
+                await dlg.ShowAsync();
             }
         }
 
