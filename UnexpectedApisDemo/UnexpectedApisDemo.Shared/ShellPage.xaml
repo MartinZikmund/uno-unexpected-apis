@@ -39,16 +39,16 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Clipboard" Tag="Clipboard">
+            <!--<NavigationViewItem Content="Clipboard" Tag="Clipboard">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
                 </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Display request" Tag="DisplayRequest">
+            </NavigationViewItem>-->
+            <!--<NavigationViewItem Content="Display request" Tag="DisplayRequest">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
                 </NavigationViewItem.Icon>
-            </NavigationViewItem>
+            </NavigationViewItem>-->
             <NavigationViewItem Content="Jump list" Tag="JumpList">
                 <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/JumpList.png" />
