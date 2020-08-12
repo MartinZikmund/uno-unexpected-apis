@@ -56,10 +56,6 @@ namespace UnexpectedApisDemo.Shared.Views
                 _currentDevice = await MidiOutPort.FromIdAsync(selectedDevice.Id);
                 KeyboardKeys.IsEnabled = true;
             }
-            else
-            {
-                KeyboardKeys.IsEnabled = false;
-            }
         }
 
         private void MidiDeviceOutputTests_Unloaded(object sender, RoutedEventArgs e)
