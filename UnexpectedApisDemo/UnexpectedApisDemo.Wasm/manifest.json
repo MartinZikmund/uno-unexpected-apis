@@ -1,0 +1,37 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Unexpected APIs in Uno Platform",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "/",
+  "short_name": "Unexpected APIs",
+  "theme_color": "#1F1F1F",
+  "description": "Slides/Demos for the Unexpected APIs in Uno Platform talk.",
+  "orientation": "any",
+  "background_color": "transparent",
+  "prefer_related_applications": true,
+  "icons": [
+    {
+      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./package_15c48fc89dcfc8ff437b3fc55c3b7918467b4dd7/images/Size44.png",
+      "sizes": "44x44",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": []
+}

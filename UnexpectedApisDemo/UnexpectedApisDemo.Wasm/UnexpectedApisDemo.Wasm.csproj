@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoWarn>NU1701</NoWarn>
+    <WasmPWAManifestFile>manifest.json</WasmPWAManifestFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <MonoRuntimeDebuggerEnabled>true</MonoRuntimeDebuggerEnabled>
@@ -13,9 +14,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Images\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <UpToDateCheckInput Include="..\UnexpectedApisDemo.Shared\**\*.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="WasmCSS\Fonts.css" />
