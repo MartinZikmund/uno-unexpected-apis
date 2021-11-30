@@ -49,6 +49,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml.cs">
       <DependentUpon>DisplayRequestPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FileSystem.xaml.cs">
+      <DependentUpon>FileSystem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml.cs">
       <DependentUpon>GeolocatorPage.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\DisplayRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\FileSystem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
