@@ -21,7 +21,7 @@
     <UpToDateCheckInput Include="..\UnexpectedApisDemo.Shared\**\*.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Images\favicon.ico" />
+    <None Remove="wwwroot\images\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="WasmCSS\Fonts.css" />
@@ -39,6 +39,16 @@
     -->
     <None Include="Program.cs" />
     <None Include="LinkerConfig.xml" />
+    <None Include="wwwroot\images\android-chrome-192x192.png" />
+    <None Include="wwwroot\images\android-chrome-256x256.png" />
+    <None Include="wwwroot\images\apple-touch-icon.png" />
+    <None Include="wwwroot\images\favicon-16x16.png" />
+    <None Include="wwwroot\images\favicon-32x32.png" />
+    <None Include="wwwroot\images\mstile-150x150.png" />
+    <None Include="wwwroot\images\Size16.png" />
+    <None Include="wwwroot\images\Size256.png" />
+    <None Include="wwwroot\images\Size32.png" />
+    <None Include="wwwroot\images\Size44.png" />
     <None Include="wwwroot\web.config" />
   </ItemGroup>
   <ItemGroup>
