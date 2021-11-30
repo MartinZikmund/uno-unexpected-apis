@@ -15,7 +15,7 @@
         IsSettingsVisible="False"
         ItemInvoked="NavigationView_ItemInvoked">
         <mux:NavigationView.MenuItems>
-            <mux:NavigationViewItem Content="Hello, UnoConf 2020!" Tag="Hello">
+            <mux:NavigationViewItem Content="Hello!" Tag="Hello">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
                 </mux:NavigationViewItem.Icon>
