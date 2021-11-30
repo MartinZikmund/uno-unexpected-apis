@@ -165,6 +165,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\TitleBarCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\VibrationCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\DisplayRequest.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Files.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Geolocator.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ComingSoon.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Accelerometer.png" />
@@ -174,6 +175,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Clipboard.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Gamepad.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Bluetooth.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\KeyboardNavigation.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\computer.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\win10.png" />
@@ -186,7 +188,6 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYouSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\VibrationBig.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Vibration.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Ios.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Macos.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThankYou.png" />

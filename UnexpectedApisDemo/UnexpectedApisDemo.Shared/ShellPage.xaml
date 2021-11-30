@@ -5,85 +5,91 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:UnexpectedApisDemo.Shared"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mux="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <NavigationView
+    <mux:NavigationView
         x:Name="Menu"
         IsBackButtonVisible="Collapsed"
         IsSettingsVisible="False"
         ItemInvoked="NavigationView_ItemInvoked">
-        <NavigationView.MenuItems>
-            <NavigationViewItem Content="Hello, UnoConf 2020!" Tag="Hello">
-                <NavigationViewItem.Icon>
+        <mux:NavigationView.MenuItems>
+            <mux:NavigationViewItem Content="Hello, UnoConf 2020!" Tag="Hello">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Title bar" Tag="TitleBar">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Title bar" Tag="TitleBar">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Network information" Tag="NetworkInformation">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Network information" Tag="NetworkInformation">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Geolocator" Tag="Geolocator">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Geolocator" Tag="Geolocator">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Geolocator.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <!--<NavigationViewItem Content="Clipboard" Tag="Clipboard">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Clipboard" Tag="Clipboard">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>-->
-            <!--<NavigationViewItem Content="Display request" Tag="DisplayRequest">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Display request" Tag="DisplayRequest">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>-->
-            <NavigationViewItem Content="Jump list" Tag="JumpList">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="File system" Tag="FileSystem">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Files.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Jump list" Tag="JumpList">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/JumpList.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Vibration" Tag="Vibration">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Vibration" Tag="Vibration">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Speech recognizer" Tag="SpeechRecognizer">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Speech recognizer" Tag="SpeechRecognizer">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="MIDI" Tag="Midi">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="MIDI" Tag="Midi">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ComingSoon.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Thank you!" Tag="ThankYou">
-                <NavigationViewItem.Icon>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Thank you!" Tag="ThankYou">
+                <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ThankYou.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-        </NavigationView.MenuItems>
-        <NavigationView.Content>
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+        </mux:NavigationView.MenuItems>
+        <mux:NavigationView.Content>
             <Frame x:Name="RootFrame" />
-        </NavigationView.Content>
-        <NavigationView.PaneFooter>
+        </mux:NavigationView.Content>
+        <mux:NavigationView.PaneFooter>
             <StackPanel Padding="12">
                 <TextBlock FontSize="20" Text="Try me at:" />
                 <HyperlinkButton
@@ -97,6 +103,6 @@
                     FontWeight="Bold"
                     NavigateUri="https://cutt.ly/unocourse" />
             </StackPanel>
-        </NavigationView.PaneFooter>
-    </NavigationView>
+        </mux:NavigationView.PaneFooter>
+    </mux:NavigationView>
 </Page>

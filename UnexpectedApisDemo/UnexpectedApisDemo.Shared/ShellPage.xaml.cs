@@ -3,6 +3,9 @@ using System.Linq;
 using UnexpectedApisDemo.Shared.Views;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using NavigationView = Microsoft.UI.Xaml.Controls.NavigationView;
+using NavigationViewItemInvokedEventArgs = Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs;
+using NavigationViewItem = Microsoft.UI.Xaml.Controls.NavigationViewItem;
 
 namespace UnexpectedApisDemo.Shared
 {

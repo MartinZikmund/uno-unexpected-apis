@@ -8,7 +8,7 @@
     xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
     mc:Ignorable="d">
 
-    <Grid Background="White">
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
