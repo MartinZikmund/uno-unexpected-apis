@@ -75,6 +75,11 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Gamepad" Tag="Gamepad">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Gamepad.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ComingSoon.png" />
