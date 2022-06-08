@@ -27,6 +27,7 @@ namespace UnexpectedApisDemo.Shared.Views
             Gamepad.GamepadAdded += GamepadsChanged;
             Gamepad.GamepadRemoved += GamepadsChanged;
 
+            _timer.Interval = TimeSpan.FromMilliseconds(100);
             _timer.Tick += OnGamepadReadingUpdate;
             _timer.Start();
 
