@@ -23,12 +23,14 @@ namespace UnexpectedApisDemo.Shared.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
+            
             Gamepad.GamepadAdded += GamepadsChanged;
             Gamepad.GamepadRemoved += GamepadsChanged;
 
             _timer.Tick += OnGamepadReadingUpdate;
             _timer.Start();
+
+            UpdateGamepads();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -44,6 +46,7 @@ namespace UnexpectedApisDemo.Shared.Views
 
         private void OnGamepadReadingUpdate(object sender, object e)
         {
+            UpdateGamepads();
             foreach (var gamepad in Gamepads)
             {
                 gamepad.Update();

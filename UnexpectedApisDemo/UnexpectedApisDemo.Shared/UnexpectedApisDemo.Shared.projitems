@@ -32,6 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\SamplePageHeader.xaml.cs">
       <DependentUpon>SamplePageHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Items\GamepadViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AccelerometerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ClipboardViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JumpListViewModel.cs" />
@@ -54,6 +55,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml.cs">
       <DependentUpon>GeolocatorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GamepadPage.xaml.cs">
+      <DependentUpon>GamepadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\HelloPage.xaml.cs">
       <DependentUpon>HelloPage.xaml</DependentUpon>
@@ -124,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\GamepadPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
