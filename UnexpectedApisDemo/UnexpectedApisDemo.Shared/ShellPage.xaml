@@ -20,12 +20,17 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Title bar" Tag="TitleBar">
+            <mux:NavigationViewItem Content="Titlebar" Tag="TitleBar">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Network information" Tag="NetworkInformation">
+            <mux:NavigationViewItem Content="Badge Notification" Tag="BadgeNotification">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/BadgeNotification.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Network Information" Tag="NetworkInformation">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
                 </mux:NavigationViewItem.Icon>
@@ -45,17 +50,37 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Display request" Tag="DisplayRequest">
+            <mux:NavigationViewItem Content="Sharing" Tag="Sharing">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Sharing.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Display Request" Tag="DisplayRequest">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="File system" Tag="FileSystem">
+            <mux:NavigationViewItem Content="Flashlight" Tag="Flashlight">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Flashlight.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Ambient Light" Tag="AmbientLight">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/AmbientLight.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="File System" Tag="FileSystem">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Files.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Jump list" Tag="JumpList">
+            <mux:NavigationViewItem Content="Hinge Angle" Tag="HingeAngle">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/HingeAngle.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Jump List" Tag="JumpList">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/JumpList.png" />
                 </mux:NavigationViewItem.Icon>
@@ -65,7 +90,7 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Speech recognizer" Tag="SpeechRecognizer">
+            <mux:NavigationViewItem Content="Speech Recognizer" Tag="SpeechRecognizer">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
                 </mux:NavigationViewItem.Icon>

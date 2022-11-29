@@ -41,6 +41,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\AccelerometerPage.xaml.cs">
       <DependentUpon>AccelerometerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AmbientLightPage.xaml.cs">
+      <DependentUpon>AmbientLightPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BadgeNotificationPage.xaml.cs">
+      <DependentUpon>BadgeNotificationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ClipboardPage.xaml.cs">
       <DependentUpon>ClipboardPage.xaml</DependentUpon>
     </Compile>
@@ -53,6 +59,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\FileSystemPage.xaml.cs">
       <DependentUpon>FileSystemPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FlashlightPage.xaml.cs">
+      <DependentUpon>FlashlightPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml.cs">
       <DependentUpon>GeolocatorPage.xaml</DependentUpon>
     </Compile>
@@ -62,6 +71,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\HelloPage.xaml.cs">
       <DependentUpon>HelloPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HingeAnglePage.xaml.cs">
+      <DependentUpon>HingeAnglePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\JumpListPage.xaml.cs">
       <DependentUpon>JumpListPage.xaml</DependentUpon>
     </Compile>
@@ -70,6 +82,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml.cs">
       <DependentUpon>NetworkInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SharingPage.xaml.cs">
+      <DependentUpon>SharingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\SpeechRecognizerPage.xaml.cs">
       <DependentUpon>SpeechRecognizerPage.xaml</DependentUpon>
@@ -111,6 +126,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\AmbientLightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\BadgeNotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\ClipboardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +150,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\FlashlightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\GeolocatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\HingeAnglePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\JumpListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\NetworkInformationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\SharingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +204,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AmbientLight.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\BadgeNotification.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\AccelerometerCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\MidiCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\SpeechRecognizerCode.png" />
@@ -181,6 +218,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Code\VibrationCode.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\DisplayRequest.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Files.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flashlight.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Geolocator.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ComingSoon.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Accelerometer.png" />
@@ -190,11 +228,13 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Clipboard.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Gamepad.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Bluetooth.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\HingeAngle.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\IntroSlide.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\KeyboardNavigation.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\computer.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\win10.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\JumpList\xp.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Sharing.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-100.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-125.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-150.png" />

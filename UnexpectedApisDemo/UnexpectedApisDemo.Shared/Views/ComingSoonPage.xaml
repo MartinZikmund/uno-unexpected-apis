@@ -25,17 +25,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Spacing="8">
-                <Image Source="/Assets/Gamepad.png" />
-                <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" Text="Gamepad APIs" />
-            </StackPanel>
-            <StackPanel Spacing="8" Grid.Column="1">
+            <StackPanel Spacing="8" Grid.Column="0">
                 <Image Source="/Assets/KeyboardNavigation.png" />
                 <TextBlock TextAlignment="Center" Style="{ThemeResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" Text="Keyboard navigation" />
             </StackPanel>
-            <StackPanel Spacing="8" Grid.Column="2">
+            <StackPanel Spacing="8" Grid.Column="1">
                 <Image Source="/Assets/Bluetooth.png" />
                 <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" Text="Bluetooth" />
             </StackPanel>
