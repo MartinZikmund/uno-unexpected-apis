@@ -37,6 +37,6 @@ steps:
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Visual Studio Enterprise Subscription(50a7d6e9-b9e1-4784-8830-c5ceb8311d2f)'
-    appType: 'webApp'
+    appType: 'webAppLinux'
     WebAppName: 'unexpectedapis'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
