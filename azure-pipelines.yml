@@ -40,10 +40,6 @@ steps:
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'MVP Sponsorship(5f792563-f67a-4f80-b04d-268a275432ed)'
-    appType: 'webAppLinux'
+    appType: 'webApp'
     WebAppName: 'unexpectedapis'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'unoconf-2020'
-    SlotName: 'production'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-    RuntimeStack: 'DOTNETCORE|7.0'
