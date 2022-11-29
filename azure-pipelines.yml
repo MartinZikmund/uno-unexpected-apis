@@ -39,8 +39,11 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Visual Studio Enterprise Subscription(2)(50a7d6e9-b9e1-4784-8830-c5ceb8311d2f)'
+    azureSubscription: 'MVP Sponsorship(5f792563-f67a-4f80-b04d-268a275432ed)'
     appType: 'webAppLinux'
     WebAppName: 'unexpectedapis'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'unoconf-2020'
+    SlotName: 'production'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     RuntimeStack: 'DOTNETCORE|7.0'
