@@ -36,9 +36,6 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
     azureSubscription: 'MVP Sponsorship(5f792563-f67a-4f80-b04d-268a275432ed)'
     appType: 'webApp'
     WebAppName: 'unexpectedapis'
