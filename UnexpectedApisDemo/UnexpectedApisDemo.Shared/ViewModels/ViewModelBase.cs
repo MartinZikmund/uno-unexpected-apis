@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Reactive.Disposables;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,6 +21,8 @@ namespace UnexpectedApisDemo.Shared.ViewModels
         public ViewModelBase()
         {
         }
+
+        public CompositeDisposable Disposables { get; } = new CompositeDisposable();
 
         protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {

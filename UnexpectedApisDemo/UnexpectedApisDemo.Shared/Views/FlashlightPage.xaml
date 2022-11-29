@@ -5,10 +5,27 @@
     xmlns:local="using:UnexpectedApisDemo.Shared.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:usercontrols="using:UnexpectedApisDemo.Shared.UserControls"
     mc:Ignorable="d"
+    x:DefaultBindMode="OneWay"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <usercontrols:SamplePageHeader Title="Flashlight" />
 
-    <Grid>
-
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Padding="12" Spacing="8">
+            <TextBlock Text="{x:Bind ViewModel.LampStatus}" />
+            <ContentControl IsEnabled="{x:Bind ViewModel.IsAvailable}">
+                <StackPanel Spacing="8">
+                    <TextBox Header="Brightness level"
+						 Text="{Binding BrightnessLevel,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+						 InputScope="Number" />
+                    <ToggleSwitch Header="Is enabled?" IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" />
+                </StackPanel>
+            </ContentControl>
+        </StackPanel>
     </Grid>
 </Page>
