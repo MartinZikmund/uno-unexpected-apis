@@ -11,6 +11,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <usercontrols:SamplePageHeader Title="Ambient Light" />
 
+        <Grid Grid.Row="1" x:Name="BackgroundGrid" Background="{x:Bind ViewModel.BackgroundBrush, Mode=OneWay}">
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" Visibility="{x:Bind ViewModel.NoSensor, Mode=OneWay}">No ambient light sensor available.</TextBlock>
+
+            <TextBlock Foreground="DarkOrange" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" 
+                       Visibility="{x:Bind ViewModel.AmbientLightSensorAvailable, Mode=OneWay}">
+                <Run Text="{x:Bind ViewModel.Lux, Mode=OneWay}" />
+                <Run Text="lux" />
+            </TextBlock>
+        </Grid>
     </Grid>
 </Page>
