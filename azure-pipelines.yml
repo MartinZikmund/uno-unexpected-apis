@@ -39,6 +39,7 @@ steps:
     azureSubscription: 'Visual Studio Enterprise Subscription(3)(50a7d6e9-b9e1-4784-8830-c5ceb8311d2f)'
     appType: 'webApp'
     WebAppName: 'uno-test'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'transfer'
+    SlotName: 'production'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-    enableCustomDeployment: true
-    DeploymentType: 'runFromZip'
