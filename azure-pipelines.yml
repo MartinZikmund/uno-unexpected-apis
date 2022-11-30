@@ -36,9 +36,9 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Visual Studio Enterprise Subscription(3)(50a7d6e9-b9e1-4784-8830-c5ceb8311d2f)'
+    azureSubscription: 'Visual Studio Enterprise Subscription(5)(50a7d6e9-b9e1-4784-8830-c5ceb8311d2f)'
     appType: 'webApp'
-    WebAppName: 'uno-test'
+    WebAppName: 'unexpectedapis'
     deployToSlotOrASE: true
     ResourceGroupName: 'transfer'
     SlotName: 'production'
