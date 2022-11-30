@@ -7,10 +7,11 @@ using Android.Views;
 namespace UnexpectedApisDemo.Droid
 {
 	[Activity(
-			MainLauncher = true,
-			ConfigurationChanges = global::Uno.UI.ActivityHelper.AllConfigChanges,
-			WindowSoftInputMode = SoftInput.AdjustPan | SoftInput.StateHidden
-		)]
+		Icon = "@drawable/icon",
+		MainLauncher = true,
+		ConfigurationChanges = global::Uno.UI.ActivityHelper.AllConfigChanges,
+		WindowSoftInputMode = SoftInput.AdjustPan | SoftInput.StateHidden
+	)]
 	public class MainActivity : Windows.UI.Xaml.ApplicationActivity
 	{
 	}
