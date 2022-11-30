@@ -2,6 +2,8 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Android.App;
+using static Java.Util.Jar.Attributes;
+using Windows.System;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -28,3 +30,21 @@ using Android.App;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+[assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
+[assembly: UsesPermission(Android.Manifest.Permission.Camera)]
+[assembly: UsesPermission(Android.Manifest.Permission.ReadCallLog)]
+[assembly: UsesPermission(Android.Manifest.Permission.WriteCallLog)]
+[assembly: UsesPermission(Android.Manifest.Permission.ReadContacts)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
+[assembly: UsesPermission(Android.Manifest.Permission.Bluetooth)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessFineLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
+[assembly: UsesPermission(Android.Manifest.Permission.ActivityRecognition)]
+[assembly: UsesPermission(Android.Manifest.Permission.SetWallpaper)]
+[assembly: UsesPermission(Android.Manifest.Permission.ManageDocuments)]
+[assembly: UsesPermission(Android.Manifest.Permission.ManageExternalStorage)]
+[assembly: UsesPermission(Android.Manifest.Permission.ManageMedia)]
+[assembly: UsesPermission(Android.Manifest.Permission.UseFullScreenIntent)]
+[assembly: UsesPermission(Android.Manifest.Permission.RecordAudio)]

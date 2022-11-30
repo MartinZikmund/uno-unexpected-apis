@@ -22,7 +22,7 @@
         <ListView Margin="20,0,20,0" Grid.Row="2" ItemsSource="{x:Bind Gamepads}" SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="items:GamepadViewModel" x:DefaultBindMode="OneWay">
-                    <StackPanel Spacing="8">
+                    <StackPanel Spacing="8" Padding="12">
                         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">
                         <Run Text="Gamepad #" /><Run Text="{x:Bind Id}" />
                         </TextBlock>

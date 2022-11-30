@@ -19,9 +19,10 @@
 
         <StackPanel
             Grid.Row="1"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
             Padding="12"
             Spacing="8">
-            <TextBlock Text="Tap to see your current GPS coordinates." />
             <Button Click="GetGeoposition_Click">Get geoposition</Button>
             <usercontrols:GeopositionDisplayControl x:Name="GeopositionDisplay" Visibility="Collapsed" />
         </StackPanel>

@@ -12,20 +12,14 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <usercontrols:SamplePageHeader Title="Flashlight" />
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Padding="12" Spacing="8">
-            <TextBlock Text="{x:Bind ViewModel.LampStatus}" />
-            <ContentControl IsEnabled="{x:Bind ViewModel.IsAvailable}">
-                <StackPanel Spacing="8">
-                    <TextBox Header="Brightness level"
-						 Text="{Binding BrightnessLevel,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-						 InputScope="Number" />
-                    <ToggleSwitch Header="Is enabled?" IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" />
-                </StackPanel>
-            </ContentControl>
-        </StackPanel>
+        <Grid Grid.Row="1">
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" Visibility="{x:Bind ViewModel.NoSensor, Mode=OneWay}">No flashlight available.</TextBlock>
+
+            <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{x:Bind ViewModel.FlashlightAvailable,Mode=OneWay}" CornerRadius="50" Width="100" Height="100" IsChecked="{x:Bind ViewModel.FlashlightOn, Mode=TwoWay}">Flashlight</ToggleButton>
+        </Grid>
     </Grid>
 </Page>

@@ -9,11 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid RowSpacing="20" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
@@ -22,7 +23,7 @@
         <ListView
             x:Name="OutputDevicesList"
             Grid.Row="1"
-            Padding="12"
+            Padding="20,0,20,0"
             Header="Connected devices"
             SelectionChanged="MidiDeviceSelected">
             <ListView.ItemTemplate>
@@ -62,8 +63,9 @@
             </Grid>
         </ContentControl>
 
+        <HyperlinkButton Grid.Row="3" HorizontalAlignment="Center" Content="YouTube sample" NavigateUri="https://www.youtube.com/watch?v=B3ZR_SlSbdM" />
         <Image
-            Grid.Row="3"
+            Grid.Row="4"
             MaxHeight="240"
             Source="/Assets/Code/MidiCode.png" />
     </Grid>

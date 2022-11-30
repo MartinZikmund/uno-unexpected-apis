@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using UnexpectedApisDemo.Shared.ViewModels;
 using Windows.Devices.Lights;
+using Windows.Devices.Sensors;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,41 +29,74 @@ namespace UnexpectedApisDemo.Shared.Views
     /// </summary>
     public sealed partial class FlashlightPage : Page
     {
+        private FlashlightViewModel _viewModel;
+
         public FlashlightPage()
         {
             this.InitializeComponent();
         }
 
-        public FlashlightViewModel ViewModel { get; } = new FlashlightViewModel();
+        public FlashlightViewModel ViewModel => _viewModel ?? (_viewModel = new FlashlightViewModel(Dispatcher));
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            await ViewModel.InitializeAsync();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            ViewModel.Disposables.Dispose();
+        }
     }
 
     public class FlashlightViewModel : ViewModelBase
     {
+        private bool _readingChangedAttached;
+        private string _sensorStatus;
+        private string _angle;
+        private readonly CoreDispatcher _dispatcher;
+        private bool _noSensor = false;
         private Lamp _lamp = null;
         private string _lampStatus;
 
-        public FlashlightViewModel()
+        public FlashlightViewModel(CoreDispatcher dispatcher)
         {
-            GetLampAsync();
+            _dispatcher = dispatcher;
         }
 
-        public ICommand GetLampCommand => GetOrCreateCommand(GetLampAsync);
-
-        public ICommand ToggleCommand => GetOrCreateCommand(ToggleLamp);
-
-        public string LampStatus
+        public bool NoSensor
         {
-            get => _lampStatus;
-            private set
+            get => _noSensor;
+            set
             {
-                _lampStatus = value;
+                _noSensor = value;
                 RaisePropertyChanged();
             }
         }
 
+        public bool FlashlightAvailable => _lamp != null;
+
+        public async Task InitializeAsync()
+        {
+            _lamp = await Lamp.GetDefaultAsync();
+            RaisePropertyChanged(nameof(FlashlightAvailable));
+            if (_lamp == null)
+            {
+                NoSensor = true;
+                return;
+            }
+
+            Disposables.Add(_lamp);
+            _lamp.BrightnessLevel = 1;
+        }
+        
         public bool IsAvailable => _lamp != null;
 
-        public bool IsEnabled
+        public bool FlashlightOn
         {
             get
             {
@@ -73,40 +110,6 @@ namespace UnexpectedApisDemo.Shared.Views
                 }
                 RaisePropertyChanged();
             }
-        }
-
-        public float BrightnessLevel
-        {
-            get => _lamp?.BrightnessLevel ?? 0.0f;
-            set
-            {
-                if (_lamp != null)
-                {
-                    _lamp.BrightnessLevel = value;
-                }
-            }
-        }
-
-        private async void GetLampAsync()
-        {
-            _lamp = await Lamp.GetDefaultAsync();
-            if (_lamp == null)
-            {
-                LampStatus = "Flashlight is not available";
-            }
-            else
-            {
-                LampStatus = "Flashlight is available";
-            }
-            RaisePropertyChanged(nameof(IsAvailable));
-            RaisePropertyChanged(nameof(IsEnabled));
-            RaisePropertyChanged(nameof(BrightnessLevel));
-        }
-
-        private void ToggleLamp()
-        {
-            _lamp.IsEnabled = !_lamp.IsEnabled;
-            RaisePropertyChanged(nameof(IsEnabled));
         }
     }
 }
