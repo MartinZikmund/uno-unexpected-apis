@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30320.27
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UnexpectedApisDemo.Shared", "UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
 EndProject
@@ -11,19 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnexpectedApisDemo.iOS", "U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnexpectedApisDemo.UWP", "UnexpectedApisDemo.UWP\UnexpectedApisDemo.UWP.csproj", "{55720CAE-3638-487D-B57E-33D3563F7F91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnexpectedApisDemo.Wasm", "UnexpectedApisDemo.Wasm\UnexpectedApisDemo.Wasm.csproj", "{8D7E4E97-26EC-4565-A4DA-2F2B2026F1C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnexpectedApisDemo.Wasm", "UnexpectedApisDemo.Wasm\UnexpectedApisDemo.Wasm.csproj", "{8D7E4E97-26EC-4565-A4DA-2F2B2026F1C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnexpectedApisDemo.macOS", "UnexpectedApisDemo.macOS\UnexpectedApisDemo.macOS.csproj", "{BE952161-F1F3-4E4E-9ED6-EF921DA3742D}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{05835682-1045-427a-8e38-02f3ca629e59}*SharedItemsImports = 4
-		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{55720cae-3638-487d-b57e-33d3563f7f91}*SharedItemsImports = 4
-		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{8d7e4e97-26ec-4565-a4da-2f2b2026f1c9}*SharedItemsImports = 5
-		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{be952161-f1f3-4e4e-9ed6-ef921da3742d}*SharedItemsImports = 4
-		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{ed1d793c-91c4-4d55-a221-03a3ff2ca61f}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
@@ -218,6 +210,8 @@ Global
 		{55720CAE-3638-487D-B57E-33D3563F7F91}.AppStore|x86.Build.0 = Release|x86
 		{55720CAE-3638-487D-B57E-33D3563F7F91}.AppStore|x86.Deploy.0 = Release|x86
 		{55720CAE-3638-487D-B57E-33D3563F7F91}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{55720CAE-3638-487D-B57E-33D3563F7F91}.Debug|Any CPU.Build.0 = Debug|x86
+		{55720CAE-3638-487D-B57E-33D3563F7F91}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{55720CAE-3638-487D-B57E-33D3563F7F91}.Debug|ARM.ActiveCfg = Debug|ARM
 		{55720CAE-3638-487D-B57E-33D3563F7F91}.Debug|ARM.Build.0 = Debug|ARM
 		{55720CAE-3638-487D-B57E-33D3563F7F91}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -353,5 +347,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7D32576-FD28-4BE6-A3C0-41504828CE6C}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{05835682-1045-427a-8e38-02f3ca629e59}*SharedItemsImports = 4
+		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{55720cae-3638-487d-b57e-33d3563f7f91}*SharedItemsImports = 4
+		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{8d7e4e97-26ec-4565-a4da-2f2b2026f1c9}*SharedItemsImports = 5
+		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{be952161-f1f3-4e4e-9ed6-ef921da3742d}*SharedItemsImports = 4
+		UnexpectedApisDemo.Shared\UnexpectedApisDemo.Shared.projitems*{ed1d793c-91c4-4d55-a221-03a3ff2ca61f}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
