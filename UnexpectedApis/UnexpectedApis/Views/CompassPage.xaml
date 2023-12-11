@@ -1,0 +1,48 @@
+﻿<Page x:Class="UnexpectedApis.Views.CompassPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:usercontrols="using:UnexpectedApis.UserControls"
+      mc:Ignorable="d"
+      x:DefaultBindMode="OneWay"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <usercontrols:SamplePageHeader Title="Compass" />
+
+    <Grid Grid.Row="1">
+
+      <StackPanel Spacing="12"
+                  VerticalAlignment="Center"
+                  Visibility="{x:Bind ViewModel.NoSensor, Mode=OneWay}">
+        <TextBlock FontWeight="Bold"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap">No Compass available.</TextBlock>
+
+        <TextBlock TextWrapping="Wrap"
+                   HorizontalAlignment="Center">This feature currently has to be enabled. For more information visit the Mozilla docs bellow:</TextBlock>
+
+        <HyperlinkButton Content="Open Docs"
+                         HorizontalAlignment="Center"
+                         Command="{x:Bind ViewModel.OpenDocs}" />
+      </StackPanel>
+
+      <StackPanel Spacing="12"
+                  VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="20"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   Text="{x:Bind ViewModel.HeadingMagneticNorth, Mode=OneWay}" />
+
+      </StackPanel>
+    </Grid>
+  </Grid>
+</Page>

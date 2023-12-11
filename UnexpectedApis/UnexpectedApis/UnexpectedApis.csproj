@@ -59,4 +59,18 @@
     <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
     <Content Include="Assets\Svg\**\*.svg" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\CompassPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\CompassPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\CompassPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
 </Project>
