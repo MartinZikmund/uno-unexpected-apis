@@ -61,6 +61,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\CompassPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\CompassPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\CompassPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+    
+  <ItemGroup>
     <None Remove="UserControls\CodeSampleControl.xaml" />
     <None Remove="UserControls\SamplePageControl.xaml" />
   </ItemGroup>
