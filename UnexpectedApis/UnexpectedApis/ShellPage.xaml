@@ -110,7 +110,7 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/JumpList.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>-->
-            <mux:NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
+            <!--<mux:NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/ComingSoon.png" />
                 </mux:NavigationViewItem.Icon>
@@ -119,7 +119,7 @@
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/ThankYou.png" />
                 </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
+            </mux:NavigationViewItem>-->
         </mux:NavigationView.MenuItems>
         <mux:NavigationView.Content>
             <Frame x:Name="RootFrame" />

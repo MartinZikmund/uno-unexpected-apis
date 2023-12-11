@@ -10,7 +10,7 @@ namespace UnexpectedApis.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class AmbientLightPage : Page
+public sealed partial class AmbientLightPage : SamplePage
 {
     private AmbientLightSensorViewModel _viewModel;
 

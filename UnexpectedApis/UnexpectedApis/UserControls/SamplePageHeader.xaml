@@ -23,12 +23,22 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <TextBlock
+        <StackPanel
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Style="{ThemeResource TitleTextBlockStyle}"
-            Text="{x:Bind Title, Mode=OneWay}"
-            TextAlignment="Center" />
+            Orientation="Horizontal"
+            Spacing="8">
+            <BitmapIcon
+                Width="32"
+                ShowAsMonochrome="False"
+                UriSource="{x:Bind IconUri, Mode=OneWay}" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                LineHeight="32"
+                Style="{ThemeResource TitleTextBlockStyle}"
+                Text="{x:Bind Title, Mode=OneWay}"
+                TextAlignment="Center" />
+        </StackPanel>
         <!--<Image
             x:Name="WindowsImage"
             Grid.Column="1"
