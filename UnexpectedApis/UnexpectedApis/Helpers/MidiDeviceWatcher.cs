@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.UI.Core;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Dispatching;
 
 namespace UnexpectedApis.Helpers;
 
@@ -16,7 +17,7 @@ internal class MidiDeviceWatcher
     private readonly ListView _portList = null;
     private readonly ObservableCollection<MidiDeviceInfo> _items;
     private readonly string _midiSelector = string.Empty;
-    private readonly CoreDispatcher _coreDispatcher = null;
+    private readonly DispatcherQueue _dispatcherQueue;
 
     private DeviceInformationCollection _deviceInformationCollection = null;
     private bool _enumerationCompleted = false;
@@ -27,13 +28,13 @@ internal class MidiDeviceWatcher
     /// <param name="midiSelectorString">MIDI Device Selector</param>
     /// <param name="dispatcher">CoreDispatcher instance, to update UI thread</param>
     /// <param name="portListBox">The UI element to update with list of devices</param>
-    internal MidiDeviceWatcher(string midiSelectorString, CoreDispatcher dispatcher, ListView portListBox, ObservableCollection<MidiDeviceInfo> items)
+    internal MidiDeviceWatcher(string midiSelectorString, DispatcherQueue dispatcher, ListView portListBox, ObservableCollection<MidiDeviceInfo> items)
     {
         _deviceWatcher = DeviceInformation.CreateWatcher(midiSelectorString);
         _portList = portListBox;
         _items = items;
         _midiSelector = midiSelectorString;
-        _coreDispatcher = dispatcher;
+        _dispatcherQueue = dispatcher;
 
         _deviceWatcher.Added += DeviceWatcher_Added;
         _deviceWatcher.Removed += DeviceWatcher_Removed;
@@ -124,7 +125,7 @@ internal class MidiDeviceWatcher
         // If all devices have been enumerated
         if (_enumerationCompleted)
         {
-            await _coreDispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
+            _dispatcherQueue.TryEnqueue(DispatcherQueuePriority.High, async () =>
             {
                 // Update the device list
                 await UpdateDevicesAsync();
@@ -142,7 +143,7 @@ internal class MidiDeviceWatcher
         // If all devices have been enumerated
         if (_enumerationCompleted)
         {
-            await _coreDispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
+            _dispatcherQueue.TryEnqueue(DispatcherQueuePriority.High, async () =>
             {
                 // Update the device list
                 await UpdateDevicesAsync();
@@ -160,7 +161,7 @@ internal class MidiDeviceWatcher
         // If all devices have been enumerated
         if (_enumerationCompleted)
         {
-            await _coreDispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
+            _dispatcherQueue.TryEnqueue(DispatcherQueuePriority.High, async () =>
             {
                 // Update the device list
                 await UpdateDevicesAsync();
@@ -176,7 +177,7 @@ internal class MidiDeviceWatcher
     private async void DeviceWatcher_EnumerationCompleted(DeviceWatcher sender, object args)
     {
         _enumerationCompleted = true;
-        await _coreDispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
+        _dispatcherQueue.TryEnqueue(DispatcherQueuePriority.High, async () =>
         {
             // Update the device list
             await UpdateDevicesAsync();

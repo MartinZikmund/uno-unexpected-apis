@@ -55,7 +55,8 @@
   </Choose>
 
   <ItemGroup>
-    <UnoImage Include="Assets\**\*.svg" />
+    <UnoImage Include="Assets\**\*.svg" Exclude="Assets\Svg\**\*.svg" />
     <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
+    <Content Include="Assets\Svg\**\*.svg" />
   </ItemGroup>
 </Project>

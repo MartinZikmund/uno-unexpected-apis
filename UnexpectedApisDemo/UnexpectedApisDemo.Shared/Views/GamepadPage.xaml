@@ -9,7 +9,11 @@
     xmlns:items="using:UnexpectedApisDemo.Shared.ViewModels.Items"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <converters:FromBoolToValueConverter x:Key="TrueToFilled"
+										 TrueValue="#A1A1A1"
+										 FalseValue="Transparent" />
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

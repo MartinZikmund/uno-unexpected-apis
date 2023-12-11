@@ -34,7 +34,7 @@ public sealed partial class MidiPage : Page
         this.InitializeComponent();
 
         // Set up the MIDI output device watcher
-        _midiOutDeviceWatcher = new MidiDeviceWatcher(MidiOutPort.GetDeviceSelector(), Dispatcher, OutputDevicesList, OutputDevices);
+        _midiOutDeviceWatcher = new MidiDeviceWatcher(MidiOutPort.GetDeviceSelector(), DispatcherQueue, OutputDevicesList, OutputDevices);
         OutputDevicesList.ItemsSource = OutputDevices;
 
         // Start watching for devices

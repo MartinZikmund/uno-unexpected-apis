@@ -33,11 +33,13 @@
         DisplayName="UnexpectedApis"
         Description="UnexpectedApis">
         <uap:SplashScreen />
+        <uap:DefaultTile/>
       </uap:VisualElements>
     </Application>
   </Applications>
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <DeviceCapability Name="microphone"/>
   </Capabilities>
 </Package>
