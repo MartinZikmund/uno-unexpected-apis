@@ -62,9 +62,11 @@
 
   <ItemGroup>
     <None Remove="UserControls\CodeSampleControl.xaml" />
+    <None Remove="UserControls\SamplePageControl.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="UserControls\CodeSampleControl.xaml" />
+    <UpToDateCheckInput Remove="UserControls\SamplePageControl.xaml" />
   </ItemGroup>
 </Project>

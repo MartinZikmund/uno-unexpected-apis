@@ -2,29 +2,39 @@
     x:Class="UnexpectedApis.Views.AmbientLightPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnexpectedApis.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UnexpectedApis.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:usercontrols="using:UnexpectedApis.UserControls"
     xmlns:mux="using:Microsoft.UI.Xaml.Controls"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    xmlns:usercontrols="using:UnexpectedApis.UserControls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader Title="Ambient Light" />
+    <usercontrols:SamplePageControl Title="Ambient Light" Code="{x:Bind Code}">
+        <Grid
+            x:Name="BackgroundGrid"
+            Grid.Row="1"
+            Background="{x:Bind ViewModel.BackgroundBrush, Mode=OneWay}"
+            CornerRadius="20">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="20"
+                FontWeight="Bold"
+                TextWrapping="Wrap"
+                Visibility="{x:Bind ViewModel.NoSensor, Mode=OneWay}">
+                No ambient light sensor available.
+            </TextBlock>
 
-        <Grid Grid.Row="1" x:Name="BackgroundGrid" Background="{x:Bind ViewModel.BackgroundBrush, Mode=OneWay}">
-            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" Visibility="{x:Bind ViewModel.NoSensor, Mode=OneWay}">No ambient light sensor available.</TextBlock>
-
-            <TextBlock Foreground="DarkOrange" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" 
-                       Visibility="{x:Bind ViewModel.AmbientLightSensorAvailable, Mode=OneWay}">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="80"
+                Foreground="DarkOrange"
+                Visibility="{x:Bind ViewModel.AmbientLightSensorAvailable, Mode=OneWay}">
                 <Run Text="{x:Bind ViewModel.Lux, Mode=OneWay}" />
                 <Run Text="lux" />
             </TextBlock>
         </Grid>
-    </Grid>
+    </usercontrols:SamplePageControl>
 </Page>

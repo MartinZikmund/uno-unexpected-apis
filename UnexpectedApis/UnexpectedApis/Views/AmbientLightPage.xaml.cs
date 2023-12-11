@@ -19,6 +19,15 @@ public sealed partial class AmbientLightPage : Page
         this.InitializeComponent();
     }
 
+    public string Code =>
+""""
+var lightSensor = LightSensor.GetDefault();
+lightSensor.ReadingChanged += (s,e) =>
+{
+    var lux = e.Reading.IlluminanceInLux;
+};
+"""";
+
     public AmbientLightSensorViewModel ViewModel => _viewModel ?? (_viewModel = new AmbientLightSensorViewModel(DispatcherQueue));
 
     protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -38,7 +47,7 @@ public sealed partial class AmbientLightPage : Page
 
 public class AmbientLightSensorViewModel : ViewModelBase
 {
-    private LightSensor _hinge;
+    private LightSensor _lightSensor;
     private bool _readingChangedAttached;
     private string _sensorStatus;
     private string _lux;
@@ -63,9 +72,9 @@ public class AmbientLightSensorViewModel : ViewModelBase
 
     public void Initialize()
     {
-        _hinge = LightSensor.GetDefault();
+        _lightSensor = LightSensor.GetDefault();
         OnPropertyChanged(nameof(AmbientLightSensorAvailable));
-        if (_hinge == null)
+        if (_lightSensor == null)
         {
             NoSensor = true;
             return;
@@ -73,15 +82,15 @@ public class AmbientLightSensorViewModel : ViewModelBase
 
         Disposables.Add(Disposable.Create(() =>
         {
-            if (_hinge != null)
+            if (_lightSensor != null)
             {
-                _hinge.ReadingChanged -= AmbientLightSensor_ReadingChanged;
+                _lightSensor.ReadingChanged -= AmbientLightSensor_ReadingChanged;
             }
         }));
-        _hinge.ReadingChanged += AmbientLightSensor_ReadingChanged;
+        _lightSensor.ReadingChanged += AmbientLightSensor_ReadingChanged;
     }
 
-    public bool AmbientLightSensorAvailable => _hinge != null;
+    public bool AmbientLightSensorAvailable => _lightSensor != null;
 
     public string SensorStatus
     {

@@ -25,11 +25,11 @@
         </Grid.ColumnDefinitions>
         <TextBlock
             HorizontalAlignment="Center"
-            TextAlignment="Center"
             VerticalAlignment="Center"
-            Style="{ThemeResource TitleTextBlockStyle}" 
-            Text="{x:Bind Title, Mode=OneWay}" />
-        <Image
+            Style="{ThemeResource TitleTextBlockStyle}"
+            Text="{x:Bind Title, Mode=OneWay}"
+            TextAlignment="Center" />
+        <!--<Image
             x:Name="WindowsImage"
             Grid.Column="1"
             Width="36"
@@ -58,6 +58,6 @@
             Grid.Column="5"
             Width="36"
             Source="ms-appx:///UnexpectedApis/Assets/Wasm.png"
-            Visibility="{x:Bind SupportsWasm, Mode=OneWay}" />
+            Visibility="{x:Bind SupportsWasm, Mode=OneWay}" />-->
     </Grid>
 </UserControl>

@@ -9,22 +9,30 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid
-        Padding="20"
-        Background="{ThemeResource HeaderBackground}"
-        RowSpacing="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <TextBlock
-            Grid.Row="1"
-            HorizontalAlignment="Center"
-            FontFamily="ms-appx:///UnexpectedApis/Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
-            FontSize="20"
-            Text="{x:Bind Content, Mode=OneWay}"
-            TextWrapping="Wrap" />
-        <Button>
-            <SymbolIcon Symbol="Copy" />
-        </Button>
+    <Grid MaxHeight="300">
+        <Grid
+            Padding="20"
+            Background="{ThemeResource HeaderBackground}"
+            RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollViewer>
+                <TextBlock
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    FontFamily="ms-appx:///UnexpectedApis/Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
+                    FontSize="14"
+                    IsTextSelectionEnabled="True"
+                    Text="{x:Bind Content, Mode=OneWay}"
+                    TextWrapping="Wrap" />
+            </ScrollViewer>
+            <Button
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="Copy_Click">
+                <SymbolIcon Symbol="Copy" />
+            </Button>
+        </Grid>
     </Grid>
 </UserControl>

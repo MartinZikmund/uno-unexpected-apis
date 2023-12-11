@@ -8,15 +8,7 @@
     xmlns:usercontrols="using:UnexpectedApis.UserControls"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <usercontrols:SamplePageHeader Title="Accelerometer" SupportsMacos="False" />
-
+    <usercontrols:SamplePageControl Title="Accelerometer" Code="{x:Bind Code}">
         <ContentControl Grid.Row="1" IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}">
             <StackPanel Padding="12" Spacing="8">
                 <TextBlock Text="{x:Bind Model.SensorStatus, Mode=OneWay}" />
@@ -47,7 +39,5 @@
                 </TextBlock>
             </StackPanel>
         </ContentControl>
-
-        <usercontrols:CodeSampleControl Grid.Row="2" Content="{x:Bind Code}" />
-    </Grid>
+    </usercontrols:SamplePageControl>
 </Page>
