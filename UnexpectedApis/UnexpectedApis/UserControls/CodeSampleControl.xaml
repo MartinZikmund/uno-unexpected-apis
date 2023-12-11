@@ -14,14 +14,16 @@
         Background="{ThemeResource HeaderBackground}"
         RowSpacing="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Style="{ThemeResource TitleTextBlockStyle}" Text="Code" />
         <ContentControl
             Grid.Row="1"
+            HorizontalContentAlignment="Center"
             Content="{x:Bind Content, Mode=OneWay}"
             FontFamily="ms-appx:///UnexpectedApis/Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
             FontSize="20" />
+        <Button>
+            <SymbolIcon Symbol="Copy" />
+        </Button>
     </Grid>
 </UserControl>

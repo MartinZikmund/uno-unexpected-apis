@@ -10,14 +10,14 @@ public sealed partial class CodeSampleControl : UserControl
         this.InitializeComponent();
     }
 
-    public UIElement Content
+    public string Content
     {
-        get { return (UIElement)GetValue(ContentProperty); }
+        get { return (string)GetValue(ContentProperty); }
         set { SetValue(ContentProperty, value); }
     }
 
     public static DependencyProperty ContentProperty { get; } =
-        DependencyProperty.Register("Content", typeof(UIElement), typeof(CodeSampleControl), new PropertyMetadata(null));
+        DependencyProperty.Register("Content", typeof(string), typeof(CodeSampleControl), new PropertyMetadata(null));
 
 
 }
