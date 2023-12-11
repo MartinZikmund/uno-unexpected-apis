@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0">
+<Project ToolsVersion="15.0">
   <ItemGroup>
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
@@ -26,5 +26,7 @@
     <PackageVersion Include="Uno.WinUI.Skia.Wpf" Version="5.0.64" />
     <PackageVersion Include="Uno.WinUI.WebAssembly" Version="5.0.64" />
     <PackageVersion Include="Xamarin.Google.Android.Material" Version="1.10.0.1" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageVersion Include="Uno.Wasm.Bootstrap.DevServer" Version="8.0.4" />
   </ItemGroup>
 </Project>
