@@ -1,4 +1,9 @@
 name: Build and deploy .NET Core application to Web App unexpectedapis
+on:
+  push:
+    branches:
+    - master
+    - feature/test-build
 env:
   AZURE_WEBAPP_NAME: unexpectedapis
   AZURE_WEBAPP_PACKAGE_PATH: UnexpectedApis.Wasm\published
