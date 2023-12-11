@@ -17,7 +17,7 @@ using Microsoft.UI.Xaml.Navigation;
 using Windows.Phone.Devices.Notification;
 #endif
 
-namespace UnexpectedApisDemo.Shared.Views;
+namespace UnexpectedApis.Views;
 
 public sealed partial class VibrationPage : Page
 {

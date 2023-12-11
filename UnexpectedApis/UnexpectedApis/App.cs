@@ -1,9 +1,11 @@
-using UnexpectedApisDemo.Shared;
+using UnexpectedApis;
 
 namespace UnexpectedApis;
 
 public class App : Application
 {
+    public static App Instance => (App)Current;
+
     public Window? MainWindow { get; private set; }
 
     protected IHost? Host { get; private set; }

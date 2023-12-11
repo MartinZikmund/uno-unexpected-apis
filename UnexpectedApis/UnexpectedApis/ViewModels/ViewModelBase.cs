@@ -2,12 +2,13 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Uno.Disposables;
 
-namespace UnexpectedApisDemo.Shared.ViewModels;
+namespace UnexpectedApis.ViewModels;
 
 [Microsoft.UI.Xaml.Data.Bindable]
 public abstract class ViewModelBase : ObservableRecipient
 {
     private readonly Dictionary<string, ICommand> _commands = new();
+    private readonly Dictionary<string, object?> _propertyValueStore = new();
 
     public CompositeDisposable Disposables { get; } = new();
 
@@ -89,5 +90,29 @@ public abstract class ViewModelBase : ObservableRecipient
             _commands.Add(commandName, command);
         }
         return command;
+    }
+
+    protected T? GetProperty<T>([CallerMemberName] string? propertyName = null)
+    {
+        if (propertyName is null)
+        {
+            throw new ArgumentNullException("Property name must not be null");
+        }
+
+        return _propertyValueStore.TryGetValue(propertyName, out var value) ? (T?)value : default;
+    }
+
+    protected void SetProperty<T>(T value, [CallerMemberName] string? propertyName = null)
+    {
+        if (propertyName is null)
+        {
+            throw new ArgumentNullException("Property name must not be null");
+        }
+
+        if (!(_propertyValueStore.TryGetValue(propertyName, out var oldValue) && oldValue?.Equals(value) == true))
+        {
+            _propertyValueStore[propertyName] = value;
+            OnPropertyChanged(propertyName);
+        }
     }
 }

@@ -5,8 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using UnexpectedApisDemo.Shared.Helpers;
-using UnexpectedApisDemo.Shared.UserControls;
+using UnexpectedApis.Helpers;
+using UnexpectedApis.UserControls;
 using Windows.Devices.Midi;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -18,7 +18,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace UnexpectedApisDemo.Shared.Views;
+namespace UnexpectedApis.Views;
 
 public sealed partial class MidiPage : Page
 {

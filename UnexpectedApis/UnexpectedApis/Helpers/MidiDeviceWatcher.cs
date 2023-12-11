@@ -8,7 +8,7 @@ using Windows.Devices.Enumeration;
 using Windows.UI.Core;
 using Microsoft.UI.Xaml.Controls;
 
-namespace UnexpectedApisDemo.Shared.Helpers;
+namespace UnexpectedApis.Helpers;
 
 internal class MidiDeviceWatcher
 {

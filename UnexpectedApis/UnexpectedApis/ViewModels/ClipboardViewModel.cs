@@ -7,7 +7,7 @@ using System.Windows.Input;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Core;
 
-namespace UnexpectedApisDemo.Shared.ViewModels;
+namespace UnexpectedApis.ViewModels;
 
 public class ClipboardViewModel : ViewModelBase, IDisposable
 {

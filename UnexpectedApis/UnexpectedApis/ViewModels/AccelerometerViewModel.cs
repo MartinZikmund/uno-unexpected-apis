@@ -8,7 +8,7 @@ using Windows.UI.Core;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Dispatching;
 
-namespace UnexpectedApisDemo.Shared.ViewModels;
+namespace UnexpectedApis.ViewModels;
 
 [Bindable]
 public class AccelerometerViewModel : ViewModelBase, IDisposable

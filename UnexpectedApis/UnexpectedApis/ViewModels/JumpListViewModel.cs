@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Windows.UI.StartScreen;
 
-namespace UnexpectedApisDemo.Shared.ViewModels;
+namespace UnexpectedApis.ViewModels;
 
 public class JumpListViewModel : ViewModelBase
 {

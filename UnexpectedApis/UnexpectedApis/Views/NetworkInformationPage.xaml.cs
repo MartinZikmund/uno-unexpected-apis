@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace UnexpectedApisDemo.Shared.Views;
+namespace UnexpectedApis.Views;
 
 public sealed partial class NetworkInformationPage : Page
 {

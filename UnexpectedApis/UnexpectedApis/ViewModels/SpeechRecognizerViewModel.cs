@@ -8,7 +8,7 @@ using Microsoft.UI.Dispatching;
 using Windows.Media.SpeechRecognition;
 using Windows.UI.Core;
 
-namespace UnexpectedApisDemo.Shared.ViewModels;
+namespace UnexpectedApis.ViewModels;
 
 public class SpeechRecognizerViewModel : ViewModelBase, IDisposable
 {

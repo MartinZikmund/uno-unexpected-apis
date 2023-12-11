@@ -1,9 +1,9 @@
 using Microsoft.UI.Dispatching;
-using UnexpectedApisDemo.Shared.ViewModels;
+using UnexpectedApis.ViewModels;
 using Windows.Devices.Lights;
 using Windows.UI.Core;
 
-namespace UnexpectedApisDemo.Shared.Views;
+namespace UnexpectedApis.Views;
 
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.

@@ -1,9 +1,9 @@
 ﻿<Page
-    x:Class="UnexpectedApisDemo.Shared.UserControls.KeyboardKey"
+    x:Class="UnexpectedApis.UserControls.KeyboardKey"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="using:UnexpectedApisDemo.Shared.UserControls"
+    xmlns:local="using:UnexpectedApis.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 

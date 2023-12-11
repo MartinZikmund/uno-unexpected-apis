@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnexpectedApisDemo.Shared.Helpers;
+namespace UnexpectedApis.Helpers;
 
 public class MidiDeviceInfo
 {

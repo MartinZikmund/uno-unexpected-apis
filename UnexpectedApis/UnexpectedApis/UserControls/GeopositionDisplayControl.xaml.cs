@@ -2,7 +2,7 @@ using Windows.Devices.Geolocation;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace UnexpectedApisDemo.Shared.UserControls;
+namespace UnexpectedApis.UserControls;
 
 public sealed partial class GeopositionDisplayControl : UserControl
 {

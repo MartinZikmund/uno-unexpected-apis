@@ -1,7 +1,7 @@
-﻿using UnexpectedApisDemo.Shared.ViewModels;
+﻿using UnexpectedApis.ViewModels;
 using Windows.Gaming.Input;
 
-namespace UnexpectedApisDemo.Shared.ViewModels.Items;
+namespace UnexpectedApis.ViewModels.Items;
 
 public class GamepadViewModel : ViewModelBase
 {
