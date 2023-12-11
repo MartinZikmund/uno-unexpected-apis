@@ -21,7 +21,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Spacing="8">
-                <Button Click="GetGeoposition_Click">Get geoposition</Button>
+                <Button HorizontalAlignment="Stretch" Click="GetGeoposition_Click">Get geoposition</Button>
                 <usercontrols:GeopositionDisplayControl x:Name="GeopositionDisplay" Visibility="Collapsed" />
             </StackPanel>
 
