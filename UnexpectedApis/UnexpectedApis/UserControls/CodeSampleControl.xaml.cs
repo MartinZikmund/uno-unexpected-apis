@@ -13,8 +13,8 @@ public sealed partial class CodeSampleControl : UserControl
 
     public string Code
     {
-        get => (string)GetValue(ContentProperty);
-        set => SetValue(ContentProperty, value);
+        get => (string)GetValue(CodeProperty);
+        set => SetValue(CodeProperty, value);
     }
 
     public static DependencyProperty CodeProperty { get; } =
