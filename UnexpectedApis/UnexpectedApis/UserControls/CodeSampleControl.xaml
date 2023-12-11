@@ -16,12 +16,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ContentControl
+        <TextBlock
             Grid.Row="1"
-            HorizontalContentAlignment="Center"
-            Content="{x:Bind Content, Mode=OneWay}"
+            HorizontalAlignment="Center"
             FontFamily="ms-appx:///UnexpectedApis/Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
-            FontSize="20" />
+            FontSize="20"
+            Text="{x:Bind Content, Mode=OneWay}"
+            TextWrapping="Wrap" />
         <Button>
             <SymbolIcon Symbol="Copy" />
         </Button>

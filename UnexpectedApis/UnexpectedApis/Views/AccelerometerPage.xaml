@@ -48,8 +48,6 @@
             </StackPanel>
         </ContentControl>
 
-        <usercontrols:CodeSampleControl Grid.Row="2">
-            <TextBlock Text="{x:Bind Code}" />
-        </usercontrols:CodeSampleControl>
+        <usercontrols:CodeSampleControl Grid.Row="2" Content="{x:Bind Code}" />
     </Grid>
 </Page>
