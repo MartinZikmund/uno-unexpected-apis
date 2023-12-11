@@ -32,6 +32,17 @@ public sealed partial class AccelerometerPage : Page
         this.Unloaded += AccelerometerPage_Unloaded;
     }
 
+    public string Code =>
+"""
+var accelerometer = Accelerometer.GetDefault();
+accelerometer.ReadingChanged += (s,e) =>
+{
+    var x = e.Reading.AccelerationX;
+    var y = e.Reading.AccelerationY;
+    var z = e.Reading.AccelerationZ;
+};
+""";
+
     public AccelerometerViewModel Model { get; }
 
     private void AccelerometerPage_Unloaded(object sender, RoutedEventArgs e)
