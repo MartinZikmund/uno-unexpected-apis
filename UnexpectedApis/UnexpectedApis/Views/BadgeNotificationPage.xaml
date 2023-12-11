@@ -10,14 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader Title="Badge Notifications" />
-
+    <usercontrols:SamplePageControl Title="Badge Notifications" Code="{x:Bind Code}">
         <StackPanel
             Grid.Row="1"
             Width="200"
@@ -41,7 +34,5 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-
-        <usercontrols:CodeSampleControl Grid.Row="2" Content="{x:Bind Code}" />
-    </Grid>
+    </usercontrols:SamplePageControl>
 </Page>

@@ -16,10 +16,13 @@
         </Grid.RowDefinitions>
         <local:SamplePageHeader Title="{x:Bind Title, Mode=OneWay}" />
 
-        <Grid Padding="20">
-            <ContentControl Content="{x:Bind Content, Mode=OneWay}" />
+        <Grid Grid.Row="1" Padding="20">
+            <ContentControl
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Content="{x:Bind Content, Mode=OneWay}" />
         </Grid>
 
-        <local:CodeSampleControl Content="{x:Bind Code, Mode=OneWay}" />
+        <local:CodeSampleControl Grid.Row="2" Code="{x:Bind Code, Mode=OneWay}" />
     </Grid>
 </UserControl>

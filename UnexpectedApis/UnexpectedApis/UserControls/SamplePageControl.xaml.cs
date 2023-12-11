@@ -33,18 +33,14 @@ public sealed partial class SamplePageControl : UserControl
     public static DependencyProperty TitleProperty { get; } =
         DependencyProperty.Register(nameof(Title), typeof(string), typeof(SamplePageControl), new PropertyMetadata(""));
 
-
-
-    public UIElement Content
+    public object Content
     {
-        get => (UIElement)GetValue(ContentProperty);
+        get => (object)GetValue(ContentProperty);
         set => SetValue(ContentProperty, value);
     }
 
     public static DependencyProperty ContentProperty { get; } =
-        DependencyProperty.Register(nameof(Content), typeof(UIElement), typeof(SamplePageControl), new PropertyMetadata(null));
-
-
+        DependencyProperty.Register(nameof(Content), typeof(object), typeof(SamplePageControl), new PropertyMetadata(null));
 
     public string Code
     {
