@@ -2,7 +2,7 @@ name: Build and deploy .NET Core application to Web App unexpectedapis
 on:
   push:
     branches:
-    - feature\ci-tests
+    - feature/ci-tests
     - master
 env:
   AZURE_WEBAPP_NAME: unexpectedapis
