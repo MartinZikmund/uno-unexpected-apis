@@ -50,6 +50,11 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Clipboard.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Compass" Tag="Compass">
+              <mux:NavigationViewItem.Icon>
+                <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Clipboard.png" />
+              </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Sharing" Tag="Sharing">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Sharing.png" />
