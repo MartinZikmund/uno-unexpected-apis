@@ -1,4 +1,4 @@
-﻿<Page
+﻿<local:SamplePage
     x:Class="UnexpectedApis.Views.AmbientLightPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,7 +10,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="Ambient Light" CodeSnippet="{x:Bind Code}">
+    <usercontrols:SamplePageControl
+        Title="Ambient Light"
+        CodeSnippet="{x:Bind Code}"
+        IconUri="{x:Bind IconUri}">
         <Grid
             x:Name="BackgroundGrid"
             Grid.Row="1"
@@ -37,4 +40,4 @@
             </TextBlock>
         </Grid>
     </usercontrols:SamplePageControl>
-</Page>
+</local:SamplePage>
