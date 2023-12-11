@@ -36,7 +36,6 @@ try
     app.UseUnoFrameworkFiles();
     app.MapFallbackToFile("index.html");
 
-    app.MapWeatherApi();
     app.UseStaticFiles();
 
     await app.RunAsync();
