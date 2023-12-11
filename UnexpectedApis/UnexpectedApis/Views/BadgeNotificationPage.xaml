@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="Badge Notifications" CodeSnippet="{x:Bind Code}">
+    <usercontrols:SamplePageControl Title="Badge Notification" CodeSnippet="{x:Bind Code}">
         <StackPanel
             Grid.Row="1"
             Width="200"

@@ -14,7 +14,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <local:SamplePageHeader Title="{x:Bind Title, Mode=OneWay}" />
+        <local:SamplePageHeader Title="{x:Bind Title, Mode=OneWay}" IconUri="{x:Bind IconUri, Mode=OneWay}" />
 
         <Grid Grid.Row="1" Padding="20">
             <ContentControl

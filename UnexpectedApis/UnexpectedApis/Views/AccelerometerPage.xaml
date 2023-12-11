@@ -8,7 +8,10 @@
     xmlns:usercontrols="using:UnexpectedApis.UserControls"
     mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="Accelerometer" CodeSnippet="{x:Bind Code}">
+    <usercontrols:SamplePageControl
+        Title="Accelerometer"
+        CodeSnippet="{x:Bind Code}"
+        IconUri="ms-appx:///UnexpectedApis/Assets/Accelerometer.png">
         <ContentControl Grid.Row="1" IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}">
             <StackPanel Padding="12" Spacing="8">
                 <TextBlock Text="{x:Bind Model.SensorStatus, Mode=OneWay}" />

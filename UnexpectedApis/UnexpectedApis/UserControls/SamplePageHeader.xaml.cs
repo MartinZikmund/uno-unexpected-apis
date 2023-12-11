@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,6 +21,15 @@ public sealed partial class SamplePageHeader : UserControl
     {
         this.InitializeComponent();
     }
+
+    public Uri IconUri
+    {
+        get { return (Uri)GetValue(IconUriProperty); }
+        set { SetValue(IconUriProperty, value); }
+    }
+
+    public static readonly DependencyProperty IconUriProperty =
+        DependencyProperty.Register(nameof(IconUri), typeof(Uri), typeof(SamplePageHeader), new PropertyMetadata(null));
 
     public string Title
     {

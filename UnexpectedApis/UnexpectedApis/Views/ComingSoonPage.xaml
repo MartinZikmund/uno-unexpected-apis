@@ -2,22 +2,20 @@
     x:Class="UnexpectedApis.Views.ComingSoonPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnexpectedApis.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="using:UnexpectedApis.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:usercontrols="using:UnexpectedApis.UserControls"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader Title="Coming soon" />
-
-        <Grid Grid.Row="1" RowSpacing="20" MaxWidth="600" VerticalAlignment="Center" ColumnSpacing="60">
+    <usercontrols:SamplePageControl Title="Clipboard" CodeSnippet="{x:Bind Code}">
+        <Grid
+            Grid.Row="1"
+            MaxWidth="600"
+            VerticalAlignment="Center"
+            ColumnSpacing="60"
+            RowSpacing="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -26,15 +24,28 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Spacing="8" Grid.Column="0">
+            <StackPanel Grid.Column="0" Spacing="8">
                 <Image Source="/Assets/KeyboardNavigation.png" />
-                <TextBlock TextAlignment="Center" Style="{ThemeResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" Text="Keyboard navigation" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    Style="{ThemeResource SubtitleTextBlockStyle}"
+                    Text="Keyboard navigation"
+                    TextAlignment="Center" />
             </StackPanel>
-            <StackPanel Spacing="8" Grid.Column="1">
+            <StackPanel Grid.Column="1" Spacing="8">
                 <Image Source="/Assets/Bluetooth.png" />
-                <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" Text="Bluetooth" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    Style="{ThemeResource SubtitleTextBlockStyle}"
+                    Text="Bluetooth" />
             </StackPanel>
-            <TextBlock FontSize="40" Text="And more!" Grid.Row="1" Grid.ColumnSpan="3" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Center"/>
+            <TextBlock
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Center"
+                FontSize="40"
+                Style="{ThemeResource TitleTextBlockStyle}"
+                Text="And more!" />
         </Grid>
-    </Grid>
+    </usercontrols:SamplePageControl>
 </Page>
