@@ -1,22 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Markup;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 
 namespace UnexpectedApis.UserControls;
 
-[ContentProperty(Name = nameof(Content))]
+[ContentProperty(Name = nameof(Sample))]
 public sealed partial class SamplePageControl : UserControl
 {
     public SamplePageControl()
@@ -33,21 +19,21 @@ public sealed partial class SamplePageControl : UserControl
     public static DependencyProperty TitleProperty { get; } =
         DependencyProperty.Register(nameof(Title), typeof(string), typeof(SamplePageControl), new PropertyMetadata(""));
 
-    public object Content
+    public object Sample
     {
-        get => (object)GetValue(ContentProperty);
-        set => SetValue(ContentProperty, value);
+        get => (object)GetValue(SampleProperty);
+        set => SetValue(SampleProperty, value);
     }
 
-    public static DependencyProperty ContentProperty { get; } =
-        DependencyProperty.Register(nameof(Content), typeof(object), typeof(SamplePageControl), new PropertyMetadata(null));
+    public static DependencyProperty SampleProperty { get; } =
+        DependencyProperty.Register(nameof(Sample), typeof(object), typeof(SamplePageControl), new PropertyMetadata(null));
 
-    public string Code
+    public string CodeSnippet
     {
-        get => (string)GetValue(CodeProperty);
-        set => SetValue(CodeProperty, value);
+        get => (string)GetValue(CodeSnippetProperty);
+        set => SetValue(CodeSnippetProperty, value);
     }
 
-    public static DependencyProperty CodeProperty { get; } =
-        DependencyProperty.Register(nameof(Code), typeof(string), typeof(SamplePageControl), new PropertyMetadata(""));
+    public static DependencyProperty CodeSnippetProperty { get; } =
+        DependencyProperty.Register(nameof(CodeSnippet), typeof(string), typeof(SamplePageControl), new PropertyMetadata(""));
 }

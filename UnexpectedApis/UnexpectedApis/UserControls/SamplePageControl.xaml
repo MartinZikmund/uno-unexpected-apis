@@ -20,9 +20,9 @@
             <ContentControl
                 HorizontalContentAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
-                Content="{x:Bind Content, Mode=OneWay}" />
+                Content="{x:Bind Sample, Mode=OneWay}" />
         </Grid>
 
-        <local:CodeSampleControl Grid.Row="2" Code="{x:Bind Code, Mode=OneWay}" />
+        <local:CodeSampleControl Grid.Row="2" Code="{x:Bind CodeSnippet, Mode=OneWay}" />
     </Grid>
 </UserControl>
