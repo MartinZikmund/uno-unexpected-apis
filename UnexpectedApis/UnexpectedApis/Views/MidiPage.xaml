@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="UnexpectedApis.Views.MidiPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UnexpectedApis.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:usercontrols="using:UnexpectedApis.UserControls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="20" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <usercontrols:SamplePageHeader Title="MIDI" />
+
+        <ListView
+            x:Name="OutputDevicesList"
+            Grid.Row="1"
+            Padding="20,0,20,0"
+            Header="Connected devices"
+            SelectionChanged="MidiDeviceSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ContentControl
+            x:Name="KeyboardKeys"
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            IsEnabled="False">
+            <Grid RowSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="C4" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="D" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="E" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="F" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="G" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="A" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="B" />
+                    <usercontrols:KeyboardKey Click="KeyClicked" KeyText="C5" />
+                </StackPanel>
+                <Button
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Click="HappyBirthday_Click">
+                    Happy birthday, UnoConf!
+                </Button>
+            </Grid>
+        </ContentControl>
+
+        <HyperlinkButton Grid.Row="3" HorizontalAlignment="Center" Content="YouTube sample" NavigateUri="https://www.youtube.com/watch?v=B3ZR_SlSbdM" />
+        <Image
+            Grid.Row="4"
+            MaxHeight="240"
+            Source="/Assets/Code/MidiCode.png" />
+    </Grid>
+</Page>

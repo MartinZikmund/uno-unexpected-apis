@@ -1,0 +1,63 @@
+﻿<UserControl
+    x:Class="UnexpectedApis.UserControls.SamplePageHeader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UnexpectedApis.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <Grid Padding="12" Background="{ThemeResource HeaderBackground}">
+        <Grid.Resources>
+            <Style TargetType="Image">
+                <Setter Property="Margin" Value="4" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            HorizontalAlignment="Center"
+            TextAlignment="Center"
+            VerticalAlignment="Center"
+            Style="{ThemeResource TitleTextBlockStyle}" 
+            Text="{x:Bind Title, Mode=OneWay}" />
+        <Image
+            x:Name="WindowsImage"
+            Grid.Column="1"
+            Width="36"
+            Source="ms-appx:///UnexpectedApis/Assets/Windows.png"
+            Visibility="{x:Bind SupportsWindows, Mode=OneWay}" />
+        <Image
+            x:Name="AndroidImage"
+            Grid.Column="2"
+            Width="36"
+            Source="ms-appx:///UnexpectedApis/Assets/Android.png"
+            Visibility="{x:Bind SupportsAndroid, Mode=OneWay}" />
+        <Image
+            x:Name="IosImage"
+            Grid.Column="3"
+            Width="36"
+            Source="ms-appx:///UnexpectedApis/Assets/Ios.png"
+            Visibility="{x:Bind SupportsIos, Mode=OneWay}" />
+        <Image
+            x:Name="MacosImage"
+            Grid.Column="4"
+            Width="36"
+            Source="ms-appx:///UnexpectedApis/Assets/Macos.png"
+            Visibility="{x:Bind SupportsMacos, Mode=OneWay}" />
+        <Image
+            x:Name="WasmImage"
+            Grid.Column="5"
+            Width="36"
+            Source="ms-appx:///UnexpectedApis/Assets/Wasm.png"
+            Visibility="{x:Bind SupportsWasm, Mode=OneWay}" />
+    </Grid>
+</UserControl>

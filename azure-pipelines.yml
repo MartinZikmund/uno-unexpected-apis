@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.Wasm.sln'
+  solution: '**/*.WebAssembly.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 

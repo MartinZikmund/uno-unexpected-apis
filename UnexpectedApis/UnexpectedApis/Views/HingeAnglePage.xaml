@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="UnexpectedApis.Views.HingeAnglePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnexpectedApis.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:usercontrols="using:UnexpectedApis.UserControls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <usercontrols:SamplePageHeader Title="Hinge Angle" />
+
+        <Grid Grid.Row="1">
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" Visibility="{x:Bind ViewModel.NoSensor, Mode=OneWay}">No hinge sensor available.</TextBlock>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" 
+                       Visibility="{x:Bind ViewModel.HingeAngleSensorAvailable, Mode=OneWay}">
+                <Run Text="{x:Bind ViewModel.Angle, Mode=OneWay}" />
+                <Run Text="°" />
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>

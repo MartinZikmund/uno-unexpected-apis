@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "UnexpectedApis",
+  "display": "standalone",
+  "name": "UnexpectedApis",
+  "short_name": "UnexpectedApis",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
