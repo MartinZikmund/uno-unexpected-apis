@@ -1,0 +1,138 @@
+﻿<Page
+    x:Class="UnexpectedApisDemo.Shared.ShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UnexpectedApisDemo.Shared"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mux="using:Microsoft.UI.Xaml.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <mux:NavigationView
+        x:Name="Menu"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        ItemInvoked="NavigationView_ItemInvoked">
+        <mux:NavigationView.MenuItems>
+            <mux:NavigationViewItem Content="Hello!" Tag="Hello">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Hello.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Titlebar" Tag="TitleBar">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/TitleBar.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Badge Notification" Tag="BadgeNotification">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/BadgeNotification.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Network Information" Tag="NetworkInformation">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/NetworkInformation.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Geolocator" Tag="Geolocator">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Geolocator.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Accelerometer.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Clipboard" Tag="Clipboard">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Clipboard.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Sharing" Tag="Sharing">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Sharing.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Display Request" Tag="DisplayRequest">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/DisplayRequest.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Speech Recognizer" Tag="SpeechRecognizer">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/SpeechRecognizer.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="MIDI" Tag="Midi">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Midi.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Gamepad" Tag="Gamepad">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Gamepad.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="File System" Tag="FileSystem">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Files.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Ambient Light" Tag="AmbientLight">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/AmbientLight.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Flashlight" Tag="Flashlight">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Flashlight.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Vibration" Tag="Vibration">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Vibration.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Hinge Angle" Tag="HingeAngle">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/HingeAngle.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <!--<mux:NavigationViewItem Content="Jump List" Tag="JumpList">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/JumpList.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>-->
+            <mux:NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/ComingSoon.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Thank you!" Tag="ThankYou">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/ThankYou.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
+        </mux:NavigationView.MenuItems>
+        <mux:NavigationView.Content>
+            <Frame x:Name="RootFrame" />
+        </mux:NavigationView.Content>
+        <mux:NavigationView.PaneFooter>
+            <StackPanel Padding="12">
+                <TextBlock FontSize="20" Text="Try me at:" />
+                <HyperlinkButton
+                    Content="https://cutt.ly/apis"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    NavigateUri="https://cutt.ly/apis" />
+                <TextBlock Margin="0,12,0,0" Text="Udemy course survey:" />
+                <HyperlinkButton
+                    Content="https://cutt.ly/unocourse"
+                    FontWeight="Bold"
+                    NavigateUri="https://cutt.ly/unocourse" />
+            </StackPanel>
+        </mux:NavigationView.PaneFooter>
+    </mux:NavigationView>
+</Page>
