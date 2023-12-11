@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +30,18 @@ public sealed partial class ClipboardPage : Page
         DataContext = Model;
         this.Unloaded += ClipboardPage_Unloaded;
     }
+
+    public string Code =>
+"""
+// Set content
+DataPackage dataPackage = new DataPackage();
+dataPackage.SetText("Hello world");
+Clipboard.SetContent(dataPackage);
+
+// Get content
+var content = Clipboard.GetContent();
+var text = await content.GetTextAsync();
+""";
 
     public ClipboardViewModel Model { get; private set; }
 
