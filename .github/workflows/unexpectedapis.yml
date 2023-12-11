@@ -2,14 +2,13 @@ name: Build and deploy .NET Core application to Web App unexpectedapis
 on:
   push:
     branches:
-    - master
     - feature/test-build
 env:
   AZURE_WEBAPP_NAME: unexpectedapis
-  AZURE_WEBAPP_PACKAGE_PATH: UnexpectedApis.Wasm\published
+  AZURE_WEBAPP_PACKAGE_PATH: UnexpectedApis\UnexpectedApis.Server\publish
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x
-  WORKING_DIRECTORY: UnexpectedApis\UnexpectedApis.Wasm
+  WORKING_DIRECTORY: UnexpectedApis\UnexpectedApis.Server
 jobs:
   build:
     runs-on: windows-latest
@@ -45,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.unexpectedapis_35FF }}
+        publish-profile: ${{ secrets.unexpectedapis_89AD }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
