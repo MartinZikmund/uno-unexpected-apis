@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,12 +16,21 @@ using Microsoft.UI.Xaml.Navigation;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class GeolocatorPage : Page
+public sealed partial class GeolocatorPage : SamplePage
 {
     public GeolocatorPage()
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+if (await Geolocator.RequestAccessAsync() == GeolocationAccessStatus.Allowed)
+{
+    var geolocator = new Geolocator();
+    var geoposition = await geolocator.GetGeopositionAsync();
+}
+""";
 
     private async void GetGeoposition_Click(object sender, RoutedEventArgs args)
     {
