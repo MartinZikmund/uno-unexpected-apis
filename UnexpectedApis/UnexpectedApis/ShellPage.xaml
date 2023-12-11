@@ -123,10 +123,15 @@
             <StackPanel Padding="12">
                 <TextBlock FontSize="20" Text="Try me at:" />
                 <HyperlinkButton
-                    Content="https://cutt.ly/apis"
-                    FontSize="24"
+                    FontSize="18"
                     FontWeight="Bold"
-                    NavigateUri="https://cutt.ly/apis" />
+                    NavigateUri="https://aka.platform.uno/demo-unexpected-apis">
+                    <TextBlock>
+                        <Run Text="aka.platform.uno/" />
+                        <LineBreak />
+                        <Run Text="demo-unexpected-apis" />
+                    </TextBlock>
+                </HyperlinkButton>
             </StackPanel>
         </mux:NavigationView.PaneFooter>
     </mux:NavigationView>

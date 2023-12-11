@@ -3,7 +3,6 @@ using Windows.ApplicationModel.DataTransfer;
 
 namespace UnexpectedApis.UserControls;
 
-[ContentProperty(Name = nameof(Content))]
 public sealed partial class CodeSampleControl : UserControl
 {
     public CodeSampleControl()
@@ -18,7 +17,11 @@ public sealed partial class CodeSampleControl : UserControl
     }
 
     public static DependencyProperty CodeProperty { get; } =
-        DependencyProperty.Register(nameof(Code), typeof(string), typeof(CodeSampleControl), new PropertyMetadata(""));
+        DependencyProperty.Register(nameof(Code), typeof(string), typeof(CodeSampleControl), new PropertyMetadata("", OnChanged));
+
+    private static void OnChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+    {
+    }
 
     private void Copy_Click(object sender, RoutedEventArgs e)
     {

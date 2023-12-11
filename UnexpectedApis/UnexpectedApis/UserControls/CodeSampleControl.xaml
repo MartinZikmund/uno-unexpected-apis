@@ -24,7 +24,7 @@
                     FontFamily="ms-appx:///UnexpectedApis/Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
                     FontSize="14"
                     IsTextSelectionEnabled="True"
-                    Text="{x:Bind Content, Mode=OneWay}"
+                    Text="{x:Bind Code, Mode=OneWay}"
                     TextWrapping="Wrap" />
             </ScrollViewer>
             <Button

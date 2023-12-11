@@ -59,14 +59,4 @@
     <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
     <Content Include="Assets\Svg\**\*.svg" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="UserControls\CodeSampleControl.xaml" />
-    <None Remove="UserControls\SamplePageControl.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="UserControls\CodeSampleControl.xaml" />
-    <UpToDateCheckInput Remove="UserControls\SamplePageControl.xaml" />
-  </ItemGroup>
 </Project>

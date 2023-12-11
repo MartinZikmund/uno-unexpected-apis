@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="Clipboard" Code="{x:Bind Code}">
+    <usercontrols:SamplePageControl Title="Clipboard" CodeSnippet="{x:Bind Code}">
         <StackPanel
             Grid.Row="1"
             Padding="12"

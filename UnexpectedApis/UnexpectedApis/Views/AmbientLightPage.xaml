@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="Ambient Light" Code="{x:Bind Code}">
+    <usercontrols:SamplePageControl Title="Ambient Light" CodeSnippet="{x:Bind Code}">
         <Grid
             x:Name="BackgroundGrid"
             Grid.Row="1"
