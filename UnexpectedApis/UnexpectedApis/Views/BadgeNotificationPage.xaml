@@ -2,35 +2,46 @@
     x:Class="UnexpectedApis.Views.BadgeNotificationPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnexpectedApis.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UnexpectedApis.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:usercontrols="using:UnexpectedApis.UserControls"
     xmlns:mux="using:Microsoft.UI.Xaml.Controls"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    xmlns:usercontrols="using:UnexpectedApis.UserControls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <usercontrols:SamplePageHeader Title="Badge Notifications" />
 
-        <StackPanel Width="200" Grid.Row="1" Padding="20" Spacing="8">
-            <mux:NumberBox HorizontalAlignment="Stretch" SpinButtonPlacementMode="Inline" x:Name="BadgeNumberBox" Value="42" />
-            <Button Click="SetBadge_Click" HorizontalAlignment="Stretch">
+        <StackPanel
+            Grid.Row="1"
+            Width="200"
+            Padding="20"
+            Spacing="8">
+            <mux:NumberBox
+                x:Name="BadgeNumberBox"
+                HorizontalAlignment="Stretch"
+                SpinButtonPlacementMode="Inline"
+                Value="42" />
+            <Button HorizontalAlignment="Stretch" Click="SetBadge_Click">
                 <StackPanel Orientation="Horizontal" Spacing="8">
                     <SymbolIcon Symbol="Save" />
                     <TextBlock Text="Set badge" />
                 </StackPanel>
             </Button>
-            <Button Click="ClearBadge_Click" HorizontalAlignment="Stretch">
+            <Button HorizontalAlignment="Stretch" Click="ClearBadge_Click">
                 <StackPanel Orientation="Horizontal" Spacing="8">
                     <SymbolIcon Symbol="Clear" />
                     <TextBlock Text="Clear badge" />
                 </StackPanel>
             </Button>
         </StackPanel>
+
+        <usercontrols:CodeSampleControl Grid.Row="2" Content="{x:Bind Code}" />
     </Grid>
 </Page>

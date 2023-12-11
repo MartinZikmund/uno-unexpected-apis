@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,11 +26,21 @@ public sealed partial class BadgeNotificationPage : Page
         this.InitializeComponent();
     }
 
+    public string Code =>
+"""
+var badgeXml = BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeNumber);
+XmlElement badgeElement = (XmlElement)badgeXml.SelectSingleNode("/badge");
+badgeElement.SetAttribute("value", BadgeNumberBox.Value.ToString());
+
+var badgeNotification = new BadgeNotification(badgeXml);
+
+BadgeUpdateManager.CreateBadgeUpdaterForApplication().Update(badgeNotification);
+""";
+
     private void SetBadge_Click(object sender, RoutedEventArgs e)
     {
         var badgeXml = BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeNumber);
-        var badgeGlyphXml = BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeGlyph);
-        XmlElement badgeElement = badgeXml.SelectSingleNode("/badge") as XmlElement;
+        XmlElement badgeElement = (XmlElement)badgeXml.SelectSingleNode("/badge");
         badgeElement.SetAttribute("value", BadgeNumberBox.Value.ToString());
 
         var badgeNotification = new BadgeNotification(badgeXml);

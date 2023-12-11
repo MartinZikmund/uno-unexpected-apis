@@ -11,19 +11,19 @@ public sealed partial class CodeSampleControl : UserControl
         this.InitializeComponent();
     }
 
-    public string Content
+    public string Code
     {
-        get { return (string)GetValue(ContentProperty); }
-        set { SetValue(ContentProperty, value); }
+        get => (string)GetValue(ContentProperty);
+        set => SetValue(ContentProperty, value);
     }
 
-    public static DependencyProperty ContentProperty { get; } =
-        DependencyProperty.Register("Content", typeof(string), typeof(CodeSampleControl), new PropertyMetadata(null));
+    public static DependencyProperty CodeProperty { get; } =
+        DependencyProperty.Register(nameof(Code), typeof(string), typeof(CodeSampleControl), new PropertyMetadata(""));
 
     private void Copy_Click(object sender, RoutedEventArgs e)
     {
         var package = new DataPackage { RequestedOperation = DataPackageOperation.Copy };
-        package.SetText(Content);
+        package.SetText(Code);
         Clipboard.SetContent(package);
     }
 }

@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="UnexpectedApis.UserControls.SamplePageControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UnexpectedApis.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <local:SamplePageHeader Title="{x:Bind Title, Mode=OneWay}" />
+
+        <Grid Padding="20">
+            <ContentControl Content="{x:Bind Content, Mode=OneWay}" />
+        </Grid>
+
+        <local:CodeSampleControl Content="{x:Bind Code, Mode=OneWay}" />
+    </Grid>
+</UserControl>
