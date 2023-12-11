@@ -1,4 +1,5 @@
 using Microsoft.UI.Xaml.Markup;
+using Windows.ApplicationModel.DataTransfer;
 
 namespace UnexpectedApis.UserControls;
 
@@ -19,5 +20,10 @@ public sealed partial class CodeSampleControl : UserControl
     public static DependencyProperty ContentProperty { get; } =
         DependencyProperty.Register("Content", typeof(string), typeof(CodeSampleControl), new PropertyMetadata(null));
 
-
+    private void Copy_Click(object sender, RoutedEventArgs e)
+    {
+        var package = new DataPackage { RequestedOperation = DataPackageOperation.Copy };
+        package.SetText(Content);
+        Clipboard.SetContent(package);
+    }
 }

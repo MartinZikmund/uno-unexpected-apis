@@ -2,7 +2,8 @@ name: Build and deploy .NET Core application to Web App unexpectedapis
 on:
   push:
     branches:
-    - feature/ci-once-more
+    - feature\ci-tests
+    - master
 env:
   AZURE_WEBAPP_NAME: unexpectedapis
   AZURE_WEBAPP_PACKAGE_PATH: UnexpectedApis\UnexpectedApis.Server\publish
@@ -44,5 +45,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.unexpectedapis_BFD9 }}
+        publish-profile: ${{ secrets.unexpectedapis_254E }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
