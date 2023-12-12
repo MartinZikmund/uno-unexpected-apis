@@ -9,7 +9,7 @@ namespace UnexpectedApis.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class HingeAnglePage : Page
+public sealed partial class HingeAnglePage : SamplePage
 {
     private HingeAngleSensorViewModel _viewModel;
 
@@ -17,6 +17,15 @@ public sealed partial class HingeAnglePage : Page
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+var hinge = await HingeAngleSensor.GetDefaultAsync();
+hinge.ReadingChanged += (s,e) =>
+{
+    var angle = e.Reading.AngleInDegrees;
+};
+""";
 
     public HingeAngleSensorViewModel ViewModel => _viewModel ?? (_viewModel = new HingeAngleSensorViewModel(DispatcherQueue));
 

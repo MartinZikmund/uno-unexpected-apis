@@ -14,7 +14,7 @@ using System.Reflection;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class GamepadPage : Page
+public sealed partial class GamepadPage : SamplePage
 {
     public GamepadPage()
     {
@@ -22,6 +22,20 @@ public sealed partial class GamepadPage : Page
         Model = new GamepadSamplePageViewModel();
         DataContext = Model;
     }
+
+    public string Code =>
+"""
+Gamepad.GamepadAdded += (s,e) =>
+{
+    var gamepad = Gamepad.Gamepads[0];
+    var reading = gamepad.GetCurrentReading();
+
+    var buttons = reading.Buttons;
+    var leftThumbstickX = reading.LeftThumbstickX;
+    ...
+};
+
+""";
 
     public GamepadSamplePageViewModel Model { get; }
 

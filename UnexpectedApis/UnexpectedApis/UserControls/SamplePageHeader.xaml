@@ -9,7 +9,7 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid Padding="12" Background="{ThemeResource HeaderBackground}">
+    <Grid Padding="20,0" Background="{ThemeResource HeaderBackground}">
         <Grid.Resources>
             <Style TargetType="Image">
                 <Setter Property="Margin" Value="4" />
@@ -18,27 +18,34 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <StackPanel
+            Margin="12"
             HorizontalAlignment="Center"
             Orientation="Horizontal"
             Spacing="8">
             <BitmapIcon
                 Width="32"
+                VerticalAlignment="Center"
                 ShowAsMonochrome="False"
                 UriSource="{x:Bind IconUri, Mode=OneWay}" />
             <TextBlock
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                LineHeight="32"
                 Style="{ThemeResource TitleTextBlockStyle}"
                 Text="{x:Bind Title, Mode=OneWay}"
-                TextAlignment="Center" />
+                TextAlignment="Center"
+                TextLineBounds="Tight" />
         </StackPanel>
+        <HyperlinkButton
+            Grid.Column="1"
+            NavigateUri="{x:Bind DocsUri}"
+            Visibility="{x:Bind DocsUri, Converter={StaticResource NotNullToVisibilityConverter}}">
+            <BitmapIcon
+                Width="32"
+                ShowAsMonochrome="False"
+                UriSource="ms-appx:///UnexpectedApis/Assets/Docs.png" />
+        </HyperlinkButton>
         <!--<Image
             x:Name="WindowsImage"
             Grid.Column="1"

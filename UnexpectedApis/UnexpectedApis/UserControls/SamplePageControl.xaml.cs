@@ -28,6 +28,15 @@ public sealed partial class SamplePageControl : UserControl
     public static readonly DependencyProperty IconUriProperty =
         DependencyProperty.Register(nameof(IconUri), typeof(Uri), typeof(SamplePageControl), new PropertyMetadata(null));
 
+    public Uri DocsUri
+    {
+        get => (Uri)GetValue(DocsUriProperty);
+        set => SetValue(DocsUriProperty, value);
+    }
+
+    public static readonly DependencyProperty DocsUriProperty =
+        DependencyProperty.Register(nameof(DocsUri), typeof(Uri), typeof(SamplePageControl), new PropertyMetadata(null));
+
     public object Sample
     {
         get => (object)GetValue(SampleProperty);

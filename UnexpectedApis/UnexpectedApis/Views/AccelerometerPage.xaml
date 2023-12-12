@@ -11,32 +11,44 @@
     <usercontrols:SamplePageControl
         Title="Accelerometer"
         CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/accelerometer.html"
         IconUri="{x:Bind IconUri}">
-        <ContentControl Grid.Row="1" IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}">
-            <StackPanel Padding="12" Spacing="8">
-                <TextBlock Text="{x:Bind Model.SensorStatus, Mode=OneWay}" />
+        <ContentControl
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}">
+            <StackPanel
+                Padding="12"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="8">
+                <TextBlock HorizontalAlignment="Center" Text="{x:Bind Model.SensorStatus, Mode=OneWay}" />
 
                 <ToggleButton
                     x:Name="AccelerometerToggle"
+                    HorizontalAlignment="Stretch"
                     Command="{x:Bind Model.ObserveCommand}"
                     IsChecked="{x:Bind Model.ReadingChangedAttached, Mode=OneWay}">
-                    Observe accelerometer events
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <SymbolIcon Symbol="View" />
+                        <TextBlock Text="Observe accelerometer readings" />
+                    </StackPanel>
                 </ToggleButton>
 
-                <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Last reading" />
-                <TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="18">
                     <Run FontWeight="Bold">X:</Run>
                     <Run Text="{x:Bind Model.AccelerationX, Mode=OneWay}" />
                 </TextBlock>
-                <TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="18">
                     <Run FontWeight="Bold">Y:</Run>
                     <Run Text="{x:Bind Model.AccelerationY, Mode=OneWay}" />
                 </TextBlock>
-                <TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="18">
                     <Run FontWeight="Bold">Z:</Run>
                     <Run Text="{x:Bind Model.AccelerationZ, Mode=OneWay}" />
                 </TextBlock>
-                <TextBlock>
+                <TextBlock HorizontalAlignment="Center">
                     <Run FontWeight="Bold">Timestamp:</Run>
                     <Run Text="{x:Bind Model.ReadingTimestamp, Mode=OneWay}" />
                 </TextBlock>

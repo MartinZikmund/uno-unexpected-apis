@@ -1,4 +1,4 @@
-﻿<Page
+﻿<local:SamplePage
     x:Class="UnexpectedApis.Views.SpeechRecognizerPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,13 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader Title="Speech recognizer" SupportsMacos="False" />
+
+    <usercontrols:SamplePageControl
+        Title="Speech Recognizer"
+        CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/SpeechRecognition.html"
+        IconUri="{x:Bind IconUri}">
 
         <Grid
             Grid.Row="1"
@@ -30,7 +29,10 @@
                 HorizontalAlignment="Center"
                 Command="{x:Bind Model.RecognizeCommand}"
                 IsEnabled="{x:Bind Model.CanRecognize, Mode=OneWay}">
-                Recognize
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <SymbolIcon Symbol="Microphone" />
+                    <TextBlock Text="Recognize speech" />
+                </StackPanel>
             </Button>
             <TextBlock
                 Grid.Row="1"
@@ -40,10 +42,5 @@
                 TextAlignment="Center"
                 TextWrapping="WrapWholeWords" />
         </Grid>
-
-        <Image
-            Grid.Row="2"
-            MaxHeight="240"
-            Source="/Assets/Code/SpeechRecognizerCode.png" />
-    </Grid>
-</Page>
+    </usercontrols:SamplePageControl>
+</local:SamplePage>

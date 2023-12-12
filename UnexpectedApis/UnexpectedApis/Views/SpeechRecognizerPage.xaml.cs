@@ -16,7 +16,7 @@ using Microsoft.UI.Xaml.Navigation;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class SpeechRecognizerPage : Page
+public sealed partial class SpeechRecognizerPage : SamplePage
 {
     public SpeechRecognizerPage()
     {
@@ -24,6 +24,13 @@ public sealed partial class SpeechRecognizerPage : Page
         DataContext = Model;
         this.Unloaded += SpeechRecognizerPage_Unloaded;
     }
+
+    public string Code =>
+"""
+var speechRecognizer = new SpeechRecognizer();
+await _speechRecognizer.CompileConstraintsAsync();
+var result = await _speechRecognizer.RecognizeAsync();
+""";
 
     public SpeechRecognizerViewModel Model { get; }
 

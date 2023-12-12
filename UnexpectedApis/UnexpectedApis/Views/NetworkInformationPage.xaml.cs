@@ -1,15 +1,32 @@
-﻿using Windows.Networking.Connectivity;
+using Windows.Networking.Connectivity;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class NetworkInformationPage : Page
+public sealed partial class NetworkInformationPage : SamplePage
 {
     public NetworkInformationPage()
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+NetworkInformation.NetworkStatusChanged += (s,e) =>
+{
+    var profile = NetworkInformation.GetInternetConnectionProfile();
+    var level = profile.GetNetworkConnectivityLevel();
+    if (level == NetworkConnectivityLevel.InternetAccess)
+    {
+        // Connected to the internet
+    }
+    else
+    {
+        // Not connected to the internet
+    }
+}
+""";
 
     private void CheckConnectivity_Click(object sender, RoutedEventArgs e) => UpdateConnectivity();
 

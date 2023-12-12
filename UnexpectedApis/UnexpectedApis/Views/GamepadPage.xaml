@@ -1,4 +1,4 @@
-﻿<Page
+﻿<local:SamplePage
     x:Class="UnexpectedApis.Views.GamepadPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -18,19 +18,19 @@
             FalseValue="Transparent"
             TrueValue="#A1A1A1" />
     </Page.Resources>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <usercontrols:SamplePageHeader Title="Gamepad" />
+    <usercontrols:SamplePageControl
+        Title="Gamepad"
+        CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/gamepad.html"
+        IconUri="{x:Bind IconUri}">
         <StackPanel
             Grid.Row="2"
             Padding="20"
             Spacing="20">
-            <Button Click="CheckChangeObservation_Click" Content="{Binding ButtonText}" />
+            <Button
+                HorizontalAlignment="Center"
+                Click="CheckChangeObservation_Click"
+                Content="{Binding ButtonText}" />
 
             <ListView ItemsSource="{Binding AvailableGamepads, Mode=OneWay}" SelectionMode="None">
                 <ListView.ItemTemplate>
@@ -325,5 +325,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-    </Grid>
-</Page>
+    </usercontrols:SamplePageControl>
+</local:SamplePage>

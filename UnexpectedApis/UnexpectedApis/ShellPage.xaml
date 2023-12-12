@@ -51,16 +51,16 @@
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Compass" Tag="Compass">
-              <mux:NavigationViewItem.Icon>
-                <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Clipboard.png" />
-              </mux:NavigationViewItem.Icon>
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Compass.png" />
+                </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Sharing" Tag="Sharing">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Sharing.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Display Request" Tag="DisplayRequest">
+            <mux:NavigationViewItem Content="Keep Screen On" Tag="DisplayRequest">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/DisplayRequest.png" />
                 </mux:NavigationViewItem.Icon>
@@ -82,7 +82,7 @@
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="File System" Tag="FileSystem">
                 <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Files.png" />
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/FileSystem.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Ambient Light" Tag="AmbientLight">

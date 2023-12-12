@@ -8,7 +8,7 @@ namespace UnexpectedApis.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class FlashlightPage : Page
+public sealed partial class FlashlightPage : SamplePage
 {
     private FlashlightViewModel _viewModel;
 
@@ -16,6 +16,13 @@ public sealed partial class FlashlightPage : Page
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+var lamp = await Lamp.GetDefaultAsync();
+lamp.BrightnessLevel = 1;
+lamp.IsEnabled = true;
+""";
 
     public FlashlightViewModel ViewModel => _viewModel ?? (_viewModel = new FlashlightViewModel(DispatcherQueue));
 
