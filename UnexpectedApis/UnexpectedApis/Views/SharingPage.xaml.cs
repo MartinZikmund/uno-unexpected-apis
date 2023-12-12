@@ -15,19 +15,26 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace UnexpectedApis.Views;
 
-/// <summary>
-/// An empty page that can be used on its own or navigated to within a Frame.
-/// </summary>
-public sealed partial class SharingPage : Page
+public sealed partial class SharingPage : SamplePage
 {
     public SharingPage()
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+DataTransferManager.GetForCurrentView().DataRequested += (s,e) =>
+{
+    args.Request.Data.Properties.Title = "Unexpected APIs in Uno Platform";
+    args.Request.Data.Properties.Description = "Link to the app";
+    args.Request.Data.SetWebLink(new Uri("https://aka.platform.uno/demo-unexpected-apis"));
+};
+
+DataTransferManager.ShowShareUI();
+""";
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
