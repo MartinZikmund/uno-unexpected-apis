@@ -39,14 +39,14 @@
             <Grid Width="160" Height="160">
                 <Image
                     x:Name="OnlineImage"
-                    Width="160"
-                    Height="160"
+                    Width="120"
+                    Height="120"
                     Source="ms-appx:///UnexpectedApis/Assets/Online.png"
                     Visibility="Collapsed" />
                 <Image
                     x:Name="OfflineImage"
-                    Width="160"
-                    Height="160"
+                    Width="120"
+                    Height="120"
                     Source="ms-appx:///UnexpectedApis/Assets/Offline.png"
                     Visibility="Collapsed" />
             </Grid>
