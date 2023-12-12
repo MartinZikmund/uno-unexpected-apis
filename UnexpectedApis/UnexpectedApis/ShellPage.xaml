@@ -82,7 +82,7 @@
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="File System" Tag="FileSystem">
                 <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Files.png" />
+                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/FileSystem.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Ambient Light" Tag="AmbientLight">

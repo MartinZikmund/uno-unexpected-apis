@@ -18,10 +18,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <StackPanel
             HorizontalAlignment="Center"
@@ -39,6 +35,15 @@
                 Text="{x:Bind Title, Mode=OneWay}"
                 TextAlignment="Center" />
         </StackPanel>
+        <HyperlinkButton
+            Grid.Column="1"
+            NavigateUri="{x:Bind DocsUri}"
+            Visibility="{x:Bind DocsUri, Converter={StaticResource NotNullToVisibilityConverter}}">
+            <BitmapIcon
+                Width="32"
+                ShowAsMonochrome="False"
+                UriSource="ms-appx:///UnexpectedApis/Assets/Docs.png" />
+        </HyperlinkButton>
         <!--<Image
             x:Name="WindowsImage"
             Grid.Column="1"

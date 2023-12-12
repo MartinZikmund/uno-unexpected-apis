@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -17,10 +17,11 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using WinRT.Interop;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class FileSystemPage : Page
+public sealed partial class FileSystemPage : SamplePage
 {
     private StorageFolder _pickedFolder;
     private StorageFile _selectedFile;
@@ -29,6 +30,22 @@ public sealed partial class FileSystemPage : Page
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+var picker = new FolderPicker()
+{
+    SuggestedStartLocation = PickerLocationId.DocumentsLibrary,
+    FileTypeFilter = { "*" }
+};
+var handle = WindowNative.GetWindowHandle(MainWindow);
+InitializeWithWindow.Initialize(picker, handle);
+var folder = await picker.PickSingleFolderAsync();
+
+var files = await folder.GetFilesAsync();
+var newFile = await folder.CreateFileAsync("hello.txt");
+await FileIO.WriteTextAsync(newFiled, "Hello world!");
+""";
 
     public ObservableCollection<StorageFile> Files { get; } = new ObservableCollection<StorageFile>();
 
@@ -62,6 +79,8 @@ public sealed partial class FileSystemPage : Page
                 SuggestedStartLocation = PickerLocationId.DocumentsLibrary,
                 FileTypeFilter = { "*" }
             };
+            var window = WindowNative.GetWindowHandle(App.Instance.MainWindow!);
+            InitializeWithWindow.Initialize(picker, window);
             PickedFolder = await picker.PickSingleFolderAsync();
             SelectedFile = null;
             await UpdateFilesAsync();

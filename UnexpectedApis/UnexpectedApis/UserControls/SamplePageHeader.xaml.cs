@@ -30,6 +30,15 @@ public sealed partial class SamplePageHeader : UserControl
 
     public static readonly DependencyProperty IconUriProperty =
         DependencyProperty.Register(nameof(IconUri), typeof(Uri), typeof(SamplePageHeader), new PropertyMetadata(null));
+    
+    public Uri DocsUri
+    {
+        get { return (Uri)GetValue(DocsUriProperty); }
+        set { SetValue(DocsUriProperty, value); }
+    }
+
+    public static readonly DependencyProperty DocsUriProperty =
+        DependencyProperty.Register(nameof(DocsUri), typeof(Uri), typeof(SamplePageHeader), new PropertyMetadata(null));
 
     public string Title
     {

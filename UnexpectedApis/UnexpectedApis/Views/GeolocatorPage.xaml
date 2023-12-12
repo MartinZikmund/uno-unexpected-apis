@@ -12,6 +12,7 @@
     <usercontrols:SamplePageControl
         Title="Geolocator"
         CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/windows-devices-geolocation.html"
         IconUri="{x:Bind IconUri}">
 
         <Grid>

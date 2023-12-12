@@ -11,6 +11,7 @@
     <usercontrols:SamplePageControl
         Title="Accelerometer"
         CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/accelerometer.html"
         IconUri="{x:Bind IconUri}">
         <ContentControl Grid.Row="1" IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}">
             <StackPanel Padding="12" Spacing="8">

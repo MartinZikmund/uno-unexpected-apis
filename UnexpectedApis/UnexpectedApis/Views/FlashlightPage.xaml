@@ -12,6 +12,7 @@
     <usercontrols:SamplePageControl
         Title="Flashlight"
         CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/flashlight.html"
         IconUri="{x:Bind IconUri}">
 
         <Grid Grid.Row="1">

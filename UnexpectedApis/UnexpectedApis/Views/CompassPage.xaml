@@ -11,7 +11,7 @@
     mc:Ignorable="d">
 
     <usercontrols:SamplePageControl
-        Title="Accelerometer"
+        Title="Compass"
         CodeSnippet="{x:Bind Code}"
         IconUri="{x:Bind IconUri}">
         <Grid>
