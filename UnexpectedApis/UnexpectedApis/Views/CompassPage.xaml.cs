@@ -7,7 +7,7 @@ namespace UnexpectedApis.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class CompassPage : Page
+public sealed partial class CompassPage : SamplePage
 {
     private CompassViewModel _viewModel;
 
@@ -15,6 +15,15 @@ public sealed partial class CompassPage : Page
     {
         this.InitializeComponent();
     }
+
+    public string Code =>
+"""
+var compass = Compass.GetDefault();
+compass.ReadingChanged += (s,e) =>
+{
+    var heading = args.Reading.HeadingMagneticNorth;
+};
+""";
 
     public CompassViewModel ViewModel => _viewModel ??= new CompassViewModel(DispatcherQueue);
 
@@ -38,7 +47,7 @@ public class CompassViewModel(DispatcherQueue dispatcher) : ViewModelBase
     private readonly DispatcherQueue _dispatcher = dispatcher;
     private bool _noSensor = false;
     private Compass? _compass = null;
-    private double? _headingMagneticNorth;
+    private string? _headingMagneticNorth;
 
     public IRelayCommand OpenDocs => new RelayCommand(async () => await Windows.System.Launcher.LaunchUriAsync(new Uri("https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer")));
 
@@ -54,7 +63,7 @@ public class CompassViewModel(DispatcherQueue dispatcher) : ViewModelBase
 
     public bool CompassAvailable => _compass != null;
 
-    public double? HeadingMagneticNorth
+    public string? HeadingMagneticNorth
     {
         set
         {
@@ -79,7 +88,10 @@ public class CompassViewModel(DispatcherQueue dispatcher) : ViewModelBase
 
     private void Compass_ReadingChanged(Compass sender, CompassReadingChangedEventArgs args)
     {
-        HeadingMagneticNorth = args.Reading.HeadingMagneticNorth;
+        _dispatcher.TryEnqueue(() =>
+        {
+            HeadingMagneticNorth = args.Reading.HeadingMagneticNorth.ToString("0.0") + "°";
+        });
     }
 
     public void Dispose()
