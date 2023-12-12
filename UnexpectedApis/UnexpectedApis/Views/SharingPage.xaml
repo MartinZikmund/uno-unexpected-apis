@@ -12,7 +12,7 @@
     <usercontrols:SamplePageControl
         Title="Sharing"
         CodeSnippet="{x:Bind Code}"
-        DocsUri="https://platform.uno/docs/articles/features/windows-storage-pickers.html"
+        DocsUri="https://platform.uno/docs/articles/features/windows-applicationmodel-datatransfer.html"
         IconUri="{x:Bind IconUri}">
 
         <Grid Grid.Row="1">
