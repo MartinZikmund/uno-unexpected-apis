@@ -40,7 +40,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontSize="20"
+                    FontSize="50"
                     FontWeight="Bold"
                     Text="{x:Bind ViewModel.HeadingMagneticNorth, Mode=OneWay}"
                     TextWrapping="Wrap" />

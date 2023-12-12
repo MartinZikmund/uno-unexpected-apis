@@ -90,7 +90,7 @@ public class CompassViewModel(DispatcherQueue dispatcher) : ViewModelBase
     {
         _dispatcher.TryEnqueue(() =>
         {
-            HeadingMagneticNorth = args.Reading.HeadingMagneticNorth.ToString("0.0") + "°";
+            HeadingMagneticNorth = args.Reading.HeadingMagneticNorth.ToString("0") + "°";
         });
     }
 
