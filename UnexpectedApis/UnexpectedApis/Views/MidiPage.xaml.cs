@@ -20,7 +20,7 @@ using Microsoft.UI.Xaml.Navigation;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class MidiPage : Page
+public sealed partial class MidiPage : SamplePage
 {
     /// <summary>
     /// Device watcher for MIDI out ports
@@ -42,6 +42,12 @@ public sealed partial class MidiPage : Page
 
         Unloaded += MidiDeviceOutputTests_Unloaded;
     }
+
+    public string Code =>
+"""
+var device = await MidiOutPort.FromIdAsync(id);
+device.SendMessage(new MidiNoteOnMessage(channel, noteNumber, velocity));
+""";
 
     public ObservableCollection<MidiDeviceInfo> OutputDevices { get; } = new ObservableCollection<MidiDeviceInfo>();
 

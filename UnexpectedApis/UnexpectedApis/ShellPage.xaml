@@ -60,7 +60,7 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Sharing.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Display Request" Tag="DisplayRequest">
+            <mux:NavigationViewItem Content="Keep Screen On" Tag="DisplayRequest">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/DisplayRequest.png" />
                 </mux:NavigationViewItem.Icon>

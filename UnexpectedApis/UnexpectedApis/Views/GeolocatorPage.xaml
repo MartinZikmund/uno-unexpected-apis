@@ -23,7 +23,7 @@
                 VerticalAlignment="Center">
                 <Button HorizontalAlignment="Stretch" Click="GetGeoposition_Click">
                     <StackPanel Orientation="Horizontal" Spacing="8">
-                        <SymbolIcon Symbol="MapPin" />
+                        <SymbolIcon Symbol="Map" />
                         <TextBlock Text="Get geoposition" />
                     </StackPanel>
                 </Button>

@@ -13,6 +13,7 @@
     <usercontrols:SamplePageControl
         Title="Ambient Light"
         CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/lightsensor.html"
         IconUri="{x:Bind IconUri}">
         <Grid
             x:Name="BackgroundGrid"

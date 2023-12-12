@@ -13,6 +13,7 @@
     <usercontrols:SamplePageControl
         Title="Compass"
         CodeSnippet="{x:Bind Code}"
+        DocsUri="https://platform.uno/docs/articles/features/compass.html"
         IconUri="{x:Bind IconUri}">
         <Grid>
 

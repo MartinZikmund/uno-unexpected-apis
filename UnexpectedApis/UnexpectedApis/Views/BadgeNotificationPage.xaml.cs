@@ -19,7 +19,7 @@ using Microsoft.UI.Xaml.Navigation;
 
 namespace UnexpectedApis.Views;
 
-public sealed partial class BadgeNotificationPage : Page
+public sealed partial class BadgeNotificationPage : SamplePage
 {
     public BadgeNotificationPage()
     {
