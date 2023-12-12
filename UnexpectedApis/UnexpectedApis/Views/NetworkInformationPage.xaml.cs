@@ -21,10 +21,6 @@ NetworkInformation.NetworkStatusChanged += (s,e) =>
     {
         // Connected to the internet
     }
-    else
-    {
-        // Not connected to the internet
-    }
 }
 """;
 
