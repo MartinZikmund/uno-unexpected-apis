@@ -100,6 +100,11 @@
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Compass.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Battery" Tag="Power">
+              <mux:NavigationViewItem.Icon>
+                <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/Compass.png" />
+              </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Hinge Angle" Tag="HingeAngle">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///UnexpectedApis/Assets/HingeAngle.png" />

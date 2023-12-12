@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converters="using:UnexpectedApis.Converters">
+    xmlns:localConverters="using:UnexpectedApis.Converters"
+    xmlns:converters="using:CommunityToolkit.WinUI.Converters">
 
     <ResourceDictionary.MergedDictionaries>
         <!--  Load WinUI resources  -->
@@ -18,6 +19,12 @@
         </ResourceDictionary>
     </ResourceDictionary.ThemeDictionaries>
 
-    <converters:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+  <converters:BoolToVisibilityConverter x:Key="TrueToVisibleConverter"
+                                        TrueValue="Visible"
+                                        FalseValue="Collapsed" />
+  <converters:BoolToVisibilityConverter x:Key="FalseToVisibleConverter"
+                                        TrueValue="Collapsed"
+                                        FalseValue="Visible" />
 
+  <localConverters:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
 </ResourceDictionary>
