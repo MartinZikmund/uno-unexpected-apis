@@ -56,6 +56,7 @@ await FileIO.WriteTextAsync(newFiled, "Hello world!");
         {
             _selectedFile = value;
             WriteToFileButton.IsEnabled = _selectedFile != null;
+            ContentTextBox.IsEnabled = _selectedFile != null;
         }
     }
 
@@ -67,6 +68,7 @@ await FileIO.WriteTextAsync(newFiled, "Hello world!");
             _pickedFolder = value;
             GetFileListButton.IsEnabled = _pickedFolder != null;
             CreateFileButton.IsEnabled = _pickedFolder != null;
+            FileNameTextBox.IsEnabled = _pickedFolder != null;
         }
     }
 
