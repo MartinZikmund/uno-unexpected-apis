@@ -17,51 +17,72 @@
         IconUri="{x:Bind IconUri}">
         <Grid
             Grid.Row="1"
-            MaxWidth="300"
-            Padding="20"
+            ColumnSpacing="8"
             RowSpacing="8">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button HorizontalAlignment="Stretch" Click="PickFolder">Pick a folder</Button>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button HorizontalAlignment="Stretch" Click="PickFolder">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE838;" />
+                    <TextBlock Text="Pick a folder" />
+                </StackPanel>
+            </Button>
             <Button
                 x:Name="GetFileListButton"
-                Grid.Row="1"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
                 Click="GetFileList"
                 IsEnabled="False">
-                Get file list
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEA37;" />
+                    <TextBlock Text="Get file list" />
+                </StackPanel>
             </Button>
             <TextBox
                 x:Name="FileNameTextBox"
-                Grid.Row="2"
+                Grid.Row="1"
+                Grid.Column="1"
                 Text="Hello.txt" />
             <Button
                 x:Name="CreateFileButton"
-                Grid.Row="3"
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
                 Click="CreateFile"
                 IsEnabled="False">
-                Create file
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8A5;" />
+                    <TextBlock Text="Create file" />
+                </StackPanel>
             </Button>
             <TextBox
                 x:Name="ContentTextBox"
-                Grid.Row="4"
+                Grid.Row="2"
+                Grid.Column="1"
                 Text="" />
             <Button
                 x:Name="WriteToFileButton"
-                Grid.Row="5"
+                Grid.Row="2"
+                HorizontalAlignment="Stretch"
                 Click="WriteToFile"
                 IsEnabled="False">
-                Write to file
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <SymbolIcon Symbol="Save" />
+                    <TextBlock Text="Write to file" />
+                </StackPanel>
             </Button>
             <ListView
                 x:Name="FileListView"
-                Grid.Row="6"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
                 Margin="0,8,0,0"
                 ItemsSource="{x:Bind Files}"
                 SelectionChanged="FilesSelectionChanged">
