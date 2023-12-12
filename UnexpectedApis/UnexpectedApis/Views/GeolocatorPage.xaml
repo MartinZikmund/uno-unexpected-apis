@@ -20,21 +20,31 @@
                 Grid.Row="1"
                 Padding="12"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Spacing="8">
-                <Button HorizontalAlignment="Stretch" Click="GetGeoposition_Click">Get geoposition</Button>
-                <usercontrols:GeopositionDisplayControl x:Name="GeopositionDisplay" Visibility="Collapsed" />
-            </StackPanel>
+                VerticalAlignment="Center">
+                <Button HorizontalAlignment="Stretch" Click="GetGeoposition_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <SymbolIcon Symbol="MapPin" />
+                        <TextBlock Text="Get geoposition" />
+                    </StackPanel>
+                </Button>
+                <Grid>
+                    <winui:ProgressRing
+                        x:Name="ProgressRing"
+                        Grid.RowSpan="3"
+                        Width="120"
+                        Height="120"
+                        Margin="8"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        IsActive="False"
+                        Visibility="Collapsed" />
 
-            <winui:ProgressRing
-                x:Name="ProgressRing"
-                Grid.RowSpan="3"
-                Width="120"
-                Height="120"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                IsActive="False"
-                Visibility="Collapsed" />
+                    <usercontrols:GeopositionDisplayControl
+                        x:Name="GeopositionDisplay"
+                        Margin="8"
+                        Visibility="Collapsed" />
+                </Grid>
+            </StackPanel>
         </Grid>
     </usercontrols:SamplePageControl>
 </local:SamplePage>

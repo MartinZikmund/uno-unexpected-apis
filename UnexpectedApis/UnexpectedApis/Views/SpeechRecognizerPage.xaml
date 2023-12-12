@@ -29,7 +29,10 @@
                 HorizontalAlignment="Center"
                 Command="{x:Bind Model.RecognizeCommand}"
                 IsEnabled="{x:Bind Model.CanRecognize, Mode=OneWay}">
-                Recognize
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <SymbolIcon Symbol="Microphone" />
+                    <TextBlock Text="Recognize speech" />
+                </StackPanel>
             </Button>
             <TextBlock
                 Grid.Row="1"

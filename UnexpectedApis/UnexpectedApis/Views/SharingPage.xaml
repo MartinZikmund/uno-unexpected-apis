@@ -20,9 +20,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Click="Share_Click">
-                <StackPanel Spacing="8">
+                <StackPanel Orientation="Horizontal" Spacing="8">
                     <SymbolIcon Symbol="Share" />
-                    <TextBlock Text="Click to share this URL" />
+                    <TextBlock Text="Click to share this app" />
                 </StackPanel>
             </Button>
         </Grid>
