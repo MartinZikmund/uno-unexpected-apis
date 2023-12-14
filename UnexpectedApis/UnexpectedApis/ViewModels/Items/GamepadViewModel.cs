@@ -1,21 +1,15 @@
-﻿using UnexpectedApis.ViewModels;
+using UnexpectedApis.ViewModels;
 using Windows.Gaming.Input;
 
 namespace UnexpectedApis.ViewModels.Items;
 
-public class GamepadViewModel : ViewModelBase
+public class GamepadViewModel(Gamepad gamepad) : ViewModelBase
 {
     private static int _id = 0;
 
-    public GamepadViewModel(Gamepad gamepad)
-    {
-        Id = ++_id;
-        Gamepad = gamepad;
-    }
+    public Gamepad Gamepad { get; } = gamepad;
 
-    public Gamepad Gamepad { get; }
-
-    public int Id { get; }
+    public int Id { get; } = ++_id;
 
     public void Update()
     {

@@ -12,11 +12,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
     <Page.Resources>
-        <SolidColorBrush x:Key="ShapesStrokeColor">#A1A1A1</SolidColorBrush>
-        <converters:FromBoolToValueConverter
+        <converters:FromBoolToFilledConverter
             x:Key="TrueToFilled"
-            FalseValue="Transparent"
-            TrueValue="#A1A1A1" />
+            ResourceName="ShapesStrokeColor" />
     </Page.Resources>
     <usercontrols:SamplePageControl
         Title="Gamepad"
@@ -95,7 +93,7 @@
                                         Canvas.Left="41"
                                         Canvas.Top="29"
                                         Height="121"
-                                        Source="ms-appx:///UnexpectedApis/Assets/Svg/Gamepad.svg" />
+                                        Source="{ThemeResource GamepadImage}" />
 
                                     <!--  Thumbsticks  -->
                                     <Ellipse
@@ -104,7 +102,7 @@
                                         Width="20"
                                         Height="20"
                                         Fill="{Binding ButtonLeftThumbstick, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="{Binding RightThumbstickXImage}"
@@ -112,7 +110,7 @@
                                         Width="20"
                                         Height="20"
                                         Fill="{Binding ButtonRightThumbstick, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
 
                                     <!--  AXYB Buttons  -->
@@ -122,7 +120,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding ButtonA, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="157"
@@ -130,7 +128,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding ButtonX, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="166.5"
@@ -138,7 +136,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding ButtonY, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="177"
@@ -146,7 +144,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding ButtonB, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
 
                                     <!--  DPad  -->
@@ -156,7 +154,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding DPadDown, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="90"
@@ -164,7 +162,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding DPadLeft, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="100"
@@ -172,7 +170,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding DPadUp, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="110"
@@ -180,7 +178,7 @@
                                         Width="11"
                                         Height="11"
                                         Fill="{Binding DPadRight, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
 
                                     <!--  View and Menu  -->
@@ -190,7 +188,7 @@
                                         Width="10"
                                         Height="10"
                                         Fill="{Binding ButtonView, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Ellipse
                                         Canvas.Left="136"
@@ -198,7 +196,7 @@
                                         Width="10"
                                         Height="10"
                                         Fill="{Binding ButtonMenu, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
 
                                     <!--  Paddles  -->
@@ -210,7 +208,7 @@
                                         Fill="{Binding ButtonPaddle1, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
                                         RadiusX="3"
                                         RadiusY="3"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Rectangle
                                         Canvas.Left="93"
@@ -220,7 +218,7 @@
                                         Fill="{Binding ButtonPaddle2, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
                                         RadiusX="3"
                                         RadiusY="3"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Rectangle
                                         Canvas.Left="139"
@@ -230,7 +228,7 @@
                                         Fill="{Binding ButtonPaddle3, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
                                         RadiusX="3"
                                         RadiusY="3"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Rectangle
                                         Canvas.Left="139"
@@ -240,7 +238,7 @@
                                         Fill="{Binding ButtonPaddle4, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
                                         RadiusX="3"
                                         RadiusY="3"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
 
                                     <!--  Shoulder Buttons  -->
@@ -252,7 +250,7 @@
                                         Fill="{Binding ButtonLeftShoulder, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
                                         RadiusX="3"
                                         RadiusY="3"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
                                     <Rectangle
                                         Canvas.Left="155"
@@ -262,7 +260,7 @@
                                         Fill="{Binding ButtonRightShoulder, Converter={StaticResource TrueToFilled}, FallbackValue=Transparent}"
                                         RadiusX="3"
                                         RadiusY="3"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2" />
 
                                     <!--  Triggers  -->
@@ -272,11 +270,10 @@
                                         Height="17"
                                         RadiusX="6"
                                         RadiusY="6"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2">
                                         <Rectangle.Fill>
-                                            <SolidColorBrush Opacity="{Binding LeftTrigger}" Color="#A1A1A1" />
-
+                                            <SolidColorBrush Opacity="{Binding LeftTriggerImage}" Color="{ThemeResource ShapesFillColor}" />
                                         </Rectangle.Fill>
                                     </Rectangle>
                                     <Rectangle
@@ -285,11 +282,10 @@
                                         Height="17"
                                         RadiusX="6"
                                         RadiusY="6"
-                                        Stroke="{StaticResource ShapesStrokeColor}"
+                                        Stroke="{ThemeResource ShapesStrokeColor}"
                                         StrokeThickness="2">
                                         <Rectangle.Fill>
-                                            <SolidColorBrush Opacity="{Binding RightTrigger}" Color="#A1A1A1" />
-
+                                            <SolidColorBrush Opacity="{Binding RightTriggerImage}" Color="{ThemeResource ShapesFillColor}" />
                                         </Rectangle.Fill>
                                     </Rectangle>
                                 </Canvas>
