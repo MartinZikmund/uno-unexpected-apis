@@ -1,16 +1,7 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnexpectedApis.ViewModels.Items;
-using Windows.Gaming.Input;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Navigation;
-using UnexpectedApis.ViewModels;
 using Microsoft.UI.Dispatching;
-using System.Reflection;
+using UnexpectedApis.ViewModels;
+using Windows.Gaming.Input;
 
 namespace UnexpectedApis.Views;
 
@@ -58,13 +49,13 @@ public class GamepadSamplePageViewModel : ViewModelBase
     private const string _startObservingContent = "Start observing gamepad changes";
     private const string _stopObservingContent = "Stop observing gamepad changes";
 
-    private DispatcherTimer _timer = new DispatcherTimer();
+    private readonly DispatcherTimer _timer = new();
 
     public bool ObservingChanges { get => GetProperty<bool>(); set => SetProperty(value); }
 
     public string ButtonText { get => GetProperty<string>()!; set => SetProperty(value); }
 
-    public ObservableCollection<GamepadViewModel> AvailableGamepads { get; } = new ObservableCollection<GamepadViewModel>();
+    public ObservableCollection<GamepadViewModel> AvailableGamepads { get; } = [];
 
 
     public GamepadSamplePageViewModel()
@@ -140,16 +131,11 @@ public class GamepadSamplePageViewModel : ViewModelBase
     }
 }
 
-public class GamepadViewModel : ViewModelBase
+public class GamepadViewModel(Gamepad gamepad) : ViewModelBase
 {
-    public GamepadViewModel(Gamepad gamepad)
-    {
-        Gamepad = gamepad;
-    }
-
     public int Position { get => GetProperty<int>(); set => SetProperty(value); }
 
-    public Gamepad Gamepad { get; }
+    public Gamepad Gamepad { get; } = gamepad;
 
     public void Update()
     {
@@ -193,6 +179,9 @@ public class GamepadViewModel : ViewModelBase
 
         LeftTrigger = reading.LeftTrigger.ToString("0.00");
         RightTrigger = reading.RightTrigger.ToString("0.00");
+
+        LeftTriggerImage = reading.LeftTrigger;
+        RightTriggerImage = reading.RightTrigger;
     }
 
     public string Buttons { get => GetProperty<string>(); private set => SetProperty(value); }
@@ -204,6 +193,9 @@ public class GamepadViewModel : ViewModelBase
 
     public string LeftTrigger { get => GetProperty<string>(); private set => SetProperty(value); }
     public string RightTrigger { get => GetProperty<string>(); private set => SetProperty(value); }
+
+    public double LeftTriggerImage { get => GetProperty<double>(); private set => SetProperty(value); }
+    public double RightTriggerImage { get => GetProperty<double>(); private set => SetProperty(value); }
 
     public bool ButtonLeftThumbstick { get => GetProperty<bool>(); private set => SetProperty(value); }
     public bool ButtonRightThumbstick { get => GetProperty<bool>(); private set => SetProperty(value); }

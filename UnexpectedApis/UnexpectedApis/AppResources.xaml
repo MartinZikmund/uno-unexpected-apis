@@ -12,9 +12,15 @@
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
             <SolidColorBrush x:Key="HeaderBackground" Color="#111" />
+            <SolidColorBrush x:Key="ShapesStrokeColor" Color="#EEE" />
+            <Color x:Key="ShapesFillColor">#EEE</Color>
+        <ImageSource x:Key="GamepadImage">ms-appx:///UnexpectedApis/Assets/Svg/gamepad_light.svg</ImageSource>
         </ResourceDictionary>
         <ResourceDictionary x:Key="Light">
             <SolidColorBrush x:Key="HeaderBackground" Color="#EEE" />
+            <SolidColorBrush x:Key="ShapesStrokeColor" Color="#111" />
+            <Color x:Key="ShapesFillColor">#111</Color>
+            <ImageSource x:Key="GamepadImage">ms-appx:///UnexpectedApis/Assets/Svg/gamepad_dark.svg</ImageSource>
         </ResourceDictionary>
     </ResourceDictionary.ThemeDictionaries>
 
