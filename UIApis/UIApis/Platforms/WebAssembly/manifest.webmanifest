@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "UIApis",
+  "display": "standalone",
+  "name": "UIApis",
+  "short_name": "UIApis",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
