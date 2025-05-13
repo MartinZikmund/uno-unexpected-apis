@@ -44,7 +44,7 @@
             <BitmapIcon
                 Width="32"
                 ShowAsMonochrome="False"
-                UriSource="ms-appx:///UIApis/Assets/Docs.png" />
+                UriSource="ms-appx:///Assets/Docs.png" />
         </HyperlinkButton>
         <!--<Image
             x:Name="WindowsImage"
