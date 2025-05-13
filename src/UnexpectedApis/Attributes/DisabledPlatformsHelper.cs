@@ -54,10 +54,10 @@ internal static class DisabledPlatformsHelper
             DisabledPlatforms.NativeIOS => IsNativeIOS(),
             DisabledPlatforms.NativeMacCatalyst => IsNativeMacCatalyst(),
             DisabledPlatforms.NativeTvOS => IsNativetvOS(),
-            DisabledPlatforms.SkiaWin32 => IsSkia() && IsSkiaWin32(),
-            DisabledPlatforms.SkiaX11 => IsSkia() && IsSkiaX11(),
-            DisabledPlatforms.SkiaMacOS => IsSkia() && IsSkiaMacOS(),
-            DisabledPlatforms.SkiaIslands => IsSkia() && IsSkiaIslands(),
+            DisabledPlatforms.SkiaWin32 => IsSkiaWin32(),
+            DisabledPlatforms.SkiaX11 => IsSkiaX11(),
+            DisabledPlatforms.SkiaMacOS => IsSkiaMacOS(),
+            DisabledPlatforms.SkiaIslands => IsSkiaIslands(),
             DisabledPlatforms.SkiaWasm => IsSkia() && OperatingSystem.IsBrowser(),
             DisabledPlatforms.SkiaAndroid => IsSkia() && OperatingSystem.IsAndroid(),
             DisabledPlatforms.SkiaIOS => IsSkia() && OperatingSystem.IsIOS(),
@@ -77,7 +77,12 @@ internal static class DisabledPlatformsHelper
         return hostAssembly != null;
     }
 
-    private static bool IsSkia() => true;
+    private static bool IsSkia() =>
+#if __UNO_SKIA__
+        true;
+#else
+        false;
+#endif
 
     private static bool IsWinUI() =>
 #if WINAPPSDK
@@ -93,17 +98,11 @@ internal static class DisabledPlatformsHelper
            HasSkiaHostAssembly("Uno.UI.Runtime.Skia.MacOS") ||
            HasSkiaHostAssembly("Uno.UI.Runtime.Skia.Islands");
 
-    private static bool IsSkiaWin32()
-        => IsSkiaDesktop() && OperatingSystem.IsWindows();
+    private static bool IsSkiaWin32() => IsSkia() && !IsWinUI() && OperatingSystem.IsWindows();
 
-    private static bool IsSkiaX11()
-        => IsSkiaDesktop() && OperatingSystem.IsLinux();
+    private static bool IsSkiaX11() => IsSkia() && OperatingSystem.IsLinux();
 
-    private static bool IsSkiaMacOS()
-        => IsSkiaDesktop() && OperatingSystem.IsMacOS();
-
-    private static bool IsSkiaBrowser()
-        => HasSkiaHostAssembly("Uno.UI.Runtime.Skia.WebAssembly.Browser");
+    private static bool IsSkiaMacOS() => IsSkia() && OperatingSystem.IsMacOS();
 
     private static bool IsSkiaIslands()
 #if __SKIA__
@@ -112,48 +111,13 @@ internal static class DisabledPlatformsHelper
         => false;
 #endif
 
-    private static bool IsNativeWasm()
-    {
-#if __WASM__
-		return true;
-#else
-        return false;
-#endif
-    }
+    private static bool IsNativeWasm() => !IsSkia() && OperatingSystem.IsBrowser();
 
-    private static bool IsNativeAndroid()
-    {
-#if __ANDROID__
-        return true;
-#else
-		return false;
-#endif
-    }
+    private static bool IsNativeAndroid() => !IsSkia() && OperatingSystem.IsAndroid();
 
-    private static bool IsNativeIOS()
-    {
-#if __IOS__
-		return true;
-#else
-        return false;
-#endif
-    }
+    private static bool IsNativeIOS() => !IsSkia() && OperatingSystem.IsIOS();
 
-    private static bool IsNativetvOS()
-    {
-#if __TVOS__
-		return true;
-#else
-        return false;
-#endif
-    }
+    private static bool IsNativetvOS() => !IsSkia() && OperatingSystem.IsTvOS();
 
-    private static bool IsNativeMacCatalyst()
-    {
-#if __MACCATALYST__
-		return true;
-#else
-        return false;
-#endif
-    }
+    private static bool IsNativeMacCatalyst() => !IsSkia() && OperatingSystem.IsMacCatalyst();
 }
