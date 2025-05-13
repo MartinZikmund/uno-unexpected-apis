@@ -13,7 +13,7 @@ public enum DisabledPlatforms
     NativeTvOS = 1 << 5,
 
     // Skia platforms
-    SkiaWpf = 1 << 6,
+    //SkiaWpf = 1 << 6,
     SkiaWin32 = 1 << 7,
     SkiaX11 = 1 << 8,
     SkiaMacOS = 1 << 9,
@@ -28,7 +28,7 @@ public enum DisabledPlatforms
     NativeUIKit = NativeIOS | NativeTvOS | NativeMacCatalyst,
     SkiaUIKit = SkiaIOS | SkiaTvOS | SkiaMacCatalyst,
     SkiaMobile = SkiaAndroid | SkiaUIKit,
-    SkiaDesktop = SkiaWpf | SkiaWin32 | SkiaX11 | SkiaMacOS | SkiaIslands,
+    SkiaDesktop = SkiaWin32 | SkiaX11 | SkiaMacOS | SkiaIslands,
     Skia = SkiaDesktop | SkiaWasm | SkiaMobile,
     Native = NativeWasm | NativeAndroid | NativeIOS | NativeMacCatalyst | NativeTvOS | NativeWinUI,
 }

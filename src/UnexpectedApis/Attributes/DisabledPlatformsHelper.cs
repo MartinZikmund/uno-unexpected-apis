@@ -54,7 +54,6 @@ internal static class DisabledPlatformsHelper
             DisabledPlatforms.NativeIOS => IsNativeIOS(),
             DisabledPlatforms.NativeMacCatalyst => IsNativeMacCatalyst(),
             DisabledPlatforms.NativeTvOS => IsNativetvOS(),
-            DisabledPlatforms.SkiaWpf => IsSkia() && IsSkiaWpf(),
             DisabledPlatforms.SkiaWin32 => IsSkia() && IsSkiaWin32(),
             DisabledPlatforms.SkiaX11 => IsSkia() && IsSkiaX11(),
             DisabledPlatforms.SkiaMacOS => IsSkia() && IsSkiaMacOS(),
@@ -68,19 +67,17 @@ internal static class DisabledPlatformsHelper
         };
     }
 
-    private static bool IsSkiaHostAssembly(string name)
-#if __SKIA__
-		=> Microsoft.UI.Xaml.Application.Current.Host?.GetType().Assembly.GetName().Name == name;
-#else
-        => false;
-#endif
+    private static bool HasSkiaHostAssembly(string name)
+    {
+        var assembly = typeof(DisabledPlatformsHelper).Assembly;
+        var referencedAssemblies = assembly.GetReferencedAssemblies();
+        var hostAssembly = referencedAssemblies
+            .FirstOrDefault(a => a.Name == name);
+        
+        return hostAssembly != null;
+    }
 
-    private static bool IsSkia() =>
-#if __SKIA__
-		true;
-#else
-        false;
-#endif
+    private static bool IsSkia() => true;
 
     private static bool IsWinUI() =>
 #if WINAPPSDK
@@ -89,20 +86,24 @@ internal static class DisabledPlatformsHelper
         false;
 #endif
 
-    private static bool IsSkiaWpf()
-        => IsSkiaHostAssembly("Uno.UI.Runtime.Skia.Wpf");
+    private static bool IsSkiaDesktop()
+        => HasSkiaHostAssembly("Uno.UI.Runtime.Skia.Wpf") ||
+           HasSkiaHostAssembly("Uno.UI.Runtime.Skia.Win32") ||
+           HasSkiaHostAssembly("Uno.UI.Runtime.Skia.X11") ||
+           HasSkiaHostAssembly("Uno.UI.Runtime.Skia.MacOS") ||
+           HasSkiaHostAssembly("Uno.UI.Runtime.Skia.Islands");
 
     private static bool IsSkiaWin32()
-        => IsSkiaHostAssembly("Uno.UI.Runtime.Skia.Win32");
+        => IsSkiaDesktop() && OperatingSystem.IsWindows();
 
     private static bool IsSkiaX11()
-        => IsSkiaHostAssembly("Uno.UI.Runtime.Skia.X11");
+        => IsSkiaDesktop() && OperatingSystem.IsLinux();
 
     private static bool IsSkiaMacOS()
-        => IsSkiaHostAssembly("Uno.UI.Runtime.Skia.MacOS");
+        => IsSkiaDesktop() && OperatingSystem.IsMacOS();
 
     private static bool IsSkiaBrowser()
-        => IsSkiaHostAssembly("Uno.UI.Runtime.Skia.WebAssembly.Browser");
+        => HasSkiaHostAssembly("Uno.UI.Runtime.Skia.WebAssembly.Browser");
 
     private static bool IsSkiaIslands()
 #if __SKIA__

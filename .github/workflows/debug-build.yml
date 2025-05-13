@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   smoke_test:
-    name: Smoke Test (Debug Build of Event Countdowns)
+    name: Smoke Test (Debug Build of Unexpected APIs)
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -32,6 +32,6 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.3.1
 
-      - name: Build Event Countdowns (Debug)
+      - name: Build Unexpected APIs (Debug)
         shell: pwsh
         run: msbuild ./src/UnexpectedApis/UnexpectedApis.csproj /r
