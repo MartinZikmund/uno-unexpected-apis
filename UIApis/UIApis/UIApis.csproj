@@ -26,10 +26,16 @@
       MediaElement;
     </UnoFeatures>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Update="Views\MediaPlayerElementPage.xaml.cs">
-      <DependentUpon>MediaPlayerElementPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.WinUI.Converters" />
+    </ItemGroup>
+    
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+        <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    </ItemGroup>
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
+        <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    </ItemGroup>
 
 </Project>
