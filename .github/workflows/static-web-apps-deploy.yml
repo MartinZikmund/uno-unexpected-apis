@@ -30,6 +30,8 @@ jobs:
         uses: actions/setup-dotnet@v4.2.0
         with:
           dotnet-version: 9.x
+      - name: Install Dependencies
+        uses: "./.github/steps/install_dependencies"
       - run: |
           cd src/UnexpectedApis
           dotnet workload restore
