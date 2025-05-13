@@ -15,103 +15,221 @@
         IsSettingsVisible="False"
         ItemInvoked="NavigationView_ItemInvoked">
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Hello!" Tag="Hello">
+            <NavigationViewItem
+                Content="Hello!"
+                Tag="Hello">
                 <NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
+                    <BitmapIcon
+                        ShowAsMonochrome="False"
+                        UriSource="ms-appx:///Assets/Samples/Hello.png" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Non-UI APIs" ToolTipService.ToolTip="Non-UI APIs">
-            </NavigationViewItem>
-            <NavigationViewItem Content="Non-UI APIs" ToolTipService.ToolTip="Non-UI APIs">
+            <NavigationViewItem
+                Content="UI APIs"
+                ToolTipService.ToolTip="UI APIs">
                 <NavigationViewItem.MenuItems>
-                    <NavigationViewItem Content="Network Information" Tag="NetworkInformation">
+                    <NavigationViewItem
+                        Content="MediaPlayerElement"
+                        Tag="MediaPlayerElement">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/MediaPlayerElement.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Geolocator" Tag="Geolocator">
+                    <NavigationViewItem
+                        Content="DataGrid"
+                        Tag="DataGrid">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Geolocator.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/DataGrid.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
+                    <NavigationViewItem
+                        Content="SKCanvasElement"
+                        Tag="SKCanvasElement">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/SKCanvasElement.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Sharing" Tag="Sharing">
+                    <NavigationViewItem
+                        Content="GLCanvasElement"
+                        Tag="GLCanvasElement">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Sharing.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/GLCanvasElement.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Speech Recognizer" Tag="SpeechRecognizer">
+                </NavigationViewItem.MenuItems>
+            </NavigationViewItem>
+            <NavigationViewItem
+                Content="Non-UI APIs"
+                ToolTipService.ToolTip="Non-UI APIs">
+                <NavigationViewItem.MenuItems>
+                    <NavigationViewItem
+                        Content="Network Information"
+                        Tag="NetworkInformation">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/NetworkInformation.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="File System" Tag="FileSystem">
+                    <NavigationViewItem
+                        Content="Geolocator"
+                        Tag="Geolocator">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/FileSystem.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Geolocator.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Ambient Light" Tag="AmbientLight">
+                    <NavigationViewItem
+                        Content="Accelerometer"
+                        Tag="Accelerometer">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/AmbientLight.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Accelerometer.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Gamepad" Tag="Gamepad">
+                    <NavigationViewItem
+                        Content="Sharing"
+                        Tag="Sharing">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Gamepad.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Sharing.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Clipboard" Tag="Clipboard">
+                    <NavigationViewItem
+                        Content="Speech Recognizer"
+                        Tag="SpeechRecognizer">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/SpeechRecognizer.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Flashlight" Tag="Flashlight">
+                    <NavigationViewItem
+                        Content="File System"
+                        Tag="FileSystem">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Flashlight.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/FileSystem.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="MIDI" Tag="Midi">
+                    <NavigationViewItem
+                        Content="Ambient Light"
+                        Tag="AmbientLight">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/AmbientLight.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Keep Screen On" Tag="DisplayRequest">
+                    <NavigationViewItem
+                        Content="Gamepad"
+                        Tag="Gamepad">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Gamepad.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Titlebar" Tag="TitleBar">
+                    <NavigationViewItem
+                        Content="Clipboard"
+                        Tag="Clipboard">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Clipboard.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Badge Notification" Tag="BadgeNotification">
+                    <NavigationViewItem
+                        Content="Flashlight"
+                        Tag="Flashlight">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/BadgeNotification.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Flashlight.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Vibration" Tag="Vibration">
+                    <NavigationViewItem
+                        Content="MIDI"
+                        Tag="Midi">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Midi.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Compass" Tag="Compass">
+                    <NavigationViewItem
+                        Content="Keep Screen On"
+                        Tag="DisplayRequest">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Compass.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/DisplayRequest.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Battery" Tag="Power">
+                    <NavigationViewItem
+                        Content="Titlebar"
+                        Tag="TitleBar">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Compass.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/TitleBar.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
-                    <NavigationViewItem Content="Hinge Angle" Tag="HingeAngle">
+                    <NavigationViewItem
+                        Content="Badge Notification"
+                        Tag="BadgeNotification">
                         <NavigationViewItem.Icon>
-                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/HingeAngle.png" />
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/BadgeNotification.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem
+                        Content="Vibration"
+                        Tag="Vibration">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Vibration.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem
+                        Content="Compass"
+                        Tag="Compass">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Compass.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem
+                        Content="Battery"
+                        Tag="Power">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/Compass.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem
+                        Content="Hinge Angle"
+                        Tag="HingeAngle">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon
+                                ShowAsMonochrome="False"
+                                UriSource="ms-appx:///Assets/Samples/HingeAngle.png" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
                     <!--<NavigationViewItem Content="Jump List" Tag="JumpList">
@@ -137,7 +255,9 @@
         </NavigationView.Content>
         <NavigationView.PaneFooter>
             <StackPanel Padding="12">
-                <TextBlock FontSize="20" Text="Try me at:" />
+                <TextBlock
+                    FontSize="20"
+                    Text="Try me at:" />
                 <HyperlinkButton
                     FontSize="18"
                     FontWeight="Bold"
