@@ -29,6 +29,7 @@
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.WinUI.Converters" />
+        <PackageReference Include="Uno.Core.Extensions.Disposables" />
     </ItemGroup>
 
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">

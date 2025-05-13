@@ -28,7 +28,7 @@ public class Plant : IComparable
     public IEnumerable<FruitOrVegetableEnum> FruitOrVegetableEnumValues { get; } =
         Enum.GetValues(typeof(FruitOrVegetableEnum)).Cast<FruitOrVegetableEnum>();
 
-    public int CompareTo(object obj)
+    public int CompareTo(object? obj)
     {
         if (obj == null)
             return 1;
