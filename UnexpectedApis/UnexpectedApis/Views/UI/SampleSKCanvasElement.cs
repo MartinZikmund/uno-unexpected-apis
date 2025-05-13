@@ -3,7 +3,7 @@ using SkiaSharp;
 using Uno.WinUI.Graphics2DSK;
 using Windows.Foundation;
 
-namespace UIApis.Views;
+namespace UnexpectedApis.Views;
 
 public class SampleSKCanvasElement : SKCanvasElement
 {

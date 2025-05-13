@@ -16,10 +16,10 @@ using System;
 using System.Diagnostics;
 using System.Numerics;
 using Silk.NET.OpenGL;
-using UIApis;
+using UnexpectedApis;
 using Uno.WinUI.Graphics3DGL;
 
-namespace UIApis.Views
+namespace UnexpectedApis.Views
 {
     // Note: App.xaml.cs was modified so that MainWindow is public
 	public class RotatingCubeGlCanvasElement() : GLCanvasElement(() => ((App)Application.Current).MainWindow)

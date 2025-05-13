@@ -1,6 +1,6 @@
-using UIApis.ViewModels;
+using UnexpectedApis.ViewModels;
 
-namespace UIApis.Views;
+namespace UnexpectedApis.Views;
 
 public sealed partial class SKCanvasElementPage : SamplePage
 {

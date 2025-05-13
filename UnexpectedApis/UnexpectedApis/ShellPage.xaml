@@ -9,127 +9,133 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <mux:NavigationView
+    <NavigationView
         x:Name="Menu"
         IsBackButtonVisible="Collapsed"
         IsSettingsVisible="False"
         ItemInvoked="NavigationView_ItemInvoked">
-        <mux:NavigationView.MenuItems>
-            <mux:NavigationViewItem Content="Hello!" Tag="Hello">
-                <mux:NavigationViewItem.Icon>
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Hello!" Tag="Hello">
+                <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Hello.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Network Information" Tag="NetworkInformation">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Geolocator" Tag="Geolocator">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Geolocator.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Sharing" Tag="Sharing">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Sharing.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Speech Recognizer" Tag="SpeechRecognizer">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="File System" Tag="FileSystem">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/FileSystem.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Ambient Light" Tag="AmbientLight">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/AmbientLight.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Gamepad" Tag="Gamepad">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Gamepad.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Clipboard" Tag="Clipboard">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Flashlight" Tag="Flashlight">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Flashlight.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="MIDI" Tag="Midi">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Keep Screen On" Tag="DisplayRequest">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Titlebar" Tag="TitleBar">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Badge Notification" Tag="BadgeNotification">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/BadgeNotification.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Vibration" Tag="Vibration">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Compass" Tag="Compass">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Compass.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Battery" Tag="Power">
-              <mux:NavigationViewItem.Icon>
-                <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Compass.png" />
-              </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Hinge Angle" Tag="HingeAngle">
-                <mux:NavigationViewItem.Icon>
-                    <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/HingeAngle.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <!--<mux:NavigationViewItem Content="Jump List" Tag="JumpList">
-                <mux:NavigationViewItem.Icon>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Non-UI APIs" ToolTipService.ToolTip="Non-UI APIs">
+            </NavigationViewItem>
+            <NavigationViewItem Content="Non-UI APIs" ToolTipService.ToolTip="Non-UI APIs">
+                <NavigationViewItem.MenuItems>
+                    <NavigationViewItem Content="Network Information" Tag="NetworkInformation">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/NetworkInformation.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Geolocator" Tag="Geolocator">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Geolocator.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Accelerometer" Tag="Accelerometer">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Accelerometer.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Sharing" Tag="Sharing">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Sharing.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Speech Recognizer" Tag="SpeechRecognizer">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/SpeechRecognizer.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="File System" Tag="FileSystem">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/FileSystem.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Ambient Light" Tag="AmbientLight">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/AmbientLight.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Gamepad" Tag="Gamepad">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Gamepad.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Clipboard" Tag="Clipboard">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Clipboard.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Flashlight" Tag="Flashlight">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Flashlight.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="MIDI" Tag="Midi">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Midi.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Keep Screen On" Tag="DisplayRequest">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/DisplayRequest.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Titlebar" Tag="TitleBar">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/TitleBar.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Badge Notification" Tag="BadgeNotification">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/BadgeNotification.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Vibration" Tag="Vibration">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Vibration.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Compass" Tag="Compass">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Compass.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Battery" Tag="Power">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/Compass.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Content="Hinge Angle" Tag="HingeAngle">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/HingeAngle.png" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <!--<NavigationViewItem Content="Jump List" Tag="JumpList">
+                <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/JumpList.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>-->
-            <!--<mux:NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
-                <mux:NavigationViewItem.Icon>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>-->
+                    <!--<NavigationViewItem Content="Coming soon!" Tag="ComingSoon">
+                <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ComingSoon.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Thank you!" Tag="ThankYou">
-                <mux:NavigationViewItem.Icon>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Thank you!" Tag="ThankYou">
+                <NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ThankYou.png" />
-                </mux:NavigationViewItem.Icon>
-            </mux:NavigationViewItem>-->
-        </mux:NavigationView.MenuItems>
-        <mux:NavigationView.Content>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>-->
+                </NavigationViewItem.MenuItems>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+        <NavigationView.Content>
             <Frame x:Name="RootFrame" />
-        </mux:NavigationView.Content>
-        <mux:NavigationView.PaneFooter>
+        </NavigationView.Content>
+        <NavigationView.PaneFooter>
             <StackPanel Padding="12">
                 <TextBlock FontSize="20" Text="Try me at:" />
                 <HyperlinkButton
@@ -143,6 +149,6 @@
                     </TextBlock>
                 </HyperlinkButton>
             </StackPanel>
-        </mux:NavigationView.PaneFooter>
-    </mux:NavigationView>
+        </NavigationView.PaneFooter>
+    </NavigationView>
 </Page>
