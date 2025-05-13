@@ -6,27 +6,13 @@ public sealed partial class MediaPlayerElementPage : SamplePage
 {
     public MediaPlayerElementPage()
     {
-        this.InitializeComponent();            
-        Model = new AccelerometerViewModel(DispatcherQueue);
-        DataContext = Model;
-        this.Unloaded += AccelerometerPage_Unloaded;
+        this.InitializeComponent();
     }
 
     public string Code =>
 """
-var accelerometer = Accelerometer.GetDefault();
-accelerometer.ReadingChanged += (s,e) =>
-{
-    var x = e.Reading.AccelerationX;
-    var y = e.Reading.AccelerationY;
-    var z = e.Reading.AccelerationZ;
-};
+<MediaPlayerElement
+    Source="ms-appx:///Assets/Media/sample.mp4"
+    AreTransportControlsEnabled="True" />
 """;
-
-    public AccelerometerViewModel Model { get; }
-
-    private void AccelerometerPage_Unloaded(object sender, RoutedEventArgs e)
-    {
-        Model.Dispose();
-    }
 }

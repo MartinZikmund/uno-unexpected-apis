@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <usercontrols:SamplePageControl
-        Title="Accelerometer"
+        Title="MediaPlayerElement"
         CodeSnippet="{x:Bind Code}"
         DocsUri="https://platform.uno/docs/articles/controls/MediaPlayerElement.html"
         IconUri="{x:Bind IconUri}">
