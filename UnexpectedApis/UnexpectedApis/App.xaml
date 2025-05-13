@@ -1,0 +1,45 @@
+﻿<Application x:Class="UnexpectedApis.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:localConverters="using:UnexpectedApis.Converters"
+             xmlns:converters="using:CommunityToolkit.WinUI.Converters">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Load WinUI resources -->
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <SolidColorBrush x:Key="HeaderBackground"
+                                     Color="#111" />
+                    <SolidColorBrush x:Key="ShapesStrokeColor"
+                                     Color="#EEE" />
+                    <Color x:Key="ShapesFillColor">#EEE</Color>
+                    <ImageSource x:Key="GamepadImage">ms-appx:///Assets/Svg/gamepad_light.svg</ImageSource>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="HeaderBackground"
+                                     Color="#EEE" />
+                    <SolidColorBrush x:Key="ShapesStrokeColor"
+                                     Color="#111" />
+                    <Color x:Key="ShapesFillColor">#111</Color>
+                    <ImageSource x:Key="GamepadImage">ms-appx:///Assets/Svg/gamepad_dark.svg</ImageSource>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <converters:BoolToVisibilityConverter x:Key="TrueToVisibleConverter"
+                                                  TrueValue="Visible"
+                                                  FalseValue="Collapsed" />
+            <converters:BoolToVisibilityConverter x:Key="FalseToVisibleConverter"
+                                                  TrueValue="Collapsed"
+                                                  FalseValue="Visible" />
+
+            <localConverters:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

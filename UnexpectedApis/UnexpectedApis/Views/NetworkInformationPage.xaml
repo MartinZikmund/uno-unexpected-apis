@@ -41,13 +41,13 @@
                     x:Name="OnlineImage"
                     Width="120"
                     Height="120"
-                    Source="ms-appx:///UnexpectedApis/Assets/Online.png"
+                    Source="ms-appx:///Assets/Online.png"
                     Visibility="Collapsed" />
                 <Image
                     x:Name="OfflineImage"
                     Width="120"
                     Height="120"
-                    Source="ms-appx:///UnexpectedApis/Assets/Offline.png"
+                    Source="ms-appx:///Assets/Offline.png"
                     Visibility="Collapsed" />
             </Grid>
         </StackPanel>

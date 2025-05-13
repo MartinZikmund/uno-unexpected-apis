@@ -15,7 +15,7 @@ public class JumpListViewModel : ViewModelBase
         Arguments = "Activated from JumpList",
         DisplayName = "UnoConf 2020",
         Description = "Your apps everywhere.",
-        Logo = new Uri("ms-appx:///UnexpectedApis/Assets/JumpList/xp.png")
+        Logo = new Uri("ms-appx:///Assets/JumpList/xp.png")
     };
 
     public JumpListViewModel()
@@ -25,9 +25,9 @@ public class JumpListViewModel : ViewModelBase
 
     public Uri[] Icons { get; } = new Uri[]
     {
-        new Uri("ms-appx:///UnexpectedApis/Assets/JumpList/xp.png"),
-        new Uri("ms-appx:///UnexpectedApis/Assets/JumpList/win10.png"),
-        new Uri("ms-appx:///UnexpectedApis/Assets/JumpList/computer.png"),
+        new Uri("ms-appx:///Assets/JumpList/xp.png"),
+        new Uri("ms-appx:///Assets/JumpList/win10.png"),
+        new Uri("ms-appx:///Assets/JumpList/computer.png"),
     };
 
     public bool IsSupported { get; }

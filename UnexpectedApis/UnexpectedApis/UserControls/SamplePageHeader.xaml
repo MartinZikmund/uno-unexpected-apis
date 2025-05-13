@@ -44,37 +44,37 @@
             <BitmapIcon
                 Width="32"
                 ShowAsMonochrome="False"
-                UriSource="ms-appx:///UnexpectedApis/Assets/Docs.png" />
+                UriSource="ms-appx:///Assets/Docs.png" />
         </HyperlinkButton>
         <!--<Image
             x:Name="WindowsImage"
             Grid.Column="1"
             Width="36"
-            Source="ms-appx:///UnexpectedApis/Assets/Windows.png"
+            Source="ms-appx:///Assets/Windows.png"
             Visibility="{x:Bind SupportsWindows, Mode=OneWay}" />
         <Image
             x:Name="AndroidImage"
             Grid.Column="2"
             Width="36"
-            Source="ms-appx:///UnexpectedApis/Assets/Android.png"
+            Source="ms-appx:///Assets/Android.png"
             Visibility="{x:Bind SupportsAndroid, Mode=OneWay}" />
         <Image
             x:Name="IosImage"
             Grid.Column="3"
             Width="36"
-            Source="ms-appx:///UnexpectedApis/Assets/Ios.png"
+            Source="ms-appx:///Assets/Ios.png"
             Visibility="{x:Bind SupportsIos, Mode=OneWay}" />
         <Image
             x:Name="MacosImage"
             Grid.Column="4"
             Width="36"
-            Source="ms-appx:///UnexpectedApis/Assets/Macos.png"
+            Source="ms-appx:///Assets/Macos.png"
             Visibility="{x:Bind SupportsMacos, Mode=OneWay}" />
         <Image
             x:Name="WasmImage"
             Grid.Column="5"
             Width="36"
-            Source="ms-appx:///UnexpectedApis/Assets/Wasm.png"
+            Source="ms-appx:///Assets/Wasm.png"
             Visibility="{x:Bind SupportsWasm, Mode=OneWay}" />-->
     </Grid>
 </UserControl>

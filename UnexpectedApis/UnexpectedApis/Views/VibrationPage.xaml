@@ -24,7 +24,7 @@
             <Image
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Source="ms-appx:///UnexpectedApis/Assets/VibrationBig.png"
+                Source="ms-appx:///Assets/VibrationBig.png"
                 Stretch="None" />
         </Button>
 

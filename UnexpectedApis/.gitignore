@@ -82,6 +82,8 @@ StyleCopReport.xml
 *.pgc
 *.pgd
 *.rsp
+# but not Directory.Build.rsp, as it configures directory-level build defaults
+!Directory.Build.rsp
 *.sbr
 *.tlb
 *.tli
@@ -153,6 +155,7 @@ coverage*.info
 
 # NCrunch
 _NCrunch_*
+.NCrunch_*
 .*crunch*.local.xml
 nCrunchTemp_*
 
@@ -399,5 +402,5 @@ FodyWeavers.xsd
 
 # Single Target Config
 solution-config.props
-# Windows Publish Profiles
-!**/*.Windows/Properties/PublishProfiles/*.pubxml
+# Publish Profiles
+!**/Properties/PublishProfiles/*.pubxml
