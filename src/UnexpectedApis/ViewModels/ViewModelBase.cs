@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Uno.Disposables;
 
 namespace UnexpectedApis.ViewModels;

@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Dispatching;
 using UnexpectedApis.ViewModels;
 using Windows.Devices.Sensors;

@@ -1,7 +1,9 @@
+using UnexpectedApis.Attributes;
 using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
+[Sample("GLCanvasElement", "GLCanvasElement.png", SampleKind.UI)]
 public sealed partial class GLCanvasElementPage : SamplePage
 {
     public GLCanvasElementPage()

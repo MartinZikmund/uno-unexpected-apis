@@ -23,6 +23,7 @@
             MediaElement;
             GLCanvas;
             Skia;
+            Mvvm;
         </UnoFeatures>
     </PropertyGroup>
 
