@@ -1,0 +1,75 @@
+﻿<Page x:Class="UnexpectedApis.Views.PowerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:usercontrols="using:UnexpectedApis.UserControls"
+      mc:Ignorable="d"
+      x:DefaultBindMode="OneWay"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="20" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <usercontrols:SamplePageHeader Title="Battery" />
+
+    <StackPanel Spacing="20"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Grid.Row="1">
+
+      <Grid>
+        <Image Source="ms-appx:///UnexpectedApis/Assets/Hello.png"
+               Height="120"
+               Visibility="{x:Bind ViewModel.IsDeviceCharging, Converter={StaticResource TrueToVisibleConverter}}"
+               ToolTipService.ToolTip="Device is Charging" />
+        <Image Source="ms-appx:///UnexpectedApis/Assets/Gamepad.png"
+               Height="120"
+               Visibility="{x:Bind ViewModel.IsDeviceCharging, Converter={StaticResource FalseToVisibleConverter}}"
+               ToolTipService.ToolTip="Device is not Charging" />
+      </Grid>
+
+      <Grid>
+        <Image Source="ms-appx:///UnexpectedApis/Assets/Gamepad.png"
+               Height="120"
+               Visibility="{x:Bind ViewModel.IsEnergySaving, Converter={StaticResource TrueToVisibleConverter}}"
+               ToolTipService.ToolTip="Energy saver is On" />
+        <Image Source="ms-appx:///UnexpectedApis/Assets/Hello.png"
+               Height="120"
+               Visibility="{x:Bind ViewModel.IsEnergySaving, Converter={StaticResource FalseToVisibleConverter}}"
+               ToolTipService.ToolTip="Energy saver is Off" />
+      </Grid>
+
+    </StackPanel>
+
+    <StackPanel Spacing="12"
+                Grid.Row="3">
+      <TextBlock HorizontalAlignment="Center"
+                 FontWeight="Bold"
+                 FontSize="20"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Center">
+
+          <Run Text="Battery Level: " />
+          <Run Text="{x:Bind ViewModel.RemainingChargePercent, Mode=OneWay}" />
+          <Run Text="%" />
+      </TextBlock>
+
+      <TextBlock HorizontalAlignment="Center"
+                 FontWeight="Bold"
+                 FontSize="20"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Center">
+
+          <Run Text="Remaining Discharge Time: " />
+          <Run Text="{x:Bind ViewModel.RemainingDischargeTimeString, Mode=OneWay}" />
+      </TextBlock>
+
+    </StackPanel>
+  </Grid>
+</Page>
