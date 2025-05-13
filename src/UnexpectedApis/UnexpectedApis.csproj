@@ -1,0 +1,44 @@
+﻿<Project Sdk="Uno.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
+
+        <OutputType>Exe</OutputType>
+        <UnoSingleProject>true</UnoSingleProject>
+
+        <!-- Display name -->
+        <ApplicationTitle>UnexpectedApis</ApplicationTitle>
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.UnexpectedApis</ApplicationId>
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+        <!-- Package Publisher -->
+        <ApplicationPublisher>domin</ApplicationPublisher>
+        <!-- Package Description -->
+        <Description>UnexpectedApis powered by Uno Platform.</Description>
+
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <UnoFeatures>
+            SkiaRenderer;
+            MediaElement;
+            GLCanvas;
+            Skia;
+            Mvvm;
+        </UnoFeatures>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.WinUI.Converters" />
+        <PackageReference Include="Uno.Core.Extensions.Collections" />
+        <PackageReference Include="Uno.Core.Extensions.Disposables" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+        <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    </ItemGroup>
+    
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
+        <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    </ItemGroup>
+
+</Project>
