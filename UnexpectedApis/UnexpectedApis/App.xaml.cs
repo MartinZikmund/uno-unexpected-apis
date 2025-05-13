@@ -1,6 +1,5 @@
 using System;
 using Microsoft.Extensions.Logging;
-using Uno.Resizetizer;
 
 namespace UnexpectedApis;
 public partial class App : Application
@@ -47,7 +46,6 @@ public partial class App : Application
             rootFrame.Navigate(typeof(ShellPage), args.Arguments);
         }
 
-        MainWindow.SetWindowIcon();
         // Ensure the current window is active
         MainWindow.Activate();
     }
