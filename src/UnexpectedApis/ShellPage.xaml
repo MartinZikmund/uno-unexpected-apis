@@ -27,11 +27,13 @@
             <NavigationViewItem
                 x:Name="UIApisItem"
                 Content="UI APIs"
+                IsExpanded="True"
                 ToolTipService.ToolTip="UI APIs">
             </NavigationViewItem>
             <NavigationViewItem
                 x:Name="NonUIApisItem"
                 Content="Non-UI APIs"
+                IsExpanded="True"
                 ToolTipService.ToolTip="Non-UI APIs">
                 <NavigationViewItem.MenuItems>
                     <NavigationViewItem
