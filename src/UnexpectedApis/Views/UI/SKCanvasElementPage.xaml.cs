@@ -1,7 +1,9 @@
+using UnexpectedApis.Attributes;
 using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
+[Sample("SKCanvasElement", "SKCanvasElement.png", SampleKind.UI, DisabledPlatforms.Native | DisabledPlatforms.SkiaWasm)]
 public sealed partial class SKCanvasElementPage : SamplePage
 {
 #if DESKTOP
