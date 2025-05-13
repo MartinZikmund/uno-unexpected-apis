@@ -33,6 +33,13 @@
                                 UriSource="ms-appx:///UIApis/Assets/Geolocator.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
+            <mux:NavigationViewItem Content="Community Toolkit DataGrid"
+                                    Tag="DataGrid">
+                <mux:NavigationViewItem.Icon>
+                    <BitmapIcon ShowAsMonochrome="False"
+                                UriSource="ms-appx:///UIApis/Assets/Samples/DataGrid.png" />
+                </mux:NavigationViewItem.Icon>
+            </mux:NavigationViewItem>
         </mux:NavigationView.MenuItems>
         <mux:NavigationView.Content>
             <Frame x:Name="RootFrame" />
