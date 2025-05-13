@@ -1,9 +1,11 @@
 using CommunityToolkit.WinUI.UI.Controls;
+using UnexpectedApis.Attributes;
 using UnexpectedApis.Model;
 using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
+[Sample("DataGrid", "DataGrid.png", SampleKind.UI)]
 public sealed partial class DataGridPage : SamplePage
 {
     public DataGridPage()

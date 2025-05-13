@@ -25,48 +25,12 @@
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem
+                x:Name="UIApisItem"
                 Content="UI APIs"
                 ToolTipService.ToolTip="UI APIs">
-                <NavigationViewItem.MenuItems>
-                    <NavigationViewItem
-                        Content="MediaPlayerElement"
-                        Tag="MediaPlayerElement">
-                        <NavigationViewItem.Icon>
-                            <BitmapIcon
-                                ShowAsMonochrome="False"
-                                UriSource="ms-appx:///Assets/Samples/MediaPlayerElement.png" />
-                        </NavigationViewItem.Icon>
-                    </NavigationViewItem>
-                    <NavigationViewItem
-                        Content="DataGrid"
-                        Tag="DataGrid">
-                        <NavigationViewItem.Icon>
-                            <BitmapIcon
-                                ShowAsMonochrome="False"
-                                UriSource="ms-appx:///Assets/Samples/DataGrid.png" />
-                        </NavigationViewItem.Icon>
-                    </NavigationViewItem>
-                    <NavigationViewItem
-                        Content="SKCanvasElement"
-                        Tag="SKCanvasElement">
-                        <NavigationViewItem.Icon>
-                            <BitmapIcon
-                                ShowAsMonochrome="False"
-                                UriSource="ms-appx:///Assets/Samples/SKCanvasElement.png" />
-                        </NavigationViewItem.Icon>
-                    </NavigationViewItem>
-                    <NavigationViewItem
-                        Content="GLCanvasElement"
-                        Tag="GLCanvasElement">
-                        <NavigationViewItem.Icon>
-                            <BitmapIcon
-                                ShowAsMonochrome="False"
-                                UriSource="ms-appx:///Assets/Samples/GLCanvasElement.png" />
-                        </NavigationViewItem.Icon>
-                    </NavigationViewItem>
-                </NavigationViewItem.MenuItems>
             </NavigationViewItem>
             <NavigationViewItem
+                x:Name="NonUIApisItem"
                 Content="Non-UI APIs"
                 ToolTipService.ToolTip="Non-UI APIs">
                 <NavigationViewItem.MenuItems>

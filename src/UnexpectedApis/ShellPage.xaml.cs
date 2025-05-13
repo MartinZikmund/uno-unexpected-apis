@@ -6,6 +6,8 @@ using Microsoft.UI.Xaml.Navigation;
 using NavigationView = Microsoft.UI.Xaml.Controls.NavigationView;
 using NavigationViewItemInvokedEventArgs = Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs;
 using NavigationViewItem = Microsoft.UI.Xaml.Controls.NavigationViewItem;
+using System.Reflection;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis;
 
@@ -14,6 +16,41 @@ public sealed partial class ShellPage : Page
     public ShellPage()
     {
         this.InitializeComponent();
+        FindSamples();
+    }
+
+    private void FindSamples()
+    {
+        var samples = this.GetType().Assembly.GetTypes()
+            .Where(t => t.IsSubclassOf(typeof(SamplePage)))
+            .Where(t => t.GetCustomAttribute<SampleAttribute>() is not null)
+            .OrderBy(t => t.GetCustomAttribute<SampleAttribute>()!.DisplayName)
+            .ToArray();
+
+        foreach (var sample in samples)
+        {
+            var sampleAttribute = sample.GetCustomAttribute<SampleAttribute>()!;
+
+            var item = new NavigationViewItem
+            {
+                Content = sampleAttribute.DisplayName,
+                Tag = sample.Name,
+                Icon = new BitmapIcon() { ShowAsMonochrome = false, UriSource = sampleAttribute.IconUri },
+            };
+
+            if (sampleAttribute.Kind == SampleKind.UI)
+            {
+                UIApisItem.MenuItems.Add(item);
+            }
+            else if (sampleAttribute.Kind == SampleKind.NonUI)
+            {
+                NonUIApisItem.MenuItems.Add(item);
+            }
+            else
+            {
+                throw new NotSupportedException($"Sample kind {sampleAttribute.Kind} is not supported.");
+            }
+        }
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
