@@ -21,7 +21,8 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Button HorizontalAlignment="Center" Click="{x:Bind NextSample}">Next sample</Button>
-                <local:SampleSKCanvasElement x:Name="CanvasElement" Grid.Row="1" />
+                <Grid Grid.Row="1" x:Name="SKContainer">
+                </Grid>
             </skia:Grid>
             <not_skia:TextBlock Text="This sample is only supported on skia." />
         </Grid>

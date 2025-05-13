@@ -6,10 +6,10 @@ public sealed partial class GLCanvasElementPage : SamplePage
 {
     public GLCanvasElementPage()
     {
-        this.InitializeComponent();            
-        Model = new AccelerometerViewModel(DispatcherQueue);
-        DataContext = Model;
-        this.Unloaded += AccelerometerPage_Unloaded;
+        this.InitializeComponent();
+#if !__ANDROID__ && !__IOS__ && !WINDOWS && !__WASM__
+        GLContainer.Children.Add(new RotatingCubeGlCanvasElement());
+#endif
     }
 
     public string Code =>
@@ -22,11 +22,4 @@ public class MyGlCanvasElement() : GLCanvasElement(() => ((App)Application.Curre
     }
 }
 """;
-
-    public AccelerometerViewModel Model { get; }
-
-    private void AccelerometerPage_Unloaded(object sender, RoutedEventArgs e)
-    {
-        Model.Dispose();
-    }
 }

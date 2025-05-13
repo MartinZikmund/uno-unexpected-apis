@@ -6,11 +6,17 @@ public sealed partial class SKCanvasElementPage : SamplePage
 {
 #if DESKTOP
     public int MaxSampleIndex => SampleSKCanvasElement.SampleCount - 1;
+
+    private SampleSKCanvasElement _canvasElement;
 #endif
 
     public SKCanvasElementPage()
     {
-        this.InitializeComponent();            
+        this.InitializeComponent();
+
+#if DESKTOP
+        SKContainer.Children.Add(_canvasElement = new SampleSKCanvasElement());
+#endif
     }
 
     public string Code =>
@@ -27,7 +33,7 @@ public class SampleSKCanvasElement : SKCanvasElement
     private void NextSample()
     {
 #if DESKTOP
-        CanvasElement.Sample = (CanvasElement.Sample + 1) % SampleSKCanvasElement.SampleCount;
+        _canvasElement.Sample = (_canvasElement.Sample + 1) % SampleSKCanvasElement.SampleCount;
 #endif
     }
 }

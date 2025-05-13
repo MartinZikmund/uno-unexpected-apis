@@ -17,13 +17,8 @@
         DocsUri="https://platform.uno/docs/articles/controls/GLCanvasElement.html"
         IconUri="{x:Bind IconUri}">
         <Grid>
-            <skia:RotatingCubeGlCanvasElement />
-            <win:Grid>
-                <local:RotatingCubeGlCanvasElement />
-            </win:Grid>
-            <not_win:Grid>
-                <not_skia:TextBlock Text="This sample is only supported on skia and WinUI." />
-            </not_win:Grid>
+            <Grid x:Name="GLContainer">                
+            </Grid>
         </Grid>
     </usercontrols:SamplePageControl>
 </local:SamplePage>
