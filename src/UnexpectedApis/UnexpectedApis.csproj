@@ -21,7 +21,6 @@
         <UnoFeatures>
             SkiaRenderer;
             MediaElement;
-            WebView;
             GLCanvas;
             Skia;
         </UnoFeatures>
