@@ -9,7 +9,7 @@ inputs:
   dotnet-version:
     description: 'Installs and sets the .NET SDK Version'
     required: false
-    default: '8.0.x'
+    default: '9.0.x'
   sdkVersion:
     description: 'The version of the Windows Sdk'
     required: false
@@ -31,8 +31,8 @@ runs:
       run: .\.github\Install-WindowsSdkISO.ps1 ${{ inputs.sdkVersion }}
 
     # Run Uno.Check
-    - name: Run Uno.Check
+    - name: Install .NET Workloads
       shell: pwsh
       run: |
-        & dotnet tool install --global --version 1.28.3 uno.check
+        & dotnet tool install --global --version 1.31.1 uno.check
         & ~/.dotnet/tools/uno-check --ci --fix --non-interactive --verbose --skip openjdk 
