@@ -19,11 +19,11 @@
                                 UriSource="ms-appx:///UIApis/Assets/Hello.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
-            <mux:NavigationViewItem Content="Network Information"
-                                    Tag="Accelerometer">
+            <mux:NavigationViewItem Content="MediaPlayerElement"
+                                    Tag="MediaPlayerElement">
                 <mux:NavigationViewItem.Icon>
                     <BitmapIcon ShowAsMonochrome="False"
-                                UriSource="ms-appx:///UIApis/Assets/NetworkInformation.png" />
+                                UriSource="ms-appx:///Samples/MediaPlayerElement.png" />
                 </mux:NavigationViewItem.Icon>
             </mux:NavigationViewItem>
             <mux:NavigationViewItem Content="Geolocator"
