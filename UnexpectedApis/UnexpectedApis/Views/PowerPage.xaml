@@ -24,22 +24,22 @@
                 Grid.Row="1">
 
       <Grid>
-        <Image Source="ms-appx:///UnexpectedApis/Assets/Hello.png"
+        <Image Source="ms-appx:///Assets/Hello.png"
                Height="120"
                Visibility="{x:Bind ViewModel.IsDeviceCharging, Converter={StaticResource TrueToVisibleConverter}}"
                ToolTipService.ToolTip="Device is Charging" />
-        <Image Source="ms-appx:///UnexpectedApis/Assets/Gamepad.png"
+        <Image Source="ms-appx:///Assets/Gamepad.png"
                Height="120"
                Visibility="{x:Bind ViewModel.IsDeviceCharging, Converter={StaticResource FalseToVisibleConverter}}"
                ToolTipService.ToolTip="Device is not Charging" />
       </Grid>
 
       <Grid>
-        <Image Source="ms-appx:///UnexpectedApis/Assets/Gamepad.png"
+        <Image Source="ms-appx:///Assets/Gamepad.png"
                Height="120"
                Visibility="{x:Bind ViewModel.IsEnergySaving, Converter={StaticResource TrueToVisibleConverter}}"
                ToolTipService.ToolTip="Energy saver is On" />
-        <Image Source="ms-appx:///UnexpectedApis/Assets/Hello.png"
+        <Image Source="ms-appx:///Assets/Hello.png"
                Height="120"
                Visibility="{x:Bind ViewModel.IsEnergySaving, Converter={StaticResource FalseToVisibleConverter}}"
                ToolTipService.ToolTip="Energy saver is Off" />

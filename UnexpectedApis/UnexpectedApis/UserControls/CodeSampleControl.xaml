@@ -21,7 +21,7 @@
                 <TextBlock
                     Grid.Row="1"
                     HorizontalAlignment="Center"
-                    FontFamily="ms-appx:///UnexpectedApis/Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
+                    FontFamily="ms-appx:///Assets/Fonts/CascadiaCode.ttf#Cascadia Code"
                     FontSize="14"
                     IsTextSelectionEnabled="True"
                     Text="{x:Bind Code, Mode=OneWay}"
