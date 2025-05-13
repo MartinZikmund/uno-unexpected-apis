@@ -1,14 +1,21 @@
 using UIApis;
 using Uno.UI.Hosting;
 
-App.InitializeLogging();
+internal class Program
+{
+    [STAThread]
+    private static void Main(string[] args)
+    {
+        App.InitializeLogging();
 
-var host = UnoPlatformHostBuilder.Create()
-    .App(() => new App())
-    .UseX11()
-    .UseLinuxFrameBuffer()
-    .UseMacOS()
-    .UseWin32()
-    .Build();
+        var host = UnoPlatformHostBuilder.Create()
+            .App(() => new App())
+            .UseX11()
+            .UseLinuxFrameBuffer()
+            .UseMacOS()
+            .UseWin32()
+            .Build();
 
-host.Run();
+        host.Run();
+    }
+}

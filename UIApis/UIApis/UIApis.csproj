@@ -1,41 +1,61 @@
 ﻿<Project Sdk="Uno.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
 
-    <OutputType>Exe</OutputType>
-    <UnoSingleProject>true</UnoSingleProject>
+        <OutputType>Exe</OutputType>
+        <UnoSingleProject>true</UnoSingleProject>
 
-    <!-- Display name -->
-    <ApplicationTitle>UIApis</ApplicationTitle>
-    <!-- App Identifier -->
-    <ApplicationId>com.companyname.UIApis</ApplicationId>
-    <!-- Versions -->
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-    <ApplicationVersion>1</ApplicationVersion>
-    <!-- Package Publisher -->
-    <ApplicationPublisher>domin</ApplicationPublisher>
-    <!-- Package Description -->
-    <Description>UIApis powered by Uno Platform.</Description>
+        <!-- Display name -->
+        <ApplicationTitle>UIApis</ApplicationTitle>
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.UIApis</ApplicationId>
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+        <!-- Package Publisher -->
+        <ApplicationPublisher>domin</ApplicationPublisher>
+        <!-- Package Description -->
+        <Description>UIApis powered by Uno Platform.</Description>
 
-    <!--
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <!--
       UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
       https://aka.platform.uno/singleproject-features
     -->
-    <UnoFeatures>
-      SkiaRenderer;
-      MediaElement;
-    </UnoFeatures>
-  </PropertyGroup>
+        <UnoFeatures>
+            SkiaRenderer;
+            MediaElement;
+            WebView;
+            GLCanvas;
+            Skia;
+        </UnoFeatures>
+    </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.WinUI.Converters" />
     </ItemGroup>
-    
+
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
         <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
     </ItemGroup>
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
         <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Views\GLCanvasElementPage.xaml.cs">
+        <DependentUpon>GLCanvasElementPage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Views\GLCanvasElementPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Views\GLCanvasElementPage - Copy.xaml">
+        <SubType>Designer</SubType>
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
     </ItemGroup>
 
 </Project>
