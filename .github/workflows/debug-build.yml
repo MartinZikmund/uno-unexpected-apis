@@ -26,6 +26,7 @@ jobs:
       - name: Install Dependencies
         timeout-minutes: ${{ fromJSON(env.STEP_TIMEOUT_MINUTES) }}
         uses: "./.github/steps/install_dependencies"
+        continue-on-error: true
 
       # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
       - name: Setup MSBuild

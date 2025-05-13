@@ -32,6 +32,7 @@ jobs:
           dotnet-version: 9.x
       - name: Install Dependencies
         uses: "./.github/steps/install_dependencies"
+        continue-on-error: true
       - run: |
           cd src/UnexpectedApis
           dotnet workload restore
