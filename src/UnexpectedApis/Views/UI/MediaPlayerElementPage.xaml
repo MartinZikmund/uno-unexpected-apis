@@ -12,6 +12,10 @@
         CodeSnippet="{x:Bind Code}"
         DocsUri="https://platform.uno/docs/articles/controls/MediaPlayerElement.html"
         IconUri="{x:Bind IconUri}">
-        <MediaPlayerElement Source="ms-appx:///Assets/Media/sample.mp4" AreTransportControlsEnabled="True" />
+        <MediaPlayerElement Source="ms-appx:///Assets/Media/sample.mp4" AreTransportControlsEnabled="True">
+            <MediaPlayerElement.TransportControls>
+                <MediaTransportControls IsFastForwardButtonVisible="False" IsFastRewindButtonVisible="False" IsZoomButtonVisible="False" IsRepeatButtonVisible="False" IsNextTrackButtonVisible="False" IsStopButtonVisible="False" IsPreviousTrackButtonVisible="False" />
+            </MediaPlayerElement.TransportControls>
+        </MediaPlayerElement>
     </usercontrols:SamplePageControl>
 </local:SamplePage>
