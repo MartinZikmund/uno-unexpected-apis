@@ -17,9 +17,11 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
+[Sample("Midi", "Midi.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class MidiPage : SamplePage
 {
     /// <summary>

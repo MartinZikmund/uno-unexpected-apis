@@ -2,12 +2,14 @@ using Microsoft.UI.Dispatching;
 using UnexpectedApis.ViewModels;
 using Windows.Devices.Lights;
 using Windows.UI.Core;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
+[Sample("Flashlight", "Flashlight.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class FlashlightPage : SamplePage
 {
     private FlashlightViewModel _viewModel;

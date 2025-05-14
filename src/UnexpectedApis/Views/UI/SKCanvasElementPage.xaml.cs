@@ -3,7 +3,7 @@ using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
-[Sample("SKCanvasElement", "SKCanvasElement.png", SampleKind.UI, DisabledPlatforms.Native | DisabledPlatforms.SkiaWasm)]
+[Sample("SKCanvasElement", "SKCanvasElement.png", SampleKind.UI, TargetPlatforms.SkiaDesktop)]
 public sealed partial class SKCanvasElementPage : SamplePage
 {
 #if DESKTOP

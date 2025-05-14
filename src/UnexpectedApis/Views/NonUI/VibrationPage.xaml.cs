@@ -17,8 +17,11 @@ using Microsoft.UI.Xaml.Navigation;
 using Windows.Phone.Devices.Notification;
 #endif
 
+using UnexpectedApis.Attributes;
+
 namespace UnexpectedApis.Views;
 
+[Sample("Vibration", "Vibration.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class VibrationPage : Page
 {
     public VibrationPage()

@@ -31,29 +31,27 @@ public sealed partial class ShellPage : Page
         {
             var sampleAttribute = sample.GetCustomAttribute<SampleAttribute>()!;
 
-            if (sampleAttribute.DisabledPlatforms.HasFlag(DisabledPlatformsHelper.CurrentPlatform))
+            if (sampleAttribute.TargetPlatforms.HasFlag(TargetPlatformsHelper.CurrentPlatform))
             {
-                continue;
-            }
+                var item = new NavigationViewItem
+                {
+                    Content = sampleAttribute.DisplayName,
+                    Tag = sample.Name,
+                    Icon = new BitmapIcon() { ShowAsMonochrome = false, UriSource = sampleAttribute.IconUri },
+                };
 
-            var item = new NavigationViewItem
-            {
-                Content = sampleAttribute.DisplayName,
-                Tag = sample.Name,
-                Icon = new BitmapIcon() { ShowAsMonochrome = false, UriSource = sampleAttribute.IconUri },
-            };
-
-            if (sampleAttribute.Kind == SampleKind.UI)
-            {
-                UIApisItem.MenuItems.Add(item);
-            }
-            else if (sampleAttribute.Kind == SampleKind.NonUI)
-            {
-                NonUIApisItem.MenuItems.Add(item);
-            }
-            else
-            {
-                throw new NotSupportedException($"Sample kind {sampleAttribute.Kind} is not supported.");
+                if (sampleAttribute.Kind == SampleKind.UI)
+                {
+                    UIApisItem.MenuItems.Add(item);
+                }
+                else if (sampleAttribute.Kind == SampleKind.NonUI)
+                {
+                    NonUIApisItem.MenuItems.Add(item);
+                }
+                else
+                {
+                    throw new NotSupportedException($"Sample kind {sampleAttribute.Kind} is not supported.");
+                }
             }
         }
     }

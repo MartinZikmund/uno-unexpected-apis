@@ -14,11 +14,13 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using UnexpectedApis.Attributes;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace UnexpectedApis.Views;
 
+[Sample("BadgeNotification", "BadgeNotification.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class BadgeNotificationPage : SamplePage
 {
     public BadgeNotificationPage()

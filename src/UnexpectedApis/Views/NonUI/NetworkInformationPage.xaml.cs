@@ -1,9 +1,11 @@
 using Windows.Networking.Connectivity;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
+[Sample("NetworkInformation", "NetworkInformation.png", SampleKind.NonUI)]
 public sealed partial class NetworkInformationPage : SamplePage
 {
     public NetworkInformationPage()

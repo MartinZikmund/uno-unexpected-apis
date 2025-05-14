@@ -1,6 +1,6 @@
 namespace UnexpectedApis.Attributes;
 
-public enum DisabledPlatforms
+public enum TargetPlatforms
 {
     None = 0,
 
@@ -31,4 +31,6 @@ public enum DisabledPlatforms
     SkiaDesktop = SkiaWin32 | SkiaX11 | SkiaMacOS | SkiaIslands,
     Skia = SkiaDesktop | SkiaWasm | SkiaMobile,
     Native = NativeWasm | NativeAndroid | NativeIOS | NativeMacCatalyst | NativeTvOS | NativeWinUI,
+
+    All = Native | Skia,
 }

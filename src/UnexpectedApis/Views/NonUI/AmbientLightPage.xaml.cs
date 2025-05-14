@@ -4,12 +4,14 @@ using Uno.Disposables;
 using Windows.Devices.Sensors;
 using Windows.UI;
 using Windows.UI.Core;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
+[Sample("AmbientLight", "AmbientLight.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class AmbientLightPage : SamplePage
 {
     private AmbientLightSensorViewModel _viewModel;

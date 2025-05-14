@@ -3,12 +3,14 @@ using UnexpectedApis.ViewModels;
 using Uno.Disposables;
 using Windows.Devices.Sensors;
 using Windows.UI.Core;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
+[Sample("HingeAngle", "HingeAngle.png", SampleKind.NonUI, TargetPlatforms.NativeAndroid | TargetPlatforms.SkiaAndroid)]
 public sealed partial class HingeAnglePage : SamplePage
 {
     private HingeAngleSensorViewModel _viewModel;
