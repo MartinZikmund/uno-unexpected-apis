@@ -14,9 +14,11 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
+[Sample("Sharing", "Sharing.png", SampleKind.NonUI)]
 public sealed partial class SharingPage : SamplePage
 {
     public SharingPage()

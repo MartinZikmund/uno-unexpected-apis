@@ -2,9 +2,11 @@ using System.Collections.ObjectModel;
 using Microsoft.UI.Dispatching;
 using UnexpectedApis.ViewModels;
 using Windows.Gaming.Input;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
+[Sample("Gamepad", "Gamepad.png", SampleKind.NonUI)]
 public sealed partial class GamepadPage : SamplePage
 {
     public GamepadPage()

@@ -1,7 +1,9 @@
 using UnexpectedApis.ViewModels;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
+[Sample("MediaPlayerElement", "MediaPlayerElement.png", SampleKind.UI)]
 public sealed partial class MediaPlayerElementPage : SamplePage
 {
     public MediaPlayerElementPage()

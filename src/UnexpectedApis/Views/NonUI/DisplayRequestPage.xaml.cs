@@ -1,7 +1,9 @@
 using Windows.System.Display;
+using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
+[Sample("DisplayRequest", "DisplayRequest.png", SampleKind.NonUI)]
 public sealed partial class DisplayRequestPage : SamplePage
 {
     private DisplayRequest _displayRequest = new();
