@@ -85,7 +85,7 @@ internal static class TargetPlatformsHelper
 #endif
 
     private static bool IsWinUI() =>
-#if WINAPPSDK
+#if !HAS_UNO
 		true;
 #else
         false;
