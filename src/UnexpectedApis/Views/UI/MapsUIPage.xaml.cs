@@ -13,9 +13,6 @@ public sealed partial class MapsUIPage : SamplePage
     {
         this.InitializeComponent();
 
-        MyMap.Map.Layers.Add(OpenStreetMap.CreateTileLayer());
-        MyMap.Visibility = Visibility.Visible;
-
         if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.Geolocation.Geolocator"))
         {
             GeolocatorButton.Visibility = Visibility.Visible;
