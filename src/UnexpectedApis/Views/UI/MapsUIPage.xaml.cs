@@ -20,13 +20,14 @@ public sealed partial class MapsUIPage : SamplePage
         else
         {
             GeolocatorButton.Visibility = Visibility.Collapsed;
-            DisplayMap(14.3893686, 50.0910957);
+            DisplayMap(14.3893686, 50.0910957, 11);
         }
     }
 
     public string Code =>
 """
-
+var mapControl = new Mapsui.UI.WinUI.MapControl();
+mapControl.Map.Layers.Add(OpenStreetMap.CreateTileLayer());
 """;
 
     private async void GetGeoposition_Click(object sender, RoutedEventArgs args)
@@ -36,16 +37,18 @@ public sealed partial class MapsUIPage : SamplePage
             var geolocator = new Geolocator();
             var geoposition = await geolocator.GetGeopositionAsync();
 
-            DisplayMap(geoposition.Coordinate.Longitude, geoposition.Coordinate.Latitude);
+            DisplayMap(geoposition.Coordinate.Longitude, geoposition.Coordinate.Latitude, 18);
         }
     }
 
-    private void DisplayMap(double lon, double lat)
+    private void DisplayMap(double lon, double lat, int zoom)
     {
-        MyMap.Map.Layers.Add(OpenStreetMap.CreateTileLayer());
-        MyMap.Visibility = Visibility.Visible;
+        var mapControl = new Mapsui.UI.WinUI.MapControl();
+        mapControl.Map.Layers.Add(OpenStreetMap.CreateTileLayer());
+        MapControlContainer.Visibility = Visibility.Visible;
+        MapControlContainer.Children.Add(mapControl);
 
         var local = SphericalMercator.FromLonLat(lon, lat);
-        MyMap.Map.Navigator.CenterOnAndZoomTo(new MPoint(local), MyMap.Map.Navigator.Resolutions[11]);
+        mapControl.Map.Navigator.CenterOnAndZoomTo(new MPoint(local), mapControl.Map.Navigator.Resolutions[zoom]);
     }
 }

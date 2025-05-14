@@ -31,15 +31,16 @@
         <PackageReference Include="CommunityToolkit.WinUI.Converters" />
         <PackageReference Include="Uno.Core.Extensions.Collections" />
         <PackageReference Include="Uno.Core.Extensions.Disposables" />
-        <PackageReference Include="Mapsui.Uno.WinUI" />
     </ItemGroup>
 
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
         <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+        <PackageReference Include="Mapsui.WinUI" />
     </ItemGroup>
     
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
         <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+        <PackageReference Include="Mapsui.Uno.WinUI" />
     </ItemGroup>
     
     <ItemGroup>

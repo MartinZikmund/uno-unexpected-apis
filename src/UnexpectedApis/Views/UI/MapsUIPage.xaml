@@ -6,7 +6,6 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:usercontrols="using:UnexpectedApis.UserControls"
                   xmlns:winui="using:Microsoft.UI.Xaml.Controls"
-                  xmlns:mapsui="clr-namespace:Mapsui.UI.WinUI;assembly=Mapsui.UI.Uno.WinUI"
                   mc:Ignorable="d">
 
     <usercontrols:SamplePageControl Title="MapsUI"
@@ -30,10 +29,12 @@
                     </StackPanel>
                 </Button>
 
-                <mapsui:MapControl x:Name="MyMap"
-                                   BorderBrush="AliceBlue"
-                                   MinWidth="500"
-                                   MinHeight="500" />
+                <Grid x:Name="MapControlContainer"
+                      MinWidth="500"
+                      MinHeight="500"
+                      Visibility="Collapsed">
+                    
+                </Grid>
 
             </StackPanel>
         </Grid>
