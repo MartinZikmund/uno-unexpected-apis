@@ -25,15 +25,15 @@
 
                 <tableview:TableView.Columns>
                     <tableview:TableViewTextColumn Header="Plant Name"
-                                                   BindingPath="PlantName" />
+                                                   Binding="PlantName" />
                     <tableview:TableViewTextColumn Header="Count"
-                                                   BindingPath="PlantsCount" />
+                                                   Binding="PlantsCount" />
                     <tableview:TableViewTextColumn Header="Type"
-                                                   BindingPath="FruitOrVegetable" />
+                                                   Binding="FruitOrVegetable" />
                     <tableview:TableViewDateColumn Header="Plant Date"
-                                                   BindingPath="PlantDate" />
+                                                   Binding="PlantDate" />
                     <tableview:TableViewCheckBoxColumn Header="Watered"
-                                                       BindingPath="IsWatered" />
+                                                       Binding="IsWatered" />
                 </tableview:TableView.Columns>
             </tableview:TableView>
 
