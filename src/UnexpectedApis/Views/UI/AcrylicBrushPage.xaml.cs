@@ -5,7 +5,7 @@ using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
-[Sample("AcrylicBrush", "AcrylicBrush.png", SampleKind.UI)]
+[Sample("AcrylicBrush", "AcrylicBrush.png", SampleKind.UI, TargetPlatforms.Skia)]
 public sealed partial class AcrylicBrushPage : SamplePage
 {
     public AcrylicBrushPage()

@@ -8,9 +8,9 @@
                   xmlns:wct="using:CommunityToolkit.WinUI.UI.Controls"
                   mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="DataGrid"
+    <usercontrols:SamplePageControl Title="AcrylicBrush"
                                     CodeSnippet="{x:Bind Code}"
-                                    DocsUri="https://platform.uno/docs/articles/uno-community-toolkit.html"
+                                    DocsUri="https://platform.uno/docs/articles/features/shapes-and-brushes.html"
                                     IconUri="{x:Bind IconUri}">
         <Grid RowSpacing="16">
             <Grid.RowDefinitions>
@@ -44,7 +44,7 @@
                     </Grid>
                     <Border Width="320" CornerRadius="160" Height="320" x:Name="CustomAcrylicShapeInApp" Margin="12">
                         <Border.Background>
-                            <AcrylicBrush x:Name="acrylicBrush" TintOpacity="0.5" TintLuminosityOpacity="0.5"  TintColor="Gray" FallbackColor="Green" />
+                            <AcrylicBrush x:Name="acrylicBrush" TintOpacity="0.5" TintLuminosityOpacity="0.5"  TintColor="#333333" FallbackColor="Green" />
                         </Border.Background>
                     </Border>
                 </Grid>
