@@ -3,6 +3,7 @@
     <PackageVersion Include="CommunityToolkit.WinUI.Converters" Version="8.2.250402" />
     <PackageVersion Include="Uno.Core.Extensions.Collections" Version="4.1.1" />
     <PackageVersion Include="Uno.Core.Extensions.Disposables" Version="4.1.1" />
+    <PackageVersion Include="Mapsui.Uno.WinUI " Version="5.0.0-beta.15" />
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
     <PackageVersion Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
