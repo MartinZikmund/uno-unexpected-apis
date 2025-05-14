@@ -9,20 +9,22 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid Padding="20,0" Background="{ThemeResource HeaderBackground}">
+    <Grid Padding="0,0" Height="48">
         <Grid.Resources>
             <Style TargetType="Image">
                 <Setter Property="Margin" Value="4" />
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <StackPanel
-            Margin="12"
+            Margin="0,4"
             HorizontalAlignment="Center"
             Orientation="Horizontal"
+            Grid.Column="1"
             Spacing="8">
             <BitmapIcon
                 Width="32"
@@ -34,11 +36,13 @@
                 VerticalAlignment="Center"
                 Style="{ThemeResource TitleTextBlockStyle}"
                 Text="{x:Bind Title, Mode=OneWay}"
+                FontSize="24"
                 TextAlignment="Center"
+                TextTrimming="CharacterEllipsis"
                 TextLineBounds="Tight" />
         </StackPanel>
         <HyperlinkButton
-            Grid.Column="1"
+            Grid.Column="2"
             NavigateUri="{x:Bind DocsUri}"
             Visibility="{x:Bind DocsUri, Converter={StaticResource NotNullToVisibilityConverter}}">
             <BitmapIcon

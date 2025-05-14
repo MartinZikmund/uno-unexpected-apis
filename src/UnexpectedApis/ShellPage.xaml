@@ -6,56 +6,59 @@
     xmlns:local="using:UnexpectedApis"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mux="using:Microsoft.UI.Xaml.Controls"
+    xmlns:toolkit="using:Uno.Toolkit.UI"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <NavigationView
+    <Grid toolkit:SafeArea.Insets="All">
+        <NavigationView
         x:Name="Menu"
         IsBackButtonVisible="Collapsed"
         IsSettingsVisible="False"
         ItemInvoked="NavigationView_ItemInvoked">
-        <NavigationView.MenuItems>
-            <NavigationViewItem
+            <NavigationView.MenuItems>
+                <NavigationViewItem
                 Content="Hello!"
                 Tag="Hello">
-                <NavigationViewItem.Icon>
-                    <BitmapIcon
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon
                         ShowAsMonochrome="False"
                         UriSource="ms-appx:///Assets/Samples/Hello.png" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem
                 x:Name="UIApisItem"
                 Content="UI APIs"
                 IsExpanded="True"
                 ToolTipService.ToolTip="UI APIs">
-            </NavigationViewItem>
-            <NavigationViewItem
+                </NavigationViewItem>
+                <NavigationViewItem
                 x:Name="NonUIApisItem"
                 Content="Non-UI APIs"
                 IsExpanded="True"
                 ToolTipService.ToolTip="Non-UI APIs">
-            </NavigationViewItem>
-        </NavigationView.MenuItems>
-        <NavigationView.Content>
-            <Frame x:Name="RootFrame" />
-        </NavigationView.Content>
-        <NavigationView.PaneFooter>
-            <StackPanel Padding="12">
-                <TextBlock
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <NavigationView.Content>
+                <Frame x:Name="RootFrame" />
+            </NavigationView.Content>
+            <NavigationView.PaneFooter>
+                <StackPanel Padding="12">
+                    <TextBlock
                     FontSize="20"
                     Text="Try me at:" />
-                <HyperlinkButton
+                    <HyperlinkButton
                     FontSize="18"
                     FontWeight="Bold"
                     NavigateUri="https://aka.platform.uno/demo-unexpected-apis">
-                    <TextBlock>
+                        <TextBlock>
                         <Run Text="aka.platform.uno/" />
                         <LineBreak />
                         <Run Text="demo-unexpected-apis" />
-                    </TextBlock>
-                </HyperlinkButton>
-            </StackPanel>
-        </NavigationView.PaneFooter>
-    </NavigationView>
+                        </TextBlock>
+                    </HyperlinkButton>
+                </StackPanel>
+            </NavigationView.PaneFooter>
+        </NavigationView>
+    </Grid>
 </Page>
