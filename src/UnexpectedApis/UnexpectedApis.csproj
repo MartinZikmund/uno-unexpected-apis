@@ -24,6 +24,7 @@
             GLCanvas;
             Skia;
             Mvvm;
+            Toolkit;
         </UnoFeatures>
     </PropertyGroup>
 
