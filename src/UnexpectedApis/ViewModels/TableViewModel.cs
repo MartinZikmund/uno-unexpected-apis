@@ -5,11 +5,11 @@ using CommunityToolkit.WinUI.UI.Controls;
 using Microsoft.UI;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml.Data;
-using UIApis.Model;
+using UnexpectedApis.Model;
 using Uno.Extensions;
 
 
-namespace UIApis.ViewModels;
+namespace UnexpectedApis.ViewModels;
 
 [Bindable]
 public class TableViewModel : ViewModelBase

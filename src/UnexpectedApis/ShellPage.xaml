@@ -25,13 +25,13 @@
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItem
-                x:Name="UIApisItem"
+                x:Name="UnexpectedApisItem"
                 Content="UI APIs"
                 IsExpanded="True"
                 ToolTipService.ToolTip="UI APIs">
             </NavigationViewItem>
             <NavigationViewItem
-                x:Name="NonUIApisItem"
+                x:Name="NonUnexpectedApisItem"
                 Content="Non-UI APIs"
                 IsExpanded="True"
                 ToolTipService.ToolTip="Non-UI APIs">
