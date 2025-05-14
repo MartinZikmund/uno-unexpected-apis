@@ -5,7 +5,7 @@ using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
-[Sample("TableView", "TableView.png", SampleKind.UI, )]
+[Sample("TableView", "TableView.png", SampleKind.UI, TargetPlatforms.All & (~TargetPlatforms.Android & ~TargetPlatforms.IOS))]
 public sealed partial class TableViewPage : SamplePage
 {
     public TableViewPage()
