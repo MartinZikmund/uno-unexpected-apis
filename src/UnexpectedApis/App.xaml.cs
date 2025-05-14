@@ -47,6 +47,7 @@ public partial class App : Application
         }
 
         // Ensure the current window is active
+        MainWindow.Title = "Unexpected APIs in Uno Platform";
         MainWindow.Activate();
     }
 
