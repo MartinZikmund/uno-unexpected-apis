@@ -5,38 +5,33 @@
                   xmlns:local="using:UnexpectedApis.Views"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:usercontrols="using:UnexpectedApis.UserControls"
-                  xmlns:tableview="using:WinUI.TableView"
+                  xmlns:tv="using:WinUI.TableView"
                   mc:Ignorable="d">
 
-    <usercontrols:SamplePageControl Title="DataGrid"
+    <usercontrols:SamplePageControl Title="TableView"
                                     CodeSnippet="{x:Bind Code}"
-                                    DocsUri="https://platform.uno/docs/articles/uno-community-toolkit.html"
+                                    DocsUri="https://github.com/w-ahmad/WinUI.TableView"
                                     IconUri="{x:Bind IconUri}">
-        <ContentControl Grid.Row="1"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        ><!--IsEnabled="{x:Bind Model.AccelerometerAvailable, Mode=OneWay}"-->
 
-            <tableview:TableView ItemsSource="{Binding Plants}"
-                                 AutoGenerateColumns="False"
-                                 SelectionMode="Extended"
-                                 ShowExportOptions="True"
-                                 GridLinesVisibility="All">
+        <tv:TableView ItemsSource="{x:Bind Model.Plants}"
+                      AutoGenerateColumns="False"
+                      SelectionMode="Extended"
+                      ShowExportOptions="True"
+                      GridLinesVisibility="All">
 
-                <tableview:TableView.Columns>
-                    <tableview:TableViewTextColumn Header="Plant Name"
-                                                   Binding="PlantName" />
-                    <tableview:TableViewTextColumn Header="Count"
-                                                   Binding="PlantsCount" />
-                    <tableview:TableViewTextColumn Header="Type"
-                                                   Binding="FruitOrVegetable" />
-                    <tableview:TableViewDateColumn Header="Plant Date"
-                                                   Binding="PlantDate" />
-                    <tableview:TableViewCheckBoxColumn Header="Watered"
-                                                       Binding="IsWatered" />
-                </tableview:TableView.Columns>
-            </tableview:TableView>
+            <tv:TableView.Columns>
+                <tv:TableViewTextColumn Header="Plant Name"
+                                        Binding="PlantName" />
+                <tv:TableViewTextColumn Header="Count"
+                                        Binding="PlantsCount" />
+                <tv:TableViewComboBoxColumn Header="Type"
+                                            Binding="FruitOrVegetable" />
+                <tv:TableViewDateColumn Header="Plant Date"
+                                        Binding="PlantDate" />
+                <tv:TableViewCheckBoxColumn Header="Watered"
+                                            Binding="IsWatered" />
+            </tv:TableView.Columns>
+        </tv:TableView>
 
-        </ContentControl>
     </usercontrols:SamplePageControl>
 </local:SamplePage>

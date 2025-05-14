@@ -1,6 +1,4 @@
-using CommunityToolkit.WinUI.UI.Controls;
 using UnexpectedApis.Attributes;
-using UnexpectedApis.Model;
 using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
@@ -17,68 +15,14 @@ public sealed partial class TableViewPage : SamplePage
 
     public string Code =>
 """
-xmlns:wct="using:CommunityToolkit.WinUI.UI.Controls"
+xmlns:tv="using:WinUI.TableView"
 
-<wct:DataGrid ItemsSource="{x:Bind Model.DataGridItems, Mode=TwoWay}"
+<tv:TableView ItemsSource="{x:Bind Model.Plants}"
               AutoGenerateColumns="True"
-              HeadersVisibility="All"
-              SelectionMode="Single"
-              IsReadOnly="False" />
+              SelectionMode="Extended"
+              ShowExportOptions="True"
+              GridLinesVisibility="All"/>
 """;
 
     public TableViewModel Model { get; }
-
-    //private void FilterFlyoutItem_Click(object sender, RoutedEventArgs e)
-    //{
-    //    if (Model is not DataGridViewModel viewModel)
-    //        return;
-
-    //    switch ((sender as Control).Tag)
-    //    {
-    //        case "TenMore":
-    //            viewModel.FilterDataGrid(p => p.PlantsCount > 10);
-    //            break;
-    //        case "TenLess":
-    //            viewModel.FilterDataGrid(p => p.PlantsCount < 10);
-    //            break;
-    //        case "IsWatered":
-    //            viewModel.FilterDataGrid(p => p.IsWatered);
-    //            break;
-    //        case "Fruit":
-    //            viewModel.FilterDataGrid(p => p.FruitOrVegetable == Plant.FruitOrVegetableEnum.Fruit);
-    //            break;
-    //        case "Vegetable":
-    //            viewModel.FilterDataGrid(p => p.FruitOrVegetable == Plant.FruitOrVegetableEnum.Vegetable);
-    //            break;
-    //        default:
-    //            viewModel.FilterDataGrid(null);
-    //            break;
-    //    }
-    //}
-
-    //private void GroupByFlyoutItem_Click(object sender, RoutedEventArgs e)
-    //{
-    //    if (Model is not DataGridViewModel viewModel)
-    //        return;
-
-    //    var tag = (sender as Control).Tag;
-
-    //    switch (tag)
-    //    {
-    //        case "FruitOrVegetable":
-    //            viewModel.RowGroupHeader = tag.ToString();
-
-    //            viewModel.GroupByDataGrid(p => p.FruitOrVegetable);
-    //            break;
-    //        case "IsWatered":
-    //            viewModel.RowGroupHeader = tag.ToString();
-
-    //            viewModel.GroupByDataGrid(p => p.IsWatered);
-    //            break;
-    //        default:
-    //            viewModel.GroupByDataGrid(null);
-    //            break;
-    //    }
-    //}
-
 }
