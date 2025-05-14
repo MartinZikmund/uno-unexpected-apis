@@ -1,0 +1,42 @@
+﻿<local:SamplePage x:Class="UnexpectedApis.Views.MapsUIPage"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:local="using:UnexpectedApis.Views"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:usercontrols="using:UnexpectedApis.UserControls"
+                  xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+                  mc:Ignorable="d">
+
+    <usercontrols:SamplePageControl Title="MapsUI"
+                                    CodeSnippet="{x:Bind Code}"
+                                    DocsUri="https://platform.uno/docs/articles/features/windows-devices-geolocation.html"
+                                    IconUri="{x:Bind IconUri}">
+
+        <Grid>
+            <StackPanel Grid.Row="1"
+                        Padding="12"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <Button x:Name="GeolocatorButton"
+                        HorizontalAlignment="Stretch"
+                        Click="GetGeoposition_Click">
+                    <StackPanel Orientation="Horizontal"
+                                Spacing="8">
+                        <SymbolIcon Symbol="Map" />
+                        <TextBlock Text="Get geoposition" />
+                    </StackPanel>
+                </Button>
+
+                <Grid x:Name="MapControlContainer"
+                      MinWidth="500"
+                      MinHeight="500"
+                      Visibility="Collapsed">
+                    
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </usercontrols:SamplePageControl>
+</local:SamplePage>

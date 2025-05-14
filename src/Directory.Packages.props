@@ -6,8 +6,10 @@
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
     <PackageVersion Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
+      <PackageVersion Include="Mapsui.WinUI " Version="5.0.0-beta.15" />
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
     <PackageVersion Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.200" />
+    <PackageVersion Include="Mapsui.Uno.WinUI " Version="5.0.0-beta.15" />
   </ItemGroup>
 </Project>

@@ -36,10 +36,12 @@
 
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
         <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+        <PackageReference Include="Mapsui.WinUI" />
     </ItemGroup>
     
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
         <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+        <PackageReference Include="Mapsui.Uno.WinUI" />
     </ItemGroup>
 
 </Project>
