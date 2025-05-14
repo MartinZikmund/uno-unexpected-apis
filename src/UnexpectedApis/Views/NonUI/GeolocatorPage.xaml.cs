@@ -17,7 +17,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("Geolocator", "Geolocator.png", SampleKind.NonUI)]
+[Sample("Geolocator", "Geolocator.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class GeolocatorPage : SamplePage
 {
     public GeolocatorPage()

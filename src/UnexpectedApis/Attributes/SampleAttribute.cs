@@ -4,11 +4,12 @@ public class SampleAttribute : Attribute
 {
     private readonly string _iconFileName;
 
-    public SampleAttribute(string name, string iconFileName, SampleKind kind, DisabledPlatforms disabledPlatforms = DisabledPlatforms.None)
+    public SampleAttribute(string name, string iconFileName, SampleKind kind, TargetPlatforms targetPlatforms = TargetPlatforms.All)
     {
         _iconFileName = iconFileName;
         DisplayName = name;
         Kind = kind;
+        TargetPlatforms = targetPlatforms;
     }
 
     public string DisplayName { get; }
@@ -17,5 +18,5 @@ public class SampleAttribute : Attribute
 
     public Uri IconUri => new Uri($"ms-appx:///Assets/Samples/{_iconFileName}");
 
-    public DisabledPlatforms DisabledPlatforms { get; set; } = DisabledPlatforms.None;
+    public TargetPlatforms TargetPlatforms { get; }
 }

@@ -7,7 +7,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("TitleBar", "TitleBar.png", SampleKind.NonUI)]
+[Sample("TitleBar", "TitleBar.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class TitleBarPage : Page
 {
     private Random _random = new Random();

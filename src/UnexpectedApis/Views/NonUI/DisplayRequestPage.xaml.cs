@@ -3,7 +3,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("DisplayRequest", "DisplayRequest.png", SampleKind.NonUI)]
+[Sample("DisplayRequest", "DisplayRequest.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class DisplayRequestPage : SamplePage
 {
     private DisplayRequest _displayRequest = new();

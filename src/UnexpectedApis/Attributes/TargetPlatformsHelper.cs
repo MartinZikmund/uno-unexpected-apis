@@ -1,18 +1,18 @@
 namespace UnexpectedApis.Attributes;
 
-internal static class DisabledPlatformsHelper
+internal static class TargetPlatformsHelper
 {
-    private static readonly Lazy<DisabledPlatforms> _currentPlatform = new Lazy<DisabledPlatforms>(GetCurrentPlatform);
+    private static readonly Lazy<TargetPlatforms> _currentPlatform = new Lazy<TargetPlatforms>(GetCurrentPlatform);
 
     /// <summary>
     /// Returns the current runtime test platform.
     /// </summary>
-    public static DisabledPlatforms CurrentPlatform => _currentPlatform.Value;
+    public static TargetPlatforms CurrentPlatform => _currentPlatform.Value;
 
-    private static DisabledPlatforms GetCurrentPlatform()
+    private static TargetPlatforms GetCurrentPlatform()
     {
-        var values = Enum.GetValues<DisabledPlatforms>();
-        var currentPlatform = default(DisabledPlatforms);
+        var values = Enum.GetValues<TargetPlatforms>();
+        var currentPlatform = default(TargetPlatforms);
         var counter = 0;
         foreach (var value in values.Where(HasSingleFlag))
         {
@@ -36,7 +36,7 @@ internal static class DisabledPlatformsHelper
         return currentPlatform;
     }
 
-    private static bool HasSingleFlag(DisabledPlatforms value)
+    private static bool HasSingleFlag(TargetPlatforms value)
     {
         var numericValue = Convert.ToInt64(value);
 
@@ -44,32 +44,32 @@ internal static class DisabledPlatformsHelper
         return numericValue != 0 && (numericValue & (numericValue - 1)) == 0;
     }
 
-    private static bool IsCurrentTarget(DisabledPlatforms singlePlatform)
+    private static bool IsCurrentTarget(TargetPlatforms singlePlatform)
     {
         return singlePlatform switch
         {
-            DisabledPlatforms.NativeWinUI => IsWinUI(),
-            DisabledPlatforms.NativeWasm => IsNativeWasm(),
-            DisabledPlatforms.NativeAndroid => IsNativeAndroid(),
-            DisabledPlatforms.NativeIOS => IsNativeIOS(),
-            DisabledPlatforms.NativeMacCatalyst => IsNativeMacCatalyst(),
-            DisabledPlatforms.NativeTvOS => IsNativetvOS(),
-            DisabledPlatforms.SkiaWin32 => IsSkiaWin32(),
-            DisabledPlatforms.SkiaX11 => IsSkiaX11(),
-            DisabledPlatforms.SkiaMacOS => IsSkiaMacOS(),
-            DisabledPlatforms.SkiaIslands => IsSkiaIslands(),
-            DisabledPlatforms.SkiaWasm => IsSkia() && OperatingSystem.IsBrowser(),
-            DisabledPlatforms.SkiaAndroid => IsSkia() && OperatingSystem.IsAndroid(),
-            DisabledPlatforms.SkiaIOS => IsSkia() && OperatingSystem.IsIOS(),
-            DisabledPlatforms.SkiaTvOS => IsSkia() && OperatingSystem.IsTvOS(),
-            DisabledPlatforms.SkiaMacCatalyst => IsSkia() && OperatingSystem.IsMacCatalyst(),
+            TargetPlatforms.NativeWinUI => IsWinUI(),
+            TargetPlatforms.NativeWasm => IsNativeWasm(),
+            TargetPlatforms.NativeAndroid => IsNativeAndroid(),
+            TargetPlatforms.NativeIOS => IsNativeIOS(),
+            TargetPlatforms.NativeMacCatalyst => IsNativeMacCatalyst(),
+            TargetPlatforms.NativeTvOS => IsNativetvOS(),
+            TargetPlatforms.SkiaWin32 => IsSkiaWin32(),
+            TargetPlatforms.SkiaX11 => IsSkiaX11(),
+            TargetPlatforms.SkiaMacOS => IsSkiaMacOS(),
+            TargetPlatforms.SkiaIslands => IsSkiaIslands(),
+            TargetPlatforms.SkiaWasm => IsSkia() && OperatingSystem.IsBrowser(),
+            TargetPlatforms.SkiaAndroid => IsSkia() && OperatingSystem.IsAndroid(),
+            TargetPlatforms.SkiaIOS => IsSkia() && OperatingSystem.IsIOS(),
+            TargetPlatforms.SkiaTvOS => IsSkia() && OperatingSystem.IsTvOS(),
+            TargetPlatforms.SkiaMacCatalyst => IsSkia() && OperatingSystem.IsMacCatalyst(),
             _ => throw new ArgumentException(nameof(singlePlatform)),
         };
     }
 
     private static bool HasSkiaHostAssembly(string name)
     {
-        var assembly = typeof(DisabledPlatformsHelper).Assembly;
+        var assembly = typeof(TargetPlatformsHelper).Assembly;
         var referencedAssemblies = assembly.GetReferencedAssemblies();
         var hostAssembly = referencedAssemblies
             .FirstOrDefault(a => a.Name == name);

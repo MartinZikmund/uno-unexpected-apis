@@ -10,7 +10,7 @@ namespace UnexpectedApis.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-[Sample("HingeAngle", "HingeAngle.png", SampleKind.NonUI)]
+[Sample("HingeAngle", "HingeAngle.png", SampleKind.NonUI, TargetPlatforms.NativeAndroid | TargetPlatforms.SkiaAndroid)]
 public sealed partial class HingeAnglePage : SamplePage
 {
     private HingeAngleSensorViewModel _viewModel;

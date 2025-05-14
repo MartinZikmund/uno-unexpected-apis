@@ -3,7 +3,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("Accelerometer", "Accelerometer.png", SampleKind.NonUI, DisabledPlatforms.SkiaDesktop)]
+[Sample("Accelerometer", "Accelerometer.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class AccelerometerPage : SamplePage
 {
     public AccelerometerPage()

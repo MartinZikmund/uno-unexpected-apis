@@ -20,7 +20,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("BadgeNotification", "BadgeNotification.png", SampleKind.NonUI)]
+[Sample("BadgeNotification", "BadgeNotification.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class BadgeNotificationPage : SamplePage
 {
     public BadgeNotificationPage()

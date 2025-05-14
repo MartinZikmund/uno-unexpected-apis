@@ -3,7 +3,7 @@ using UnexpectedApis.ViewModels;
 
 namespace UnexpectedApis.Views;
 
-[Sample("GLCanvasElement", "GLCanvasElement.png", SampleKind.UI)]
+[Sample("GLCanvasElement", "GLCanvasElement.png", SampleKind.UI, TargetPlatforms.SkiaDesktop)]
 public sealed partial class GLCanvasElementPage : SamplePage
 {
     public GLCanvasElementPage()

@@ -40,5 +40,17 @@
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
         <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Compile Update="Views\NonUI\LauncherPage.xaml.cs">
+        <DependentUpon>LauncherPage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Page Update="Views\NonUI\LauncherPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+    </ItemGroup>
 
 </Project>

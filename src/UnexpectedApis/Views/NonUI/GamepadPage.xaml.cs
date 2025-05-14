@@ -6,7 +6,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("Gamepad", "Gamepad.png", SampleKind.NonUI)]
+[Sample("Gamepad", "Gamepad.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class GamepadPage : SamplePage
 {
     public GamepadPage()

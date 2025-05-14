@@ -9,7 +9,7 @@ namespace UnexpectedApis.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-[Sample("Compass", "Compass.png", SampleKind.NonUI)]
+[Sample("Compass", "Compass.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class CompassPage : SamplePage
 {
     private CompassViewModel _viewModel;

@@ -17,7 +17,7 @@ using UnexpectedApis.Attributes;
 
 namespace UnexpectedApis.Views;
 
-[Sample("SpeechRecognizer", "SpeechRecognizer.png", SampleKind.NonUI)]
+[Sample("SpeechRecognizer", "SpeechRecognizer.png", SampleKind.NonUI, TargetPlatforms.All & ~TargetPlatforms.SkiaDesktop)]
 public sealed partial class SpeechRecognizerPage : SamplePage
 {
     public SpeechRecognizerPage()
