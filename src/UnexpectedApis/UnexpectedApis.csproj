@@ -30,6 +30,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="CommunityToolkit.WinUI.Controls.TabbedCommandBar" />
         <PackageReference Include="CommunityToolkit.WinUI.Converters" />
         <PackageReference Include="System.Text.Encoding.CodePages" />
         <PackageReference Include="Uno.Core.Extensions.Collections" />
