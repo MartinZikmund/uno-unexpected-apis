@@ -50,12 +50,8 @@
                     <HyperlinkButton
                     FontSize="18"
                     FontWeight="Bold"
-                    NavigateUri="https://aka.platform.uno/demo-unexpected-apis">
-                        <TextBlock>
-                        <Run Text="aka.platform.uno/" />
-                        <LineBreak />
-                        <Run Text="demo-unexpected-apis" />
-                        </TextBlock>
+                    NavigateUri="https://unexpectedapis.uno">
+                        <TextBlock Text="https://unexpectedapis.uno" />
                     </HyperlinkButton>
                 </StackPanel>
             </NavigationView.PaneFooter>

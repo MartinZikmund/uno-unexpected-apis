@@ -13,7 +13,7 @@
                                     DocsUri="https://platform.uno/docs/articles/controls/WebView.html"
                                     IconUri="{x:Bind IconUri}">
 
-        <controls:WebView2 Source="https://mzikmund.dev/" />
+        <controls:WebView2 Source="https://unexpectedapis.uno/" />
 
     </usercontrols:SamplePageControl>
 </local:SamplePage>
