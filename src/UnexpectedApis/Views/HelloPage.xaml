@@ -8,13 +8,14 @@
     xmlns:usercontrols="using:UnexpectedApis.UserControls"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid RowSpacing="16" RowDefinitions="Auto,Auto,*" Margin="20">
         <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Style="{ThemeResource TitleTextBlockStyle}"
-            Text="Pick a sample in the menu"
-            TextAlignment="Center"
-            TextWrapping="Wrap" />
+            Text="Unexpected APIs in Uno Platform"
+            TextAlignment="Center" />
+        <TextBlock TextAlignment="Center" Grid.Row="1" Text="Explore the unexpected APIs that you can find in Uno Platform" Style="{StaticResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" />
+        <Image Grid.Row="2" Stretch="Uniform" Source="ms-appx:///Assets/AppLogo.png" Width="300" Height="300" />
     </Grid>
 </Page>
