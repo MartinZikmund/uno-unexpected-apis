@@ -14,6 +14,20 @@ public sealed partial class GamepadPage : SamplePage
         this.InitializeComponent();
         Model = new GamepadSamplePageViewModel();
         DataContext = Model;
+        Loaded += (s, e) =>
+        {
+            if (!Model.ObservingChanges)
+            {
+                Model.StartObservingGamepadChanges();
+            }
+        };
+        Unloaded += (s, e) =>
+        {
+            if (Model.ObservingChanges)
+            {
+                Model.StopObservingGamepadChanges();
+            }
+        };
     }
 
     public string Code =>
