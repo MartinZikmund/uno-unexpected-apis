@@ -63,7 +63,7 @@ DataTransferManager.ShowShareUI();
         args.Request.Data.ShareCanceled += Data_ShareCanceled;
         args.Request.Data.Properties.Title = "Unexpected APIs in Uno Platform";
         args.Request.Data.Properties.Description = "Link to the app";
-        args.Request.Data.SetWebLink(new Uri("https://cutt.ly/apis"));
+        args.Request.Data.SetWebLink(new Uri("https://unexpectedapis.uno"));
 
         deferral.Complete();
     }
