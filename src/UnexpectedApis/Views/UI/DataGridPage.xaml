@@ -5,8 +5,12 @@
                   xmlns:local="using:UnexpectedApis.Views"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:usercontrols="using:UnexpectedApis.UserControls"
+                  xmlns:converters="using:CommunityToolkit.WinUI.Converters"
                   xmlns:wct="using:CommunityToolkit.WinUI.UI.Controls"
                   mc:Ignorable="d">
+    <local:SamplePage.Resources>
+        <converters:StringFormatConverter x:Key="StringFormatConverter" />
+    </local:SamplePage.Resources>
 
     <usercontrols:SamplePageControl Title="DataGrid"
                                     CodeSnippet="{x:Bind Code}"

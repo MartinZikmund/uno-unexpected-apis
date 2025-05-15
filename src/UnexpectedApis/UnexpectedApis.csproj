@@ -23,6 +23,7 @@
             MediaElement;
             GLCanvas;
             Skia;
+            Svg;
             Mvvm;
             Toolkit;
         </UnoFeatures>
