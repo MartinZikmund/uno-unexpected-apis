@@ -29,14 +29,10 @@
                     </StackPanel>
                 </Button>
 
-                <Grid x:Name="MapControlContainer"
-                      MinWidth="500"
-                      MinHeight="500"
-                      Visibility="Collapsed">
-                    
-                </Grid>
-
             </StackPanel>
+
+            <Grid x:Name="MapControlContainer" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            </Grid>
         </Grid>
     </usercontrols:SamplePageControl>
 </local:SamplePage>

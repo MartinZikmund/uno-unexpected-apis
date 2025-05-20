@@ -32,6 +32,7 @@
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.WinUI.Converters" />
         <PackageReference Condition="!$(IsAndroid) and !$(IsIOS)" Include="WinUI.TableView" />
+        <PackageReference Include="System.Text.Encoding.CodePages" />
         <PackageReference Include="Uno.Core.Extensions.Collections" />
         <PackageReference Include="Uno.Core.Extensions.Disposables" />
     </ItemGroup>
