@@ -4,6 +4,7 @@
     <PackageVersion Include="System.Text.Encoding.CodePages" Version="9.0.5" />
     <PackageVersion Include="Uno.Core.Extensions.Collections" Version="4.1.1" />
     <PackageVersion Include="Uno.Core.Extensions.Disposables" Version="4.1.1" />
+    <PackageVersion Include="WinUI.TableView" Version="1.3.0" />
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
     <PackageVersion Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />

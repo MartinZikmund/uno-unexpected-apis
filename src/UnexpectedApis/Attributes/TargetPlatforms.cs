@@ -32,5 +32,8 @@ public enum TargetPlatforms
     Skia = SkiaDesktop | SkiaWasm | SkiaMobile,
     Native = NativeWasm | NativeAndroid | NativeIOS | NativeMacCatalyst | NativeTvOS | NativeWinUI,
 
+    Android = NativeAndroid | SkiaAndroid,
+    IOS = NativeIOS | SkiaIOS,
+
     All = Native | Skia,
 }
