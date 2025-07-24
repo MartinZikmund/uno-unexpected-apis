@@ -31,7 +31,6 @@
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-        <PackageReference Include="System.Text.Encoding.CodePages" />
         <PackageReference Include="Uno.Core.Extensions.Collections" />
         <PackageReference Include="Uno.Core.Extensions.Disposables" />
     </ItemGroup>
