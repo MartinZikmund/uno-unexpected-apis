@@ -1,5 +1,6 @@
 <Project ToolsVersion="15.0">
   <ItemGroup>
+    <PackageVersion Include="CommunityToolkit.WinUI.Controls.TabbedCommandBar" Version="8.2.250402" />
     <PackageVersion Include="CommunityToolkit.WinUI.Converters" Version="8.2.250402" />
     <PackageVersion Include="Uno.Core.Extensions.Collections" Version="4.1.1" />
     <PackageVersion Include="Uno.Core.Extensions.Disposables" Version="4.1.1" />
