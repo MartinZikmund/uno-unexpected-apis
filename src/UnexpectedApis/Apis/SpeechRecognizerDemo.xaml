@@ -1,0 +1,28 @@
+<UserControl x:Class="UnexpectedApis.Apis.SpeechRecognizerDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StackPanel MaxWidth="480" Spacing="16" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Button AutomationProperties.AutomationId="SpeechRecognize"
+            HorizontalAlignment="Center"
+            Style="{StaticResource AccentButtonStyle}"
+            Click="OnRecognizeClick"
+            IsEnabled="{x:Bind CanRecognize, Mode=OneWay}">
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <SymbolIcon Symbol="Microphone" />
+        <TextBlock Text="Recognize speech" />
+      </StackPanel>
+    </Button>
+    <TextBlock AutomationProperties.AutomationId="SpeechResult"
+               Style="{ThemeResource SubtitleTextBlockStyle}"
+               Text="{x:Bind Result, Mode=OneWay}"
+               TextAlignment="Center"
+               TextWrapping="WrapWholeWords" />
+    <TextBlock AutomationProperties.AutomationId="SpeechStatus"
+               Style="{ThemeResource CaptionTextBlockStyle}"
+               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+               Text="{x:Bind Status, Mode=OneWay}"
+               TextAlignment="Center"
+               TextWrapping="Wrap" />
+  </StackPanel>
+</UserControl>

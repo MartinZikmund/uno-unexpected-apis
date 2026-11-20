@@ -1,0 +1,16 @@
+<UserControl x:Class="UnexpectedApis.Apis.SharingDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StackPanel MaxWidth="420" Spacing="12" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Button AutomationProperties.AutomationId="SharingShare" HorizontalAlignment="Center"
+            Style="{StaticResource AccentButtonStyle}" Click="OnShareClick">
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <SymbolIcon Symbol="Share" />
+        <TextBlock Text="Share this app" />
+      </StackPanel>
+    </Button>
+    <TextBlock x:Name="StatusText" AutomationProperties.AutomationId="SharingStatus" TextWrapping="Wrap"
+               TextAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,61 @@
+<UserControl x:Class="UnexpectedApis.Apis.MidiDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Grid RowSpacing="12" Padding="8">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <TextBlock x:Name="StatusText"
+               AutomationProperties.AutomationId="MidiStatus"
+               TextWrapping="Wrap"
+               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+
+    <ListView x:Name="DevicesList"
+              Grid.Row="1"
+              MaxHeight="120"
+              AutomationProperties.AutomationId="MidiDevices"
+              Header="MIDI output devices"
+              DisplayMemberPath="Name"
+              SelectionChanged="OnDeviceSelected" />
+
+    <ContentControl x:Name="KeyboardPanel" Grid.Row="2" IsEnabled="False"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+      <StackPanel Spacing="16">
+      <StackPanel Orientation="Horizontal" Spacing="2">
+          <Button AutomationProperties.AutomationId="MidiKeyC4" Width="48" Height="160" Padding="0" Tag="60" Click="OnKeyClick">
+            <TextBlock Text="C4" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyD" Width="48" Height="160" Padding="0" Tag="62" Click="OnKeyClick">
+            <TextBlock Text="D" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyE" Width="48" Height="160" Padding="0" Tag="64" Click="OnKeyClick">
+            <TextBlock Text="E" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyF" Width="48" Height="160" Padding="0" Tag="65" Click="OnKeyClick">
+            <TextBlock Text="F" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyG" Width="48" Height="160" Padding="0" Tag="67" Click="OnKeyClick">
+            <TextBlock Text="G" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyA" Width="48" Height="160" Padding="0" Tag="69" Click="OnKeyClick">
+            <TextBlock Text="A" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyB" Width="48" Height="160" Padding="0" Tag="71" Click="OnKeyClick">
+            <TextBlock Text="B" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+          <Button AutomationProperties.AutomationId="MidiKeyC5" Width="48" Height="160" Padding="0" Tag="72" Click="OnKeyClick">
+            <TextBlock Text="C5" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+          </Button>
+      </StackPanel>
+      <Button AutomationProperties.AutomationId="MidiBirthday" HorizontalAlignment="Center"
+              Content="Happy birthday, UnoConf!" Click="OnBirthdayClick" />
+      </StackPanel>
+    </ContentControl>
+  </Grid>
+</UserControl>
+
+
