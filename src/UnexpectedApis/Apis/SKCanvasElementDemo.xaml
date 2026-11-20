@@ -1,0 +1,35 @@
+<UserControl x:Class="UnexpectedApis.Apis.SKCanvasElementDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Grid Padding="16" RowSpacing="12">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="12">
+      <Button x:Name="NextButton"
+              AutomationProperties.AutomationId="SKCanvasNext"
+              Click="OnNextClick"
+              Content="Next drawing"
+              Style="{StaticResource AccentButtonStyle}" />
+      <TextBlock x:Name="IndexText"
+                 AutomationProperties.AutomationId="SKCanvasIndex"
+                 VerticalAlignment="Center"
+                 Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+    </StackPanel>
+
+    <Grid x:Name="Host" Grid.Row="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+      <TextBlock x:Name="MessageText"
+                 AutomationProperties.AutomationId="SKCanvasMessage"
+                 Margin="24"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                 TextAlignment="Center"
+                 TextWrapping="Wrap"
+                 Visibility="Collapsed" />
+    </Grid>
+  </Grid>
+</UserControl>

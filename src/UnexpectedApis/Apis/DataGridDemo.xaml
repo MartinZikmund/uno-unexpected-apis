@@ -1,0 +1,68 @@
+<UserControl x:Class="UnexpectedApis.Apis.DataGridDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wct="using:CommunityToolkit.WinUI.UI.Controls">
+
+  <Grid Padding="16" RowSpacing="12">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <StackPanel Orientation="Horizontal" Spacing="24">
+      <ToggleSwitch AutomationProperties.AutomationId="DataGridReadOnly"
+                    Header="Read only"
+                    Toggled="OnReadOnlyToggled" />
+      <ToggleSwitch AutomationProperties.AutomationId="DataGridLines"
+                    Header="Grid lines"
+                    Toggled="OnGridLinesToggled" />
+    </StackPanel>
+
+    <wct:DataGrid x:Name="PlantGrid"
+                  Grid.Row="1"
+                  AutomationProperties.AutomationId="DataGridPlants"
+                  AutoGenerateColumns="False"
+                  BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                  BorderThickness="1"
+                  CanUserReorderColumns="True"
+                  CanUserResizeColumns="True"
+                  CanUserSortColumns="True"
+                  GridLinesVisibility="None"
+                  HeadersVisibility="Column"
+                  ItemsSource="{x:Bind Plants}"
+                  SelectionMode="Extended"
+                  Sorting="OnSorting">
+      <wct:DataGrid.Columns>
+        <wct:DataGridTextColumn Header="Plant name" Tag="PlantName" Binding="{Binding PlantName, Mode=TwoWay}" />
+        <wct:DataGridTextColumn Header="Count" Tag="PlantsCount" Binding="{Binding PlantsCount, Mode=TwoWay}" />
+        <wct:DataGridTemplateColumn Header="Fruit or vegetable" Tag="Kind">
+          <wct:DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="{Binding Kind}" />
+            </DataTemplate>
+          </wct:DataGridTemplateColumn.CellTemplate>
+          <wct:DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+              <ComboBox HorizontalAlignment="Stretch"
+                        ItemsSource="{Binding Kinds}"
+                        SelectedItem="{Binding Kind, Mode=TwoWay}" />
+            </DataTemplate>
+          </wct:DataGridTemplateColumn.CellEditingTemplate>
+        </wct:DataGridTemplateColumn>
+        <wct:DataGridTemplateColumn Header="Date planted" Tag="PlantDate">
+          <wct:DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="{Binding PlantDateText}" />
+            </DataTemplate>
+          </wct:DataGridTemplateColumn.CellTemplate>
+          <wct:DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+              <CalendarDatePicker Margin="4" Date="{Binding PlantDate, Mode=TwoWay}" />
+            </DataTemplate>
+          </wct:DataGridTemplateColumn.CellEditingTemplate>
+        </wct:DataGridTemplateColumn>
+        <wct:DataGridCheckBoxColumn Header="Watered" Tag="IsWatered" Binding="{Binding IsWatered, Mode=TwoWay}" />
+      </wct:DataGrid.Columns>
+    </wct:DataGrid>
+  </Grid>
+</UserControl>

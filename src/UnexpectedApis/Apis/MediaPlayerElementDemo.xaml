@@ -1,0 +1,32 @@
+<UserControl x:Class="UnexpectedApis.Apis.MediaPlayerElementDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Grid Background="Black">
+    <MediaPlayerElement x:Name="Player"
+                        AutomationProperties.AutomationId="MediaPlayer"
+                        AreTransportControlsEnabled="True"
+                        AutoPlay="False"
+                        Stretch="Uniform">
+      <MediaPlayerElement.TransportControls>
+        <MediaTransportControls IsFastForwardButtonVisible="False"
+                                IsFastRewindButtonVisible="False"
+                                IsNextTrackButtonVisible="False"
+                                IsPreviousTrackButtonVisible="False"
+                                IsRepeatButtonVisible="False"
+                                IsStopButtonVisible="False"
+                                IsZoomButtonVisible="False" />
+      </MediaPlayerElement.TransportControls>
+    </MediaPlayerElement>
+
+    <TextBlock x:Name="MessageText"
+               AutomationProperties.AutomationId="MediaPlayerMessage"
+               Margin="24"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Foreground="White"
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               Visibility="Collapsed" />
+  </Grid>
+</UserControl>
