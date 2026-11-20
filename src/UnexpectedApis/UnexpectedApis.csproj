@@ -3,6 +3,7 @@
     <TargetFrameworks>net11.0-android;net11.0-ios;net11.0-tvos;net11.0-windows10.0.26100;net11.0-browserwasm;net11.0-desktop</TargetFrameworks>
 
     <OutputType>Exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UnoSingleProject>true</UnoSingleProject>
 
     <ApplicationTitle>Unexpected APIs</ApplicationTitle>
@@ -14,13 +15,29 @@
 
     <!-- https://aka.platform.uno/singleproject-features -->
     <UnoFeatures>
+      GLCanvas;
+      MediaElement;
+      WebView;
       Mvvm;
       SkiaRenderer;
       SpellChecking;
     </UnoFeatures>
   </PropertyGroup>
 
-  <!-- Relative, so the site works under GitHub Pages' /<repo>/ path as well as at a domain root. -->
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    <PackageReference Include="Mapsui.WinUI" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
+    <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net11.0-browserwasm'">
+    <PackageReference Include="Uno.WinUI.Graphics3DGL" />
+  </ItemGroup>
+
+  <!-- Relative, so the web app also works when hosted below a domain root. -->
   <PropertyGroup>
     <WasmShellWebAppBasePath>./</WasmShellWebAppBasePath>
   </PropertyGroup>
