@@ -24,14 +24,14 @@ public static partial class SampleCatalog
     public static readonly Category AppSystem = new("system", "App and system", Symbol.Setting, "Clipboard, files, sharing and the shell");
     public static readonly Category Graphics = new("graphics", "Graphics and media", Symbol.Pictures, "Canvases, maps, video and the web");
 
-    public static IReadOnlyList<Category> ApiCategories { get; } = [Sensors, Device, AppSystem, Graphics];
+    public static IReadOnlyList<Category> ApiCategories { get; } = (Category[])[Sensors, Device, AppSystem, Graphics];
 
     public static IReadOnlyList<Category> ControlCategories { get; } =
-        [Actions, Input, Text, DateTime, Status, Dialogs, Collections, Navigation, Layout];
+        (Category[])[Actions, Input, Text, DateTime, Status, Dialogs, Collections, Navigation, Layout];
 
-    public static IReadOnlyList<Category> Categories { get; } = [.. ControlCategories, .. ApiCategories];
+    public static IReadOnlyList<Category> Categories { get; } = (Category[])[.. ControlCategories, .. ApiCategories];
 
-    public static IReadOnlyList<Sample> All { get; } = [.. Build(), .. BuildApis()];
+    public static IReadOnlyList<Sample> All { get; } = (Sample[])[.. Build(), .. BuildApis()];
 
     public static Sample? Find(string id) => All.FirstOrDefault(sample => sample.Id == id);
 

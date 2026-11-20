@@ -20,7 +20,7 @@ public enum ApiPlatforms
 public static class ApiPlatformInfo
 {
     public static IReadOnlyList<(ApiPlatforms Platform, string Name)> Each { get; } =
-    [
+    ((ApiPlatforms, string)[])[
         (ApiPlatforms.Android, "Android"),
         (ApiPlatforms.iOS, "iOS"),
         (ApiPlatforms.TvOS, "tvOS"),

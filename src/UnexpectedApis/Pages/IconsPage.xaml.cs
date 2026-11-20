@@ -50,10 +50,10 @@ public sealed partial class IconsPage : Page
     }
 
     private static string SymbolSnippet(IconToken token) =>
-        XamlSnippet.Build("SymbolIcon", [new("Symbol", token.Name)]);
+        XamlSnippet.Build("SymbolIcon", (XamlAttribute[])[new("Symbol", token.Name)]);
 
     private static string FontSnippet(IconToken token) =>
-        XamlSnippet.Build("FontIcon", [new("FontFamily", "{ThemeResource SymbolThemeFontFamily}"), new("Glyph", $"&#x{token.Code};")]);
+        XamlSnippet.Build("FontIcon", (XamlAttribute[])[new("FontFamily", "{ThemeResource SymbolThemeFontFamily}"), new("Glyph", $"&#x{token.Code};")]);
 
     private void OnCopySymbol(object sender, RoutedEventArgs e) =>
         AppServices.Copy(SymbolCode.Source, "SymbolIcon copied");

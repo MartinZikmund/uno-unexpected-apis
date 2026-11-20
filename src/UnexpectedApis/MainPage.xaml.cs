@@ -124,9 +124,9 @@ public sealed partial class MainPage : Page
                 s.Keywords))
             .ToList();
 
-        entries.Add(new(new("Theme brushes", "Design tokens", Symbol.FontColor, Routes.Brushes), "Theme brushes", ["color", "resource", "palette", "stroke", "fill"]));
-        entries.Add(new(new("Typography", "Design tokens", Symbol.Font, Routes.Typography), "Typography", ["font", "text style", "type ramp"]));
-        entries.Add(new(new("Icons", "Design tokens", Symbol.Emoji2, Routes.Icons), "Icons", ["symbol", "glyph", "fonticon"]));
+        entries.Add(new(new("Theme brushes", "Design tokens", Symbol.FontColor, Routes.Brushes), "Theme brushes", (string[])["color", "resource", "palette", "stroke", "fill"]));
+        entries.Add(new(new("Typography", "Design tokens", Symbol.Font, Routes.Typography), "Typography", (string[])["font", "text style", "type ramp"]));
+        entries.Add(new(new("Icons", "Design tokens", Symbol.Emoji2, Routes.Icons), "Icons", (string[])["symbol", "glyph", "fonticon"]));
         return entries;
     }
 
