@@ -12,6 +12,7 @@ public sealed class ApiSample : Sample
     private readonly Uri _docs;
     private readonly ApiPlatforms _platforms;
     private string _code = string.Empty;
+    private string _language = "C#";
 
     public ApiSample(
         string id,
@@ -35,13 +36,19 @@ public sealed class ApiSample : Sample
 
     public override bool IsLiveControl => false;
 
-    public override string SnippetLanguage => "C#";
+    public override string SnippetLanguage => _language;
 
     public override ApiPlatforms Platforms => _platforms;
 
-    public ApiSample Code(string csharp)
+    public ApiSample Code(string csharp) => Snippet(csharp, "C#");
+
+    /// <summary>For samples whose essence is markup rather than code.</summary>
+    public ApiSample Xaml(string xaml) => Snippet(xaml, "XAML");
+
+    private ApiSample Snippet(string code, string language)
     {
-        _code = csharp.Trim();
+        _code = code.Trim();
+        _language = language;
         return this;
     }
 

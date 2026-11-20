@@ -47,7 +47,7 @@ public static partial class SampleCatalog
                 ApiPlatforms.All & ~ApiPlatforms.Windows,
                 "https://platform.uno/docs/articles/features/shapes-and-brushes.html#acrylicbrush", () => new AcrylicBrushDemo())
             .Height(560)
-            .Code("""
+            .Xaml("""
                 <Border CornerRadius="160" Width="320" Height="320">
                     <Border.Background>
                         <AcrylicBrush TintColor="Red"
@@ -64,8 +64,8 @@ public static partial class SampleCatalog
                 ApiPlatforms.All,
                 "https://platform.uno/docs/articles/uno-community-toolkit.html", () => new DataGridDemo())
             .Height(560)
-            .Code("""
-                xmlns:wct="using:CommunityToolkit.WinUI.UI.Controls"
+            .Xaml("""
+                <!-- xmlns:wct="using:CommunityToolkit.WinUI.UI.Controls" -->
 
                 <wct:DataGrid ItemsSource="{x:Bind Plants}"
                               AutoGenerateColumns="True"
@@ -121,7 +121,7 @@ public static partial class SampleCatalog
         new ApiSample("mediaplayerelement", "MediaPlayerElement", Graphics, Symbol.Video, "Plays a video with the standard transport controls.",
                 ApiPlatforms.All,
                 "https://platform.uno/docs/articles/controls/MediaPlayerElement.html", () => new MediaPlayerElementDemo())
-            .Code("""
+            .Xaml("""
                 <MediaPlayerElement
                     Source="ms-appx:///Assets/Media/sample.mp4"
                     AreTransportControlsEnabled="True"
@@ -151,7 +151,7 @@ public static partial class SampleCatalog
                 ApiPlatforms.All,
                 "https://platform.uno/docs/articles/controls/WebView.html", () => new WebViewDemo())
             .Height(520)
-            .Code("""
+            .Xaml("""
                 <WebView2 Source="https://platform.uno/" />
                 """)
             .Tip("Add the WebView UnoFeature for the desktop head. In the browser it's an iframe, so sites that forbid framing (X-Frame-Options) stay blank. Mobile heads need the internet permission.")
