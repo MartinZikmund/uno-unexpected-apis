@@ -77,7 +77,7 @@ cd src
 dotnet run --project UnexpectedApis/UnexpectedApis.csproj -f net11.0-desktop
 ```
 
-For the browser, use `-f net11.0-browserwasm`. For a device, open `src/UnexpectedApis.sln` in Visual Studio, Rider or VS Code and pick the target.
+For the browser, use `-f net11.0-browserwasm`. For a device, open `src/UnexpectedApis.slnx` in Visual Studio, Rider or VS Code and pick the target.
 
 ## Test it
 
