@@ -1,3 +1,5 @@
+// Not implemented on every head; calls are guarded and the demo says so.
+#pragma warning disable Uno0001
 using Windows.Globalization;
 using Windows.Media.SpeechRecognition;
 

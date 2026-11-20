@@ -8,7 +8,7 @@ public static partial class SampleCatalog
     private static List<Sample> DeviceAndSystemApis() =>
     [
         new ApiSample("clipboard", "Clipboard", AppSystem, Symbol.Paste, "Copies, pastes and watches text on the system clipboard.",
-                ApiPlatforms.All, "https://platform.uno/docs/articles/features/clipboard.html", () => new ClipboardDemo())
+                ApiPlatforms.All & ~ApiPlatforms.TvOS, "https://platform.uno/docs/articles/features/clipboard.html", () => new ClipboardDemo())
             .Code("""
                 DataPackage package = new();
                 package.SetText("Hello world");
@@ -51,7 +51,7 @@ public static partial class SampleCatalog
             .Find("music", "note", "piano", "instrument", "sound"),
 
         new ApiSample("speech", "Speech recognizer", Device, Symbol.Microphone, "Turns what you say into text.",
-                ApiPlatforms.All & ~ApiPlatforms.Desktop, "https://platform.uno/docs/articles/features/SpeechRecognition.html", () => new SpeechRecognizerDemo())
+                ApiPlatforms.All & ~ApiPlatforms.Desktop & ~ApiPlatforms.TvOS, "https://platform.uno/docs/articles/features/SpeechRecognition.html", () => new SpeechRecognizerDemo())
             .Code("""
                 using var recognizer = new SpeechRecognizer(new Language("en-US"));
                 recognizer.HypothesisGenerated += (s, e) => Debug.WriteLine(e.Hypothesis.Text);
@@ -103,7 +103,7 @@ public static partial class SampleCatalog
             .Find("open", "browser", "url", "uri", "deep link", "mailto"),
 
         new ApiSample("sharing", "Sharing", AppSystem, Symbol.Share, "Opens the system share sheet with a link to the app.",
-                ApiPlatforms.All & ~ApiPlatforms.Desktop, "https://platform.uno/docs/articles/features/windows-applicationmodel-datatransfer.html", () => new SharingDemo())
+                ApiPlatforms.All & ~ApiPlatforms.Desktop & ~ApiPlatforms.TvOS, "https://platform.uno/docs/articles/features/windows-applicationmodel-datatransfer.html", () => new SharingDemo())
             .Code("""
                 DataTransferManager.GetForCurrentView().DataRequested += (s, args) =>
                 {
