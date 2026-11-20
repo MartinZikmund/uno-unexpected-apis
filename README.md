@@ -1,18 +1,57 @@
+<div align="center">
+
 # Unexpected APIs in Uno Platform
+
+**48 live controls and 27 platform APIs, with the code to use them, on every platform.**
 
 [![CI](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/ci.yml/badge.svg)](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/ci.yml)
 [![Deploy](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/static-web-apps-deploy.yml/badge.svg)](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/static-web-apps-deploy.yml)
+![Uno Platform 7.1](https://img.shields.io/badge/Uno%20Platform-7.1-5534E0)
+![.NET 11](https://img.shields.io/badge/.NET-11-512BD4)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**[Try it in your browser](https://unexpectedapis.uno/)**
+### [▶ Try it in your browser](https://unexpectedapis.uno/)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/home-dark.png">
+  <img alt="The Unexpected APIs home page: live controls in the hero, recently opened samples and the catalog categories" src="docs/images/home-light.png" width="900">
+</picture>
+
+</div>
 
 [Uno Platform](https://platform.uno) is known for its controls. It also brings a surprising amount of the Windows API surface to every platform: sensors, the clipboard, gamepads, MIDI, speech, files, sharing and more. This app shows both, live, with the code to use them.
 
-- **Controls:** every control is live. Change a property, and the control and its XAML change together. Preview in light, dark or both at once, and at phone widths.
-- **Platform APIs:** a working demo for each API, the C# that drives it, and the platforms it runs on. When the current platform lacks an API, the page says so instead of failing.
-- **Quick find:** Ctrl+K matches names, capital initials (`ts` finds ToggleSwitch), keywords and scattered letters.
-- **Favorites and recents**, plus browsers for theme brushes, the type ramp and every `Symbol`.
+- 🎛️ **Controls:** every control is live. Change a property, and the control and its XAML change together. Preview in light, dark or both at once, and at phone widths.
+- 🧭 **Platform APIs:** a working demo for each API, the C# that drives it, and the platforms it runs on. When the current platform lacks an API, the page says so instead of failing.
+- 🔎 **Quick find:** Ctrl+K matches names, capital initials (`ts` finds ToggleSwitch), keywords and scattered letters.
+- ⭐ **Favorites and recents**, plus browsers for theme brushes, the type ramp and every `Symbol`.
 
 It's a community project, not an official Uno Platform app.
+
+## A quick tour
+
+<table>
+  <tr>
+    <td width="50%">
+      <img alt="The Slider page: the control in light and dark side by side, its properties and the generated XAML" src="docs/images/control-slider.png">
+      <p align="center"><b>Turn the knobs.</b> Every property change updates the control and its XAML. "Both" shows light and dark side by side.</p>
+    </td>
+    <td width="50%">
+      <img alt="The GLCanvasElement page: a spinning, rainbow-shaded 3D cube drawn with OpenGL, with its C# below" src="docs/images/api-glcanvas.png">
+      <p align="center"><b>Raw OpenGL.</b> <code>GLCanvasElement</code> spins a 3D cube in the browser, on Windows and on the desktop.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img alt="The SKCanvasElement page: overlapping SkiaSharp shapes, with a button to cycle drawings" src="docs/images/api-skcanvas.png">
+      <p align="center"><b>SkiaSharp drawing.</b> <code>SKCanvasElement</code> hands you an <code>SKCanvas</code> to draw on, with the C# right below the demo.</p>
+    </td>
+    <td width="50%">
+      <img alt="The home page in dark theme" src="docs/images/home-dark.png">
+      <p align="center"><b>Light, dark or system.</b> One click in the title bar, remembered between visits.</p>
+    </td>
+  </tr>
+</table>
 
 ## Platforms
 
