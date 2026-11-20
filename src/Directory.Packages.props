@@ -12,6 +12,5 @@
     <PackageVersion Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
     <PackageVersion Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.2.0" />
     <PackageVersion Include="Mapsui.WinUI" Version="5.2.0" />
-    <PackageVersion Include="Uno.WinUI.Graphics3DGL" Version="7.1.0-dev.478" />
   </ItemGroup>
 </Project>

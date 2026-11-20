@@ -34,7 +34,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net11.0-browserwasm'">
-    <PackageReference Include="Uno.WinUI.Graphics3DGL" />
+    <!-- The GLCanvas feature only adds this on desktop and Windows; keep it on the SDK's Uno version. -->
+    <PackageReference Include="Uno.WinUI.Graphics3DGL" VersionOverride="$(UnoVersion)" />
   </ItemGroup>
 
   <!-- Relative, so the web app also works when hosted below a domain root. -->
