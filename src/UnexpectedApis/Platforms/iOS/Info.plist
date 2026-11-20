@@ -56,5 +56,11 @@
 		<key>ITSAppUsesNonExemptEncryption</key>
 		<false/>
 		-->
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>The Geolocator sample shows where you are.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>The Speech recognizer sample listens to what you say.</string>
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>The Speech recognizer sample turns what you say into text.</string>
 	</dict>
 </plist>
