@@ -18,10 +18,19 @@ public static class AppServices
 
     public static void Copy(string text, string message)
     {
-        DataPackage package = new();
-        package.SetText(text);
-        Clipboard.SetContent(package);
-        ShowToast?.Invoke(message);
+        try
+        {
+#pragma warning disable Uno0001 // tvOS has no clipboard; the catch reports it.
+            DataPackage package = new();
+            package.SetText(text);
+            Clipboard.SetContent(package);
+#pragma warning restore Uno0001
+            ShowToast?.Invoke(message);
+        }
+        catch (Exception ex)
+        {
+            ShowToast?.Invoke($"Couldn't copy: {ex.Message}");
+        }
     }
 
     public static void SaveLibrary()
