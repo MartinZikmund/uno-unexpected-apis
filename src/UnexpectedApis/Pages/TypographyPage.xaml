@@ -1,0 +1,48 @@
+<Page x:Class="UnexpectedApis.Pages.TypographyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:pages="using:UnexpectedApis.Pages">
+
+  <ScrollViewer>
+    <StackPanel Spacing="16" Padding="32,24,32,48" MaxWidth="1320">
+      <StackPanel Spacing="4">
+        <TextBlock Text="Design tokens" Style="{StaticResource SectionLabelStyle}" />
+        <TextBlock Text="Typography" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}" TextWrapping="Wrap"
+                   Text="The Fluent type ramp. Use these styles instead of a raw FontSize, and text stays consistent everywhere." />
+      </StackPanel>
+
+      <TextBox x:Name="SampleBox" AutomationProperties.AutomationId="TypeSampleText" Header="Preview text" MaxWidth="480" HorizontalAlignment="Left" MinWidth="480"
+               Text="Fluent, in every size" TextChanged="OnSampleChanged" />
+
+      <ItemsControl x:Name="RampList">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel Spacing="8" />
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate x:DataType="pages:TypeRow">
+            <Border Style="{StaticResource CardStyle}" Padding="16">
+              <Grid ColumnSpacing="24">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="240" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center">
+                  <TextBlock Text="{x:Bind StyleKey}" TextTrimming="CharacterEllipsis" />
+                  <TextBlock Text="{x:Bind Metrics}" Style="{StaticResource MutedCaptionStyle}" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="{x:Bind Text, Mode=OneWay}" Style="{x:Bind TextStyle}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                <Button Grid.Column="2" VerticalAlignment="Center" AutomationProperties.Name="Copy style" ToolTipService.ToolTip="Copy style" Tag="{x:Bind StyleKey}" Click="OnCopyClick">
+                  <SymbolIcon Symbol="Copy" />
+                </Button>
+              </Grid>
+            </Border>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </StackPanel>
+  </ScrollViewer>
+</Page>

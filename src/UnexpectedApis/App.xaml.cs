@@ -1,8 +1,9 @@
 using System;
 using Microsoft.Extensions.Logging;
-using Uno;
+using Uno.Resizetizer;
 
 namespace UnexpectedApis;
+
 public partial class App : Application
 {
     /// <summary>
@@ -14,13 +15,12 @@ public partial class App : Application
         this.InitializeComponent();
     }
 
-    public static App Instance => (App)Current;
-
-    public Window? MainWindow { get; private set; }
+    public static Window? MainWindow { get; private set; }
 
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        MainWindow = new Window();
+        MainWindow = new Window { Title = "Unexpected APIs" };
+        MainWindow.ExtendsContentIntoTitleBar = true;
 #if DEBUG
         MainWindow.UseStudio();
 #endif
@@ -44,11 +44,11 @@ public partial class App : Application
             // When the navigation stack isn't restored navigate to the first page,
             // configuring the new page by passing required information as a navigation
             // parameter
-            rootFrame.Navigate(typeof(ShellPage), args.Arguments);
+            rootFrame.Navigate(typeof(MainPage), args.Arguments);
         }
 
+        MainWindow.SetWindowIcon();
         // Ensure the current window is active
-        MainWindow.Title = "Unexpected APIs in Uno Platform";
         MainWindow.Activate();
     }
 

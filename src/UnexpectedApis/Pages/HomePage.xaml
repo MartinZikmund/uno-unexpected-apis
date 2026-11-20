@@ -1,0 +1,110 @@
+<Page x:Class="UnexpectedApis.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:pages="using:UnexpectedApis.Pages">
+
+  <Page.Resources>
+    <DataTemplate x:Key="SampleTileTemplate" x:DataType="pages:SampleTile">
+      <Border Width="288" Height="80" Style="{StaticResource CardStyle}" Padding="16,12">
+        <Grid ColumnSpacing="16">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <SymbolIcon Symbol="{x:Bind Icon}" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" />
+          <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+            <TextBlock Text="{x:Bind Title}" Style="{StaticResource BodyStrongTextBlockStyle}" TextTrimming="CharacterEllipsis" />
+            <TextBlock Text="{x:Bind Subtitle}" Style="{StaticResource MutedCaptionStyle}" TextTrimming="CharacterEllipsis" />
+          </StackPanel>
+        </Grid>
+      </Border>
+    </DataTemplate>
+  </Page.Resources>
+
+  <ScrollViewer>
+    <StackPanel Spacing="32" Padding="32,24,32,48" MaxWidth="1320">
+
+      <Border x:Name="Hero" Background="{ThemeResource HeroBackgroundBrush}"
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="12" Padding="40,32">
+        <Grid ColumnSpacing="48">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <StackPanel Spacing="16" VerticalAlignment="Center" MaxWidth="560" HorizontalAlignment="Left">
+            <TextBlock Text="Turn the knobs. Copy the XAML." Style="{StaticResource TitleLargeTextBlockStyle}" />
+            <TextBlock TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                       Text="Every control here is the real thing, running on Uno Platform. Change a property and watch the control and its markup change together, in light and dark at once." />
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <Button x:Name="StartButton" AutomationProperties.AutomationId="StartExploring"
+                      Style="{StaticResource AccentButtonStyle}" Content="Open a control" Click="OnStartClick" />
+              <Button AutomationProperties.AutomationId="OpenBrushes" Content="Browse theme brushes" Click="OnBrushesClick" />
+            </StackPanel>
+            <TextBlock x:Name="CountsText" Style="{StaticResource MutedCaptionStyle}" />
+          </StackPanel>
+
+          <!-- Live controls, not a picture of them: they respond if you touch them. -->
+          <Grid x:Name="LiveWall" Grid.Column="1" ColumnSpacing="12" RowSpacing="12" Width="440">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource CardStyle}" Padding="16,8">
+              <ToggleSwitch AutomationProperties.Name="Sample toggle" IsOn="True" Header="Sync" OnContent="On" OffContent="Off" />
+            </Border>
+            <Border Grid.Column="1" Style="{StaticResource CardStyle}" Padding="16,8">
+              <Slider AutomationProperties.Name="Sample slider" Header="Volume" Value="64" VerticalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="1" Style="{StaticResource CardStyle}" Padding="16,12">
+              <RatingControl AutomationProperties.Name="Sample rating" Value="4" HorizontalAlignment="Left" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource CardStyle}" Padding="16,12">
+              <StackPanel Orientation="Horizontal" Spacing="12">
+                <ProgressRing IsActive="True" Width="24" Height="24" />
+                <TextBlock Text="Compiling confidence" VerticalAlignment="Center" Style="{StaticResource MutedCaptionStyle}" />
+              </StackPanel>
+            </Border>
+            <Border Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource CardStyle}" Padding="16,12">
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button Style="{StaticResource AccentButtonStyle}" Content="Accent" />
+                <Button Content="Default" />
+                <CheckBox Content="Checked" IsChecked="True" Margin="8,0,0,0" />
+              </StackPanel>
+            </Border>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <StackPanel x:Name="FavoritesSection" Spacing="8" Visibility="Collapsed">
+        <TextBlock Text="Favorites" Style="{StaticResource SubtitleTextBlockStyle}" />
+        <GridView x:Name="FavoritesGrid" AutomationProperties.Name="Favorites" SelectionMode="None" IsItemClickEnabled="True"
+                  ItemTemplate="{StaticResource SampleTileTemplate}" ItemClick="OnTileClick" />
+      </StackPanel>
+
+      <StackPanel x:Name="RecentsSection" Spacing="8" Visibility="Collapsed">
+        <TextBlock Text="Jump back in" Style="{StaticResource SubtitleTextBlockStyle}" />
+        <GridView x:Name="RecentsGrid" AutomationProperties.Name="Recently opened" SelectionMode="None" IsItemClickEnabled="True"
+                  ItemTemplate="{StaticResource SampleTileTemplate}" ItemClick="OnTileClick" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Browse" Style="{StaticResource SubtitleTextBlockStyle}" />
+        <GridView x:Name="BrowseGrid" AutomationProperties.Name="Browse categories" SelectionMode="None" IsItemClickEnabled="True"
+                  ItemTemplate="{StaticResource SampleTileTemplate}" ItemClick="OnTileClick" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Design tokens" Style="{StaticResource SubtitleTextBlockStyle}" />
+        <GridView x:Name="TokensGrid" AutomationProperties.Name="Design tokens" SelectionMode="None" IsItemClickEnabled="True"
+                  ItemTemplate="{StaticResource SampleTileTemplate}" ItemClick="OnTileClick" />
+      </StackPanel>
+    </StackPanel>
+  </ScrollViewer>
+</Page>
