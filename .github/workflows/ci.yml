@@ -53,13 +53,13 @@ jobs:
             os: windows-latest
             tfm: net11.0-windows10.0.26100
           - name: iOS
-            os: macos-latest
+            os: macos-26
             tfm: net11.0-ios
             workloads: ios
             # A simulator build needs no signing identity.
             args: -p:RuntimeIdentifier=iossimulator-arm64
           - name: tvOS
-            os: macos-latest
+            os: macos-26
             tfm: net11.0-tvos
             workloads: tvos
             args: -p:RuntimeIdentifier=tvossimulator-arm64
@@ -75,6 +75,15 @@ jobs:
         with:
           distribution: microsoft
           java-version: 21
+
+      # .NET 11's Apple SDK needs Xcode 27.2; the image's default can be older.
+      - name: Select Xcode
+        if: runner.os == 'macOS'
+        run: |
+          ls -d /Applications/Xcode*.app
+          xcode=$(ls -d /Applications/Xcode_27*.app | sort -V | tail -1)
+          sudo xcode-select -s "$xcode"
+          xcodebuild -version
 
       - name: Install workloads
         if: matrix.workloads
