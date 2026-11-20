@@ -3,6 +3,8 @@
 [![CI](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/ci.yml/badge.svg)](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/ci.yml)
 [![Deploy](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/static-web-apps-deploy.yml/badge.svg)](https://github.com/MartinZikmund/uno-unexpected-apis/actions/workflows/static-web-apps-deploy.yml)
 
+**[Try it in your browser](https://unexpectedapis.uno/)**
+
 [Uno Platform](https://platform.uno) is known for its controls. It also brings a surprising amount of the Windows API surface to every platform: sensors, the clipboard, gamepads, MIDI, speech, files, sharing and more. This app shows both, live, with the code to use them.
 
 - **Controls:** every control is live. Change a property, and the control and its XAML change together. Preview in light, dark or both at once, and at phone widths.
