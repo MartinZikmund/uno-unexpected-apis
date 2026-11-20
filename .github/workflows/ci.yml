@@ -53,13 +53,13 @@ jobs:
             os: windows-latest
             tfm: net11.0-windows10.0.26100
           - name: iOS
-            os: macos-26
+            os: xcode-27
             tfm: net11.0-ios
             workloads: ios
             # A simulator build needs no signing identity.
             args: -p:RuntimeIdentifier=iossimulator-arm64
           - name: tvOS
-            os: macos-26
+            os: xcode-27
             tfm: net11.0-tvos
             workloads: tvos
             args: -p:RuntimeIdentifier=tvossimulator-arm64
@@ -76,7 +76,8 @@ jobs:
           distribution: microsoft
           java-version: 21
 
-      # .NET 11's Apple SDK needs Xcode 27.2; the image's default can be older.
+      # .NET 11's Apple SDK needs Xcode 27.2: macos-26 images stop at 26.6, so use the
+      # xcode-27 image and select its newest Xcode 27.
       - name: Select Xcode
         if: runner.os == 'macOS'
         run: |
