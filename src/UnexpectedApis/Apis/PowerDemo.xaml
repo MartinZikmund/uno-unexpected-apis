@@ -1,0 +1,53 @@
+<UserControl x:Class="UnexpectedApis.Apis.PowerDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StackPanel MaxWidth="360" Spacing="16" VerticalAlignment="Center">
+    <TextBlock x:Name="StatusText"
+               AutomationProperties.AutomationId="PowerStatus"
+               Style="{StaticResource BodyTextBlockStyle}"
+               TextWrapping="Wrap"
+               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+
+    <Border x:Name="InfoCard"
+            Padding="16"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="{ThemeResource OverlayCornerRadius}">
+      <StackPanel Spacing="12">
+        <StackPanel Spacing="4">
+          <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Battery level"
+                     Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+          <TextBlock x:Name="LevelText" AutomationProperties.AutomationId="PowerLevel"
+                     Style="{StaticResource TitleTextBlockStyle}" Text="-" />
+          <ProgressBar x:Name="LevelBar" Minimum="0" Maximum="100" />
+        </StackPanel>
+        <Grid ColumnSpacing="16">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <StackPanel Spacing="4">
+            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Charging"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            <TextBlock x:Name="ChargingText" AutomationProperties.AutomationId="PowerCharging"
+                       Style="{StaticResource SubtitleTextBlockStyle}" Text="-" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Spacing="4">
+            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Energy saver"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            <TextBlock x:Name="SaverText" AutomationProperties.AutomationId="PowerSaver"
+                       Style="{StaticResource SubtitleTextBlockStyle}" Text="-" />
+          </StackPanel>
+        </Grid>
+        <StackPanel Spacing="4">
+          <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Remaining discharge time"
+                     Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+          <TextBlock x:Name="DischargeText" AutomationProperties.AutomationId="PowerDischarge"
+                     Style="{StaticResource SubtitleTextBlockStyle}" Text="-" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

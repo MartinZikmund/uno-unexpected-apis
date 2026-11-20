@@ -1,0 +1,50 @@
+<UserControl x:Class="UnexpectedApis.Apis.GeolocatorDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StackPanel MaxWidth="360" Spacing="16" VerticalAlignment="Center">
+    <Button x:Name="LocateButton"
+            AutomationProperties.AutomationId="GeolocatorGet"
+            HorizontalAlignment="Stretch"
+            Style="{StaticResource AccentButtonStyle}"
+            Click="OnLocateClick">
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <SymbolIcon Symbol="Map" />
+        <TextBlock Text="Get geoposition" />
+      </StackPanel>
+    </Button>
+
+    <ProgressRing x:Name="Progress" Width="32" Height="32" IsActive="False" Visibility="Collapsed" />
+
+    <TextBlock x:Name="StatusText"
+               AutomationProperties.AutomationId="GeolocatorStatus"
+               Style="{StaticResource BodyTextBlockStyle}"
+               TextWrapping="Wrap"
+               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+
+    <Border x:Name="ResultCard"
+            Padding="16"
+            Visibility="Collapsed"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="{ThemeResource OverlayCornerRadius}">
+      <StackPanel Spacing="8">
+        <StackPanel Spacing="4">
+          <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Latitude"
+                     Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+          <TextBlock x:Name="LatitudeText" AutomationProperties.AutomationId="GeolocatorLatitude"
+                     Style="{StaticResource SubtitleTextBlockStyle}" />
+        </StackPanel>
+        <StackPanel Spacing="4">
+          <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Longitude"
+                     Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+          <TextBlock x:Name="LongitudeText" AutomationProperties.AutomationId="GeolocatorLongitude"
+                     Style="{StaticResource SubtitleTextBlockStyle}" />
+        </StackPanel>
+        <TextBlock x:Name="DetailsText" Style="{StaticResource CaptionTextBlockStyle}"
+                   Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,27 @@
+<UserControl x:Class="UnexpectedApis.Apis.AmbientLightDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Border x:Name="Backdrop"
+          MaxWidth="420"
+          MinHeight="200"
+          Padding="24"
+          VerticalAlignment="Center"
+          Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+          BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+          BorderThickness="1"
+          CornerRadius="{ThemeResource OverlayCornerRadius}">
+    <StackPanel Spacing="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <TextBlock x:Name="LuxText"
+                 AutomationProperties.AutomationId="AmbientLightLux"
+                 HorizontalAlignment="Center"
+                 Style="{StaticResource TitleLargeTextBlockStyle}"
+                 Text="-" />
+      <TextBlock x:Name="StatusText"
+                 AutomationProperties.AutomationId="AmbientLightStatus"
+                 HorizontalAlignment="Center"
+                 Style="{StaticResource BodyTextBlockStyle}"
+                 TextWrapping="Wrap" />
+    </StackPanel>
+  </Border>
+</UserControl>
