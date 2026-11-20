@@ -81,4 +81,5 @@ jobs:
         run: dotnet workload install ${{ matrix.workloads }}
 
       - name: Build
-        run: dotnet build ${{ env.PROJECT }} -f ${{ matrix.tfm }} -c Release ${{ matrix.args }}
+        # Restore evaluates every target framework, so narrow the project to one.
+        run: dotnet build ${{ env.PROJECT }} -p:TargetFrameworks=${{ matrix.tfm }} -c Release ${{ matrix.args }}
