@@ -20,8 +20,8 @@
     </UnoFeatures>
   </PropertyGroup>
 
-  <!-- GitHub Pages serves the app from /<repo>/; CI passes the base path. -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net11.0-browserwasm' and '$(AppBasePath)' != ''">
-    <WasmShellWebAppBasePath>$(AppBasePath)</WasmShellWebAppBasePath>
+  <!-- Relative, so the site works under GitHub Pages' /<repo>/ path as well as at a domain root. -->
+  <PropertyGroup>
+    <WasmShellWebAppBasePath>./</WasmShellWebAppBasePath>
   </PropertyGroup>
 </Project>
