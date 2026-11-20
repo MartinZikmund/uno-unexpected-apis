@@ -76,19 +76,20 @@ jobs:
           distribution: microsoft
           java-version: 21
 
-      # .NET 11's Apple SDK needs Xcode 27.2: macos-26 images stop at 26.6, so use the
-      # xcode-27 image and select its newest Xcode 27.
-      - name: Select Xcode
-        if: runner.os == 'macOS'
-        run: |
-          ls -d /Applications/Xcode*.app
-          xcode=$(ls -d /Applications/Xcode_27*.app | sort -V | tail -1)
-          sudo xcode-select -s "$xcode"
-          xcodebuild -version
-
       - name: Install workloads
         if: matrix.workloads
         run: dotnet workload install ${{ matrix.workloads }}
+
+      # The Apple SDK packs need one exact Xcode, named in the pack folder (e.g. Microsoft.iOS.Sdk.net11.0_27.2).
+      # macos-26 images stop at Xcode 26.6, so these jobs run on the xcode-27 image.
+      - name: Select Xcode
+        if: runner.os == 'macOS'
+        run: |
+          pack=$(ls -d "$DOTNET_ROOT"/packs/Microsoft.{iOS,tvOS}.Sdk.net*_* 2>/dev/null | sort -V | tail -1)
+          version=${pack##*_}
+          echo "SDK pack $(basename "$pack") needs Xcode $version"
+          sudo xcode-select -s "/Applications/Xcode_$version.app"
+          xcodebuild -version
 
       - name: Build
         # Restore evaluates every target framework, so narrow the project to one.
