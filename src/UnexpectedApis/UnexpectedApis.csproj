@@ -1,48 +1,45 @@
-﻿<Project Sdk="Uno.Sdk">
-    <PropertyGroup>
-        <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
+<Project Sdk="Uno.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net11.0-android;net11.0-ios;net11.0-tvos;net11.0-windows10.0.26100;net11.0-browserwasm;net11.0-desktop</TargetFrameworks>
 
-        <OutputType>Exe</OutputType>
-        <UnoSingleProject>true</UnoSingleProject>
+    <OutputType>Exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UnoSingleProject>true</UnoSingleProject>
 
-        <!-- Display name -->
-        <ApplicationTitle>UnexpectedApis</ApplicationTitle>
-        <!-- App Identifier -->
-        <ApplicationId>com.companyname.UnexpectedApis</ApplicationId>
-        <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-        <ApplicationVersion>1</ApplicationVersion>
-        <!-- Package Publisher -->
-        <ApplicationPublisher>domin</ApplicationPublisher>
-        <!-- Package Description -->
-        <Description>UnexpectedApis powered by Uno Platform.</Description>
+    <ApplicationTitle>Unexpected APIs</ApplicationTitle>
+    <ApplicationId>dev.zikmund.unexpectedapis</ApplicationId>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationPublisher>Martin Zikmund</ApplicationPublisher>
+    <Description>Unexpected APIs: live controls and platform APIs of Uno Platform.</Description>
 
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <UnoFeatures>
-            SkiaRenderer;
-            MediaElement;
-            GLCanvas;
-            Skia;
-            Svg;
-            Mvvm;
-            Toolkit;
-        </UnoFeatures>
-    </PropertyGroup>
+    <!-- https://aka.platform.uno/singleproject-features -->
+    <UnoFeatures>
+      GLCanvas;
+      MediaElement;
+      WebView;
+      Mvvm;
+      SkiaRenderer;
+      SpellChecking;
+    </UnoFeatures>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-        <PackageReference Include="Uno.Core.Extensions.Collections" />
-        <PackageReference Include="Uno.Core.Extensions.Disposables" />
-    </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+    <PackageReference Include="Mapsui.WinUI" />
+  </ItemGroup>
 
-    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-        <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" />
-        <PackageReference Include="Mapsui.WinUI" />
-    </ItemGroup>
-    
-    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
-        <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
-        <PackageReference Include="Mapsui.Uno.WinUI" />
-    </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
+    <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" />
+  </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net11.0-browserwasm'">
+    <!-- The GLCanvas feature only adds this on desktop and Windows; keep it on the SDK's Uno version. -->
+    <PackageReference Include="Uno.WinUI.Graphics3DGL" VersionOverride="$(UnoVersion)" />
+  </ItemGroup>
+
+  <!-- Relative, so the web app also works when hosted below a domain root. -->
+  <PropertyGroup>
+    <WasmShellWebAppBasePath>./</WasmShellWebAppBasePath>
+  </PropertyGroup>
 </Project>

@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application android:allowBackup="true" android:supportsRtl="true"></application>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.FLASHLIGHT" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <!-- Listed in the Uno Platform docs for PowerManager; Android only grants it to system apps. -->
+  <uses-permission android:name="android.permission.BATTERY_STATS" />
+
+  <!-- Samples check for the hardware, so the app still installs without it. -->
+  <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+  <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+  <application android:allowBackup="true" android:supportsRtl="true">
+  </application>
 </manifest>

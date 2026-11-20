@@ -1,14 +1,22 @@
-using UnexpectedApis;
 using Uno.UI.Hosting;
 
-App.InitializeLogging();
+namespace UnexpectedApis;
 
-var host = UnoPlatformHostBuilder.Create()
-    .App(() => new App())
-    .UseX11()
-    .UseLinuxFrameBuffer()
-    .UseMacOS()
-    .UseWin32()
-    .Build();
+internal class Program
+{
+    [STAThread]
+    public static void Main(string[] args)
+    {
+        App.InitializeLogging();
 
-host.Run();
+        var host = UnoPlatformHostBuilder.Create()
+            .App(() => new App())
+            .UseX11()
+            .UseLinuxFrameBuffer()
+            .UseMacOS()
+            .UseWin32()
+            .Build();
+
+        host.Run();
+    }
+}

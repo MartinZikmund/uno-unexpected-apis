@@ -1,0 +1,24 @@
+<UserControl x:Class="UnexpectedApis.Views.CodeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Border Background="{ThemeResource CodeBackgroundBrush}" CornerRadius="0,0,8,8">
+    <Grid>
+      <!-- Runs can't take a ThemeResource from code, so these hand over the resolved brushes. -->
+      <Border x:Name="TagSwatch" Background="{ThemeResource CodeTagBrush}" Visibility="Collapsed" />
+      <Border x:Name="AttributeSwatch" Background="{ThemeResource CodeAttributeBrush}" Visibility="Collapsed" />
+      <Border x:Name="ValueSwatch" Background="{ThemeResource CodeValueBrush}" Visibility="Collapsed" />
+      <Border x:Name="PunctuationSwatch" Background="{ThemeResource CodePunctuationBrush}" Visibility="Collapsed" />
+      <Border x:Name="CommentSwatch" Background="{ThemeResource CodeCommentBrush}" Visibility="Collapsed" />
+
+      <ScrollViewer x:Name="Scroller" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
+                    HorizontalScrollMode="Auto" VerticalScrollMode="Disabled">
+        <TextBlock x:Name="Output"
+                   AutomationProperties.AutomationId="SnippetText"
+                   Margin="16"
+                   FontFamily="{StaticResource CodeFontFamily}"
+                   IsTextSelectionEnabled="True" />
+      </ScrollViewer>
+    </Grid>
+  </Border>
+</UserControl>

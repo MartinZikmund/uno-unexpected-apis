@@ -1,12 +1,20 @@
 using UIKit;
-using UnexpectedApis;
 using Uno.UI.Hosting;
 
-App.InitializeLogging();
+namespace UnexpectedApis.iOS;
 
-var host = UnoPlatformHostBuilder.Create()
-    .App(() => new App())
-    .UseAppleUIKit()
-    .Build();
+public class EntryPoint
+{
+    // This is the main entry point of the application.
+    public static void Main(string[] args)
+    {
+        App.InitializeLogging();
 
-host.Run();
+        var host = UnoPlatformHostBuilder.Create()
+            .App(() => new App())
+            .UseAppleUIKit()
+            .Build();
+
+        host.Run();
+    }
+}

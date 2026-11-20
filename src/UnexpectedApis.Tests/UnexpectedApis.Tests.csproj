@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <!-- Core is UI-free, so it is linked in rather than referencing the Uno head. -->
+  <ItemGroup>
+    <Compile Include="..\UnexpectedApis\Core\*.cs" Link="Core\%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

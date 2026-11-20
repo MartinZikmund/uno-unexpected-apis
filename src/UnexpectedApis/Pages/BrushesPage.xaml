@@ -1,0 +1,76 @@
+<Page x:Class="UnexpectedApis.Pages.BrushesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:pages="using:UnexpectedApis.Pages"
+      xmlns:views="using:UnexpectedApis.Views">
+
+  <Grid Padding="32,24,32,0" RowSpacing="16" MaxWidth="1320">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <StackPanel Spacing="4">
+      <TextBlock Text="Design tokens" Style="{StaticResource SectionLabelStyle}" />
+      <TextBlock Text="Theme brushes" Style="{StaticResource TitleTextBlockStyle}" />
+      <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}" TextWrapping="Wrap"
+                 Text="The Fluent brushes in light and dark, resolved live from this app. Click a row to copy its ThemeResource." />
+    </StackPanel>
+
+    <TextBox x:Name="FilterBox" AutomationProperties.AutomationId="BrushFilter" AutomationProperties.Name="Filter brushes"
+             Grid.Row="1" MaxWidth="360" HorizontalAlignment="Left" MinWidth="360"
+             PlaceholderText="Filter: accent, stroke, card..." TextChanged="OnFilterChanged" />
+
+    <ListView x:Name="BrushList" AutomationProperties.AutomationId="BrushList" Grid.Row="2"
+              SelectionMode="None" IsItemClickEnabled="True" ItemClick="OnBrushClick">
+      <ListView.Header>
+        <Grid ColumnSpacing="16" Padding="16,0,16,4">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="120" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Resource" Style="{StaticResource SectionLabelStyle}" />
+          <TextBlock Grid.Column="1" Text="Light" Style="{StaticResource SectionLabelStyle}" />
+          <TextBlock Grid.Column="2" Text="Dark" Style="{StaticResource SectionLabelStyle}" />
+        </Grid>
+      </ListView.Header>
+      <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+      </ListView.ItemContainerStyle>
+      <ListView.ItemTemplate>
+        <DataTemplate x:DataType="pages:BrushToken">
+          <Grid ColumnSpacing="16" Padding="0,8">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="120" />
+              <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center">
+              <TextBlock Text="{x:Bind Key}" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="{x:Bind Group}" Style="{StaticResource MutedCaptionStyle}" />
+            </StackPanel>
+
+            <Grid Grid.Column="1" RequestedTheme="Light">
+              <Border Height="40" CornerRadius="{StaticResource ControlCornerRadius}"
+                      Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1">
+                <views:BrushSwatch BrushKey="{x:Bind Key}" />
+              </Border>
+            </Grid>
+            <Grid Grid.Column="2" RequestedTheme="Dark">
+              <Border Height="40" CornerRadius="{StaticResource ControlCornerRadius}"
+                      Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1">
+                <views:BrushSwatch BrushKey="{x:Bind Key}" />
+              </Border>
+            </Grid>
+          </Grid>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </Grid>
+</Page>

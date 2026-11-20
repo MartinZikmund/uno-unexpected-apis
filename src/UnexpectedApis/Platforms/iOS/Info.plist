@@ -33,11 +33,34 @@
 		<string>Assets.xcassets/icon.appiconset</string>
 		<key>UIApplicationSupportsIndirectInputEvents</key>
 		<true/>
+		<key>UIApplicationSceneManifest</key>
+		<dict>
+			<key>UIApplicationSupportsMultipleScenes</key>
+			<true/>
+			<key>UISceneConfigurations</key>
+			<dict>
+				<key>UIWindowSceneSessionRoleApplication</key>
+				<array>
+					<dict>
+						<key>UISceneConfigurationName</key>
+						<string>__UNO_DEFAULT_SCENE_CONFIGURATION__</string>
+						<key>UISceneDelegateClassName</key>
+						<string>SceneDelegate</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
 
 		<!--
 		Adjust this to your application's encryption usage.
 		<key>ITSAppUsesNonExemptEncryption</key>
 		<false/>
 		-->
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>The Geolocator sample shows where you are.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>The Speech recognizer sample listens to what you say.</string>
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>The Speech recognizer sample turns what you say into text.</string>
 	</dict>
 </plist>

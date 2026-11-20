@@ -1,0 +1,11 @@
+<UserControl x:Class="UnexpectedApis.Views.StageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Border x:Name="Surface" Background="{ThemeResource StageBackgroundBrush}" CornerRadius="0,0,8,8" Padding="24">
+    <Grid>
+      <Grid x:Name="Host" />
+      <InfoBar x:Name="ErrorBar" Title="This sample failed" Severity="Error" IsClosable="False" VerticalAlignment="Center" />
+    </Grid>
+  </Border>
+</UserControl>

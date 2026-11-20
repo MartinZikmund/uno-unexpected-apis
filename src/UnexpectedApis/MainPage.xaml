@@ -1,0 +1,102 @@
+<Page x:Class="UnexpectedApis.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:UnexpectedApis"
+      Background="{ThemeResource ShellBackgroundBrush}"
+      KeyboardAcceleratorPlacementMode="Hidden">
+
+  <Page.KeyboardAccelerators>
+    <KeyboardAccelerator Key="K" Modifiers="Control" Invoked="OnFindAccelerator" />
+  </Page.KeyboardAccelerators>
+
+  <Grid x:Name="Root">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="48" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid x:Name="AppTitleBar" ColumnSpacing="16" Padding="16,0,152,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+        <Border Width="24" Height="24" CornerRadius="{StaticResource ControlCornerRadius}"
+                Background="{ThemeResource AccentFillColorDefaultBrush}">
+          <SymbolIcon Symbol="Library" Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"
+                      RenderTransformOrigin="0.5,0.5">
+            <SymbolIcon.RenderTransform>
+              <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
+            </SymbolIcon.RenderTransform>
+          </SymbolIcon>
+        </Border>
+        <TextBlock Text="Unexpected APIs" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" />
+        <TextBlock Text="Uno Platform 7" Style="{StaticResource MutedCaptionStyle}" VerticalAlignment="Center" />
+      </StackPanel>
+
+      <AutoSuggestBox x:Name="SearchBox"
+                      AutomationProperties.AutomationId="QuickFind"
+                      AutomationProperties.Name="Find a control or token"
+                      Grid.Column="1"
+                      MaxWidth="480"
+                      VerticalAlignment="Center"
+                      PlaceholderText="Find a control, brush or icon (Ctrl+K)"
+                      QueryIcon="Find"
+                      TextMemberPath="Title"
+                      UpdateTextOnSelect="False"
+                      TextChanged="OnSearchTextChanged"
+                      QuerySubmitted="OnSearchSubmitted">
+        <AutoSuggestBox.ItemTemplate>
+          <DataTemplate x:DataType="local:SearchResult">
+            <Grid ColumnSpacing="12" Padding="0,4">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <SymbolIcon Symbol="{x:Bind Icon}" />
+              <StackPanel Grid.Column="1">
+                <TextBlock Text="{x:Bind Title}" />
+                <TextBlock Text="{x:Bind Subtitle}" Style="{StaticResource MutedCaptionStyle}" />
+              </StackPanel>
+            </Grid>
+          </DataTemplate>
+        </AutoSuggestBox.ItemTemplate>
+      </AutoSuggestBox>
+
+      <Button x:Name="ThemeButton"
+              AutomationProperties.AutomationId="ThemeButton"
+              AutomationProperties.Name="Switch app theme"
+              Grid.Column="2"
+              VerticalAlignment="Center"
+              Click="OnThemeClick">
+        <StackPanel Orientation="Horizontal" Spacing="8">
+          <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE793;" />
+          <TextBlock x:Name="ThemeLabel" />
+        </StackPanel>
+      </Button>
+    </Grid>
+
+    <NavigationView x:Name="Nav"
+                    AutomationProperties.AutomationId="MainNav"
+                    Grid.Row="1"
+                    PaneDisplayMode="Left"
+                    OpenPaneLength="280"
+                    IsSettingsVisible="False"
+                    IsPaneToggleButtonVisible="True"
+                    IsTitleBarAutoPaddingEnabled="False"
+                    SelectionChanged="OnNavSelectionChanged"
+                    BackRequested="OnNavBackRequested">
+      <Frame x:Name="ContentFrame" Navigated="OnFrameNavigated" />
+    </NavigationView>
+
+    <InfoBar x:Name="Toast"
+             Grid.Row="1"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Bottom"
+             Margin="0,0,0,24"
+             Severity="Success"
+             IsClosable="False" />
+  </Grid>
+</Page>

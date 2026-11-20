@@ -1,0 +1,29 @@
+<UserControl x:Class="UnexpectedApis.Apis.VibrationDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StackPanel MaxWidth="360" Spacing="16" VerticalAlignment="Center">
+    <Slider x:Name="DurationSlider"
+            AutomationProperties.AutomationId="VibrationDuration"
+            Header="Duration (ms)"
+            Minimum="100"
+            Maximum="2000"
+            StepFrequency="100"
+            Value="500" />
+    <Button x:Name="VibrateButton"
+            AutomationProperties.AutomationId="VibrationVibrate"
+            HorizontalAlignment="Stretch"
+            Style="{StaticResource AccentButtonStyle}"
+            Click="OnVibrateClick">
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <SymbolIcon Symbol="Phone" />
+        <TextBlock Text="Vibrate" />
+      </StackPanel>
+    </Button>
+    <TextBlock x:Name="StatusText"
+               AutomationProperties.AutomationId="VibrationStatus"
+               Style="{StaticResource BodyTextBlockStyle}"
+               TextWrapping="Wrap"
+               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+  </StackPanel>
+</UserControl>

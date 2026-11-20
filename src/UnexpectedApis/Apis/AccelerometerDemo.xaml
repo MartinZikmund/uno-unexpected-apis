@@ -1,0 +1,56 @@
+<UserControl x:Class="UnexpectedApis.Apis.AccelerometerDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StackPanel MaxWidth="360" Spacing="16" VerticalAlignment="Center">
+    <TextBlock x:Name="StatusText"
+               AutomationProperties.AutomationId="AccelerometerStatus"
+               Style="{StaticResource BodyTextBlockStyle}"
+               TextWrapping="Wrap"
+               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+
+    <StackPanel x:Name="ReadingPanel" Spacing="16">
+      <ToggleSwitch x:Name="ObserveSwitch"
+                    AutomationProperties.AutomationId="AccelerometerObserve"
+                    Header="Observe readings"
+                    Toggled="OnObserveToggled" />
+      <Border Padding="16"
+              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+              BorderThickness="1"
+              CornerRadius="{ThemeResource OverlayCornerRadius}">
+        <StackPanel Spacing="12">
+          <Grid ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Spacing="4">
+              <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="X"
+                         Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+              <TextBlock x:Name="XText" AutomationProperties.AutomationId="AccelerometerX"
+                         Style="{StaticResource SubtitleTextBlockStyle}" Text="-" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Spacing="4">
+              <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Y"
+                         Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+              <TextBlock x:Name="YText" AutomationProperties.AutomationId="AccelerometerY"
+                         Style="{StaticResource SubtitleTextBlockStyle}" Text="-" />
+            </StackPanel>
+            <StackPanel Grid.Column="2" Spacing="4">
+              <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Z"
+                         Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+              <TextBlock x:Name="ZText" AutomationProperties.AutomationId="AccelerometerZ"
+                         Style="{StaticResource SubtitleTextBlockStyle}" Text="-" />
+            </StackPanel>
+          </Grid>
+          <TextBlock x:Name="TimestampText"
+                     AutomationProperties.AutomationId="AccelerometerTimestamp"
+                     Style="{StaticResource CaptionTextBlockStyle}"
+                     Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </StackPanel>
+</UserControl>
